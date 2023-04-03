@@ -199,7 +199,7 @@ p {
 .professionals {
     padding: 7rem 0;
     /*background: linear-gradient(var(--primario), 70% ,var(--blanco)); /* hay que evaluar cual dejamos */
-    background: linear-gradient(var(--primario),var(--secundario) ,var(--blanco));
+    background: linear-gradient(var(--primario), var(--secundario), var(--blanco));
     color: var(--blanco);
 }
 
@@ -207,6 +207,7 @@ p {
     text-align: center;
     margin-bottom: 5rem;
 }
+
 /* no va esto */
 .professionals .service-item {
     background-color: #FFF;
@@ -223,7 +224,7 @@ p {
 
 .grid-services {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
 }
 
@@ -238,7 +239,7 @@ p {
     border: 0.1rem solid var(--secundario);
     border-radius: 2rem;
     color: var(--negro);
-    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
 }
 
 .service img {
@@ -249,7 +250,7 @@ p {
 .contact {
     padding: 7rem 0;
     background-color: var(--terciario);
-    color: var(--blanco); 
+    color: var(--blanco);
 }
 
 .contact .container {
@@ -263,77 +264,79 @@ p {
     border: 1px solid var(--blanco);
 }
 
-/* Footer */
-.social-icon .icon:hover {
-    stroke: var(--secundario);
-    transition: ease-out 0.3s;
-}
-
-
-/* contacto */
-
-
-.containerForm{
+/* Contact */
+.containerForm {
     display: flex;
     flex-direction: column;
 }
-.containerForm .form{
+
+.containerForm .form {
     display: flex;
     flex-direction: column;
     margin: 5% auto;
     gap: 1.5rem;
 }
-.form input{
+
+.form input {
     border: none;
     text-align: center;
     transition: .5s;
 }
 
-.form input:focus{
+.form input:focus {
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 255, 0.536);
-   border: none;
+    border: none;
 }
-.form input:active{
+
+.form input:active {
     border-bottom: 1px solid red;
 }
-.form input:focus::placeholder{
+
+.form input:focus::placeholder {
     color: black;
 }
 
-.form textarea{
+.form textarea {
     border-radius: 5px;
     padding: 2rem;
 }
-.form .btn{
+
+.form .btn {
     background-color: #1169A2;
     transition: .5s;
 }
-.form .btn:hover{
 
+.form .btn:hover {
     background-color: rgba(0, 128, 0, 0.531);
     color: #000;
 }
 
-
-/* map */
-
-.map{
+/* Map */
+.map {
     display: flex;
     flex-direction: column;
     margin: 3% auto;
 }
-.map iframe{
+
+.map iframe {
     margin: 3rem auto;
     border-radius: 15px;
 }
-.map .position{
+
+.map .position {
     display: flex;
 
     margin: 3rem auto;
 }
-.map .position img{
+
+.map .position img {
     width: 50px;
     height: 50px;
 }
 
+/* Footer */
+.social-icon .icon:hover {
+    stroke: var(--secundario);
+    transition: ease-out 0.3s;
+}
