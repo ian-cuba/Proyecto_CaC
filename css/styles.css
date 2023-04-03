@@ -268,3 +268,72 @@ p {
     stroke: var(--secundario);
     transition: ease-out 0.3s;
 }
+
+
+/* contacto */
+
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+}
+.containerForm .form{
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto;
+    gap: 1.5rem;
+}
+.form input{
+    border: none;
+    text-align: center;
+    transition: .5s;
+}
+
+.form input:focus{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 255, 0.536);
+   border: none;
+}
+.form input:active{
+    border-bottom: 1px solid red;
+}
+.form input:focus::placeholder{
+    color: black;
+}
+
+.form textarea{
+    border-radius: 5px;
+    padding: 2rem;
+}
+.form .btn{
+    background-color: #1169A2;
+    transition: .5s;
+}
+.form .btn:hover{
+
+    background-color: rgba(0, 128, 0, 0.531);
+    color: #000;
+}
+
+
+/* map */
+
+.map{
+    display: flex;
+    flex-direction: column;
+    margin: 3% auto;
+}
+.map iframe{
+    margin: 3rem auto;
+    border-radius: 15px;
+}
+.map .position{
+    display: flex;
+
+    margin: 3rem auto;
+}
+.map .position img{
+    width: 50px;
+    height: 50px;
+}
+
