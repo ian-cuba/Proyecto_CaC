@@ -33,8 +33,10 @@ a {
 
 h1,
 h2,
-h3 {
-    margin: 0 0 5rem 0;
+h3,
+h4 {
+    margin: 0 0 2rem 0;
+    font-family: var(--fuenteHeading);
 }
 
 h1 {
@@ -49,6 +51,14 @@ h3 {
     font-size: 3rem;
 }
 
+h4 {
+    font-size: 2rem;
+}
+
+p {
+    font-family: var(--fuenteParrafos);
+}
+
 .container {
     width: 90%;
     max-width: 190rem;
@@ -58,37 +68,6 @@ h3 {
 .header,
 .footer {
     background-color: var(--primario);
-}
-
-/* Header */
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    gap: 3rem;
-}
-
-
-.nav__link {
-    font-size: 2rem;
-    margin-right: 4rem;
-    color: var(--blanco);
-}
-
-.nav__link:last-child {
-    margin: 0;
-}
-
-.nav__link:hover {
-    cursor: pointer;
-    color: var(--secundario);
-    transition: ease-out 0.3s;
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 2rem;
 }
 
 .button {
@@ -114,6 +93,40 @@ h3 {
     transition: ease-out 0.3s;
 }
 
+.content {
+    margin: 0 2rem;
+    padding: 30rem 0;
+}
+
+/* Header */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav__link {
+    font-size: 2rem;
+    margin-right: 4rem;
+    color: var(--blanco);
+}
+
+.nav__link:last-child {
+    margin: 0;
+}
+
+.nav__link:hover {
+    cursor: pointer;
+    color: var(--secundario);
+    transition: ease-out 0.3s;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 2rem;
+}
+
 .login-button {
     background-color: var(--secundario);
 }
@@ -125,10 +138,129 @@ h3 {
     transition: ease-out 0.3s;
 }
 
-/* Main */
-.content {
-    margin: 0 2rem;
-    padding: 30rem 0;
+/* Home */
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45vw;
+    min-height: 55rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgb(0 0 0 / 80%);
+    width: 100%;
+    height: 100%;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    font-weight: 600;
+}
+
+.button-banner {
+    width: 20rem;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.about {
+    background-color: var(--primario);
+    min-height: 55rem;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+}
+
+.about-content {
+    max-width: 70rem;
+}
+
+.upper-title p {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.vision {
+    font-size: 5rem;
+}
+
+.professionals {
+    padding: 7rem 0;
+    /*background: linear-gradient(var(--primario), 70% ,var(--blanco)); /* hay que evaluar cual dejamos */
+    background: linear-gradient(var(--primario),var(--secundario) ,var(--blanco));
+    color: var(--blanco);
+}
+
+.professionals h2 {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+/* no va esto */
+.professionals .service-item {
+    background-color: #FFF;
+}
+
+.services {
+    padding: 7rem 0;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4rem;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    transition: all ease-out 0.3s;
+}
+
+.service-item {
+    padding: 3rem;
+    text-align: center;
+    border: 0.1rem solid var(--secundario);
+    border-radius: 2rem;
+    color: var(--negro);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+}
+
+.service img {
+    height: 10rem;
+    width: 10rem;
+}
+
+.contact {
+    padding: 7rem 0;
+    background-color: var(--terciario);
+    color: var(--blanco); 
+}
+
+.contact .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-content .button {
+    width: 100%;
+    border: 1px solid var(--blanco);
 }
 
 /* Footer */
