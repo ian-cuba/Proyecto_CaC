@@ -293,6 +293,13 @@ p {
 }
 
 /* Contact */
+
+main{
+    display: flex;
+    margin: 1rem 20%;
+    gap: 5%;
+    align-items: center;
+}
 .containerForm {
     display: flex;
     flex-direction: column;
@@ -304,11 +311,16 @@ p {
     margin: 5% auto;
     gap: 1.5rem;
 }
+.form h2{
+    text-align: center;
+    margin-left: -50%;
+}
 
 .form input {
     border: none;
     text-align: center;
     transition: .5s;
+    margin-left: -50%
 }
 
 .form input:focus {
@@ -328,11 +340,13 @@ p {
 .form textarea {
     border-radius: 5px;
     padding: 2rem;
+    margin-left: -50%;
 }
 
 .form .btn {
     background-color: #1169A2;
     transition: .5s;
+    margin-left: -50%;
 }
 
 .form .btn:hover {
@@ -362,6 +376,7 @@ p {
     width: 50px;
     height: 50px;
 }
+
 
 /* Footer */
 .social-icon .icon:hover {
