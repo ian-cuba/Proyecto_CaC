@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Turnos para Clínicas</title>
+    <title>Centro de Salud Integral - Home</title>
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <div class="row">
+            <div class="header-row">
                 <a href="index.html" class="logo">
                     <img src="img/logo.svg" alt="Logo" width="70px">
                 </a>
@@ -32,12 +37,12 @@
         </div>
     </header>
     <main class="main">
-        <section class="hero">
+        <section class="home-hero">
             <div class="overlay"></div>
             <div class="container">
-                <h1>Clínica Médica Lorem Ipsum</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugiat culpa recusandae beatae
-                    possimus consequatur ea dolorum dicta! Amet, tempore!</p>
+                <h1>Centro de Salud Integral</h1>
+                <p>Un centro de salud que promueva el bienestar físico y mental de la comunidad en un ambiente acogedor
+                    y cálido.</p>
                 <a href="#about" class="button button-banner">Nuestra visión</a>
             </div>
         </section>
@@ -48,8 +53,14 @@
                         <p>Nuestra Visión</p>
                     </div>
                     <h2 class="vision">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                        Brindar servicios de salud integrales, modernos y eficaces, centrados en el bienestar del
+                        paciente.
                     </h2>
+                </div>
+                <div class="about-image">
+                    <div class="image">
+                        <img src="img/about.jpg" alt="Doctor saludando al paciente">
+                    </div>
                 </div>
             </div>
         </section>
@@ -59,7 +70,9 @@
                 <div class="grid-container">
                     <div class="grid-item">
                         <div class="grid-item__content">
-                            <img src="img/Professionals/doctora1.jpg" alt="Dra. María Rodríguez">
+                            <div>
+                                <img src="img/Professionals/doctora1.jpg" alt="Dra. María Rodríguez">
+                            </div>
                             <h3>Dra. María Rodríguez</h3>
                             <p>Médico general con experiencia en atención primaria y cuidado de pacientes
                                 hospitalizados.</p>
@@ -67,7 +80,9 @@
                     </div>
                     <div class="grid-item">
                         <div class="grid-item__content">
-                            <img src="img/Professionals/doctor1.jpg" alt="Enfermero Luis García">
+                            <div>
+                                <img src="img/Professionals/doctor1.jpg" alt="Enfermero Luis García">
+                            </div>
                             <h3>Enfermero Luis García</h3>
                             <p>Enfermero registrado con experiencia en atención de emergencias y cuidado de pacientes en
                                 unidades de cuidados intensivos.</p>
@@ -75,13 +90,19 @@
                     </div>
                     <div class="grid-item">
                         <div class="grid-item__content">
-                            <img src="img/Professionals/doctora2.jpg" alt="Dr. Pedro Díaz">
+                            <div>
+                                <img src="img/Professionals/doctora2.jpg" alt="Dr. Pedro Díaz">
+                            </div>
                             <h3>Dra. Juliana Díaz</h3>
                             <p>Psiquiatra con experiencia en el tratamiento de trastornos mentales como depresión,
                                 ansiedad y trastornos del espectro autista.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="professionals-button">
+                <a href="professionals.html" class="button button-banner">Conocer Mas</a>
+            </div>
         </section>
         <section class="services">
             <div class="container">
@@ -123,17 +144,17 @@
     </main>
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="header-row">
                 <a href="index.html" class="logo">
                     <img src="img/logo.svg" alt="Logo" width="70px">
                 </a>
-                <nav class="nav secundary-nav">
-                    <a href="about.html" class="nav__link">Nosotros</a>
-                    <a href="professionals.html" class="nav__link">Profesionales</a>
-                    <a href="services.html" class="nav__link">Especialidades</a>
-                    <a href="turns.html" class="nav__link">Mis Turnos</a>
-                    <a href="contact.html" class="nav__link">Contacto</a>
-                </nav>
+                <div class="footer-contact">
+                    <h4>Contactanos</h4>
+                    <p> Hospital Italiano sede Central </p>
+                    <p>Tte. Gral. Juan Domingo Perón 4190, CABA.</p> 
+                    <p>CP C1199ABB</p>    
+                    <p>Tel. (+54 11) 4959 - 0200</p>    
+                </div>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/" class="social-icon" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"

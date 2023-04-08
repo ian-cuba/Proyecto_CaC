@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Turnos para Clínicas</title>
+    <title>Centro de Salud Integral - Registro</title>
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <div class="row">
+            <div class="header-row">
                 <a href="index.html" class="logo">
                     <img src="img/logo.svg" alt="Logo" width="70px">
                 </a>
@@ -34,57 +39,79 @@
     <main class="main">
         <div class="container">
             <div class="content">
-                <form class="row g-3">
-                    <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2"
-                            placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">State</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label for="inputZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
+                <form action="" class="form-register">
+                    <fieldset>
+                        <legend>Completa los campos para registrarte</legend>
+                        <div class="input-container">
+                            <div class="form-register__input">
+                                <label for="">Nombre</label>
+                                <input class="input-text" type="text" placeholder="Escribe tu nombre">
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Apellido</label>
+                                <input class="input-text" type="text" placeholder="Escribe tu apellido">
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">DNI</label>
+                                <input class="input-text" type="number" placeholder="Escribe tu DNI">
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Teléfono</label>
+                                <input class="input-text" type="tel" placeholder="Escribe tu teléfono">
+                            </div>
+
+                            <div class="form-register__input">
+                                <label for="">Email</label>
+                                <input class="input-text" type="email" placeholder="Escribe tu email">
+                            </div>
+                            <div class="form-register__input" id="social-work">
+                                <div>
+                                    <label class="social-work__label">
+                                        <input type="checkbox" name="social-work">Obra Social
+                                        <i></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-register__input" id="affiliate-number">
+                                <label for="">Número de Afiliado</label>
+                                <input class="input-text" type="number" placeholder="Escribe tu número de afiliado">
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Dirección</label>
+                                <input class="input-text" type="text" placeholder="Escribe tu dirección">
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Ciudad</label>
+                                <select name="city" class="input-text">
+                                    <option value="value1" selected>Value 1</option>
+                                    <option value="value2">Value 2</option>
+                                    <option value="value3">Value 3</option>
+                                </select>
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Código Postal</label>
+                                <input class="input-text" type="number" placeholder="Escribe tu código postal">
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Provincia</label>
+                                <select name="province" class="input-text">
+                                    <option value="value1" selected>Value 1</option>
+                                    <option value="value2">Value 2</option>
+                                    <option value="value3">Value 3</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
+                        <div>
+                            <input class="button submit-button" type="submit" value="Registrarse">
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         </div>
     </main>
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="header-row">
                 <a href="index.html" class="logo">
                     <img src="img/logo.svg" alt="Logo" width="70px">
                 </a>

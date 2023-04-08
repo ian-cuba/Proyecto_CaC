@@ -1,10 +1,11 @@
 :root {
-    --fuenteHeading: 'PT Sans', sans-serif;
-    --fuenteParrafos: 'Open Sans', sans-serif;
+    --fuenteHeading: 'Nunito', sans-serif;
+    --fuenteParrafos: 'Roboto', sans-serif;
 
     --primario: #0C2D5D;
     --secundario: #1169A2;
     --terciario: #0C556A;
+    --backgroud: #c3e3fd;
     --blanco: #FFF;
     --negro: #000;
 }
@@ -13,12 +14,15 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-size: 16px;
     /* 1rem = 10px */
+    background-color: var(--backgroud);
+    padding-top: 9rem;
 }
 
 *,
@@ -39,6 +43,10 @@ h4 {
     font-family: var(--fuenteHeading);
 }
 
+p {
+    margin: 0 0 1rem 0;
+}
+
 h1 {
     font-size: 4rem;
 }
@@ -55,8 +63,12 @@ h4 {
     font-size: 2rem;
 }
 
-p {
+p,a,span {
     font-family: var(--fuenteParrafos);
+}
+
+select,input[type=checkbox] {
+    cursor: pointer;
 }
 
 .container {
@@ -95,11 +107,51 @@ p {
 
 .content {
     margin: 0 2rem;
-    padding: 30rem 0;
+    padding: 10rem 0;
 }
 
+.hero {
+    background-color: var(--secundario);
+    height: 25vw;
+    min-height: 50rem;
+    color: var(--negro);
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 8px 12px -3px rgba(138,134,138,1);
+}
+
+.hero .container {
+    display: flex;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    background-color: var(--backgroud);
+}
+/* Eliminar flechas de los inputs tipo number */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
 /* Header */
-.row {
+.header {
+    min-height: 9rem;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25);
+}
+
+.header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -122,6 +174,7 @@ p {
     transition: ease-out 0.3s;
 }
 
+
 .nav-buttons {
     display: flex;
     gap: 2rem;
@@ -139,7 +192,7 @@ p {
 }
 
 /* Home */
-.hero {
+.home-hero {
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -158,12 +211,12 @@ p {
     height: 100%;
 }
 
-.hero .container {
+.home-hero .container {
     position: relative;
     z-index: 1;
 }
 
-.hero h1 {
+.home-hero h1 {
     font-size: 7rem;
     font-weight: 600;
 }
@@ -182,8 +235,20 @@ p {
     color: var(--blanco);
 }
 
+.about .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+
 .about-content {
-    max-width: 70rem;
+    max-width: 80rem;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
 }
 
 .upper-title p {
@@ -198,7 +263,6 @@ p {
 
 .professionals {
     padding: 0 0 7rem 0;
-    /*background: linear-gradient(var(--primario), 70% ,var(--blanco)); /* hay que evaluar cual dejamos */
     background: linear-gradient(var(--primario), var(--secundario), var(--blanco));
     color: var(--blanco);
 }
@@ -208,18 +272,29 @@ p {
     margin-bottom: 5rem;
 }
 
-/* no va esto */
-.professionals .service-item {
-    background-color: #FFF;
+.professionals-button {
+    display: flex;
+    justify-content: center;
 }
 
+.professionals-button .button {
+    color: var(--secundario);
+}
+
+.professionals-button .button:hover {
+    transform: scale(1.05);
+    transition: all ease-out 0.3s;
+    background-color: transparent;
+}
 .services {
     padding: 0 0 7rem 0;
+    background-color: var(--blanco);
 }
 
 .services h2 {
     text-align: center;
     margin-bottom: 5rem;
+    
 }
 
 .grid-services {
@@ -248,7 +323,7 @@ p {
 }
 
 .contact {
-    padding: 7rem 0;
+    padding: 10rem 0;
     background-color: var(--terciario);
     color: var(--blanco);
 }
@@ -286,16 +361,158 @@ p {
     text-align: center;
     color: var(--blanco);
     box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    height: 100%;
 }
 
 .grid-item__content h3{
     margin-top: 2rem;
 }
 
+/* Register */
+.form-register {
+    width: min( 80rem, 100% ); /* Utilizar el valor mas pequeño */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.form-register fieldset {
+    border: none;
+}
+
+.form-register legend {
+    text-align: center;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .input-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+
+    .form-register__input:nth-child(5), .form-register__input:nth-child(8),
+    .form-register__input:last-child {
+        grid-column: 1 / 3;
+    }
+}
+
+.form-register__input {
+    margin-bottom: 1rem;
+}
+
+#social-work {
+    display: flex;
+    align-items: center;
+}
+/* Personalización  del checkbox */
+.social-work__label input{
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+
+.social-work__label {
+    position: relative;
+	margin-bottom: 30px;
+	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar 
+        el elemento <i> en este espacio*/
+	display: block;
+}
+
+/* Estas reglas se aplicarán a todos las elementos i 
+después de cualquier input*/
+.social-work__label input + i{
+    background: #f0f0f0;
+    border:2px solid rgba(0,0,0,0.2);
+    position: absolute; 
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+/* Estas reglas se aplicarán a todos los i despues 
+de un input de tipo checkbox*/
+.social-work__label input[type=checkbox ] + i{
+	width: 52px;
+	height: 30px;
+	border-radius: 15px;
+}
+
+/*
+Creamos el círculo que aparece encima de los checkbox
+con la etqieta before. Importante aunque no haya contenido
+debemos poner definir este valor.
+*/
+.social-work__label input[type=checkbox] + i:before{
+	content: ''; /* No hay contenido */
+	width: 26px;
+	height: 26px;
+	background: #fff;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+	-webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+	box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+}
+
+.social-work__label input[type=checkbox]:checked + i:before{
+	left: 22px;
+	-webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
+	box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
+}
+ 
+.social-work__label input[type=checkbox]:checked + i{
+ background: var(--terciario);
+}
+
+.form-register__input label {
+    color: var(--terciario);
+    font-weight: 700;
+    margin-bottom: .5rem;
+    display: block;
+    font-size: 2rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--negro);
+}
+
+.input-text::placeholder {
+    font-size: 1.5rem;
+}
+
+#affiliate-number {
+    display: none;
+}
+/* Eliminar borde negro al seleccionar */
+input,select:focus {
+    outline: none;
+}
+
+.submit-button {
+    margin-top: 3rem;
+    color: var(--secundario);
+}
+
+.submit-button:hover {
+    color: var(--blanco);
+}
+
 /* Contact */
 .containerForm {
     display: flex;
-    flex-direction: column;
+
 }
 
 .containerForm .form {
@@ -364,6 +581,12 @@ p {
 }
 
 /* Footer */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .social-icon .icon:hover {
     stroke: var(--secundario);
     transition: ease-out 0.3s;
