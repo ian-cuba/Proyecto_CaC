@@ -37,8 +37,8 @@
         </div>
     </header>
     <main class="main">
-        <div class="container">
-            <div class="content">
+        <div class="content">
+            <div class="container">
                 <form action="" class="form-register">
                     <fieldset>
                         <legend>Completa los campos para registrarte</legend>
@@ -67,14 +67,20 @@
                             <div class="form-register__input" id="social-work">
                                 <div>
                                     <label class="social-work__label">
-                                        <input type="checkbox" name="social-work">Obra Social
+                                        <input type="checkbox" name="social-work" id="social-work__check" onclick="showSocialWork()">Obra Social
                                         <i></i>
                                     </label>
                                 </div>
                             </div>
-                            <div class="form-register__input" id="affiliate-number">
-                                <label for="">Número de Afiliado</label>
-                                <input class="input-text" type="number" placeholder="Escribe tu número de afiliado">
+                            <div id="affiliate">
+                                <div class="form-register__input">
+                                    <label for="">Obra Social</label>
+                                    <input class="input-text" type="text" placeholder="Escribe el nombre de tu obra social">
+                                </div>
+                                <div class="form-register__input">
+                                    <label for="">Número de Afiliado</label>
+                                    <input class="input-text" type="number" placeholder="Escribe tu número de afiliado">
+                                </div>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Dirección</label>
@@ -82,7 +88,7 @@
                             </div>
                             <div class="form-register__input">
                                 <label for="">Ciudad</label>
-                                <select name="city" class="input-text">
+                                <select name="city" class="input-text select">
                                     <option value="value1" selected>Value 1</option>
                                     <option value="value2">Value 2</option>
                                     <option value="value3">Value 3</option>
@@ -92,7 +98,7 @@
                                 <label for="">Código Postal</label>
                                 <input class="input-text" type="number" placeholder="Escribe tu código postal">
                             </div>
-                            <div class="form-register__input">
+                            <div class="form-register__input select">
                                 <label for="">Provincia</label>
                                 <select name="province" class="input-text">
                                     <option value="value1" selected>Value 1</option>
@@ -157,6 +163,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        function showSocialWork() {
+
+            social_work__check = document.getElementById("social-work__check");
+            console.log(social_work__check);
+            if (social_work__check.checked) {
+                document.getElementById("affiliate").style.display = "block";
+            } else {
+                document.getElementById("affiliate").style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

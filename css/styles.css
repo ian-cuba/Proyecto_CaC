@@ -106,7 +106,6 @@ select,input[type=checkbox] {
 }
 
 .content {
-    margin: 0 2rem;
     padding: 10rem 0;
 }
 
@@ -192,6 +191,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Home */
+/* Hero Section - Home */
 .home-hero {
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
@@ -226,7 +226,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 2rem;
     margin-top: 4rem;
 }
-
+/* About Section - Home */
 .about {
     background-color: var(--primario);
     min-height: 55rem;
@@ -260,7 +260,7 @@ input[type=number]::-webkit-outer-spin-button {
 .vision {
     font-size: 5rem;
 }
-
+/* Professionals Section - Home */
 .professionals {
     padding: 0 0 7rem 0;
     background: linear-gradient(var(--primario), var(--secundario), var(--blanco));
@@ -286,6 +286,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition: all ease-out 0.3s;
     background-color: transparent;
 }
+/* Services Section - Home */
 .services {
     padding: 0 0 7rem 0;
     background-color: var(--blanco);
@@ -321,7 +322,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 10rem;
     width: 10rem;
 }
-
+/* Contact Section - Home */
 .contact {
     padding: 10rem 0;
     background-color: var(--terciario);
@@ -339,7 +340,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid var(--blanco);
 }
 
-/*Professionals */
+/* Professionals Page */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -368,16 +369,17 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 2rem;
 }
 
-/* Register */
+/* Register Page */
 .form-register {
     width: min( 80rem, 100% ); /* Utilizar el valor mas pequeño */
     margin: 0 auto;
-    padding: 2rem;
     border-radius: 1rem;
 }
 
 .form-register fieldset {
     border: none;
+    padding: 0;
+    margin: 0;
 }
 
 .form-register legend {
@@ -397,21 +399,21 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .form-register__input:nth-child(5), .form-register__input:nth-child(8),
-    .form-register__input:last-child {
+    .form-register__input:last-child, #social-work, #affiliate {
         grid-column: 1 / 3;
     }
 }
 
 .form-register__input {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 #social-work {
     display: flex;
     align-items: center;
 }
-/* Personalización  del checkbox */
-.social-work__label input{
+
+.social-work__label input { /* Personalización  del checkbox */
 	visibility: hidden;
 	position: absolute;
 	right: 0;
@@ -492,31 +494,38 @@ debemos poner definir este valor.
     font-size: 1.5rem;
 }
 
-#affiliate-number {
-    display: none;
+#affiliate{
+    display: none; /* Por defecto los campos de obra social no se ven, solo si seleccionan el select */
 }
 /* Eliminar borde negro al seleccionar */
 input,select:focus {
     outline: none;
 }
 
+.select option {
+    height: 2rem;
+    background-color: transparent;
+}
+
 .submit-button {
     margin-top: 3rem;
-    color: var(--secundario);
+    background-color: var(--secundario);
 }
 
 .submit-button:hover {
-    color: var(--blanco);
+    background-color: transparent;
+    color: var(--secundario);
+    transition: ease-in .2s;
 }
 
-/* Contact */
-
-main{
+/* Contact Page */
+.content-contact {
     display: flex;
     margin: 1rem 20%;
     gap: 5%;
     align-items: center;
 }
+
 .containerForm {
     display: flex;
 
@@ -571,7 +580,7 @@ main{
     color: #000;
 }
 
-/* Map */
+/* Map Section */
 .map {
     display: flex;
     flex-direction: column;
