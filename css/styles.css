@@ -112,7 +112,7 @@ select,input[type=checkbox] {
 .hero {
     background-color: var(--secundario);
     height: 25vw;
-    min-height: 50rem;
+    min-height: 40rem; 
     color: var(--negro);
     display: flex;
     align-items: center;
@@ -248,7 +248,7 @@ input[type=number]::-webkit-outer-spin-button {
 .image img {
     height: 100%;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 1.5rem;
 }
 
 .upper-title p {
@@ -312,7 +312,7 @@ input[type=number]::-webkit-outer-spin-button {
 .service-item {
     padding: 3rem;
     text-align: center;
-    border: 0.1rem solid var(--secundario);
+    border: 1px solid var(--secundario);
     border-radius: 2rem;
     color: var(--negro);
     box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
@@ -345,7 +345,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
-    grid-gap: 20px;
+    grid-gap: 2rem;
 }
 
 .grid-item img {
@@ -373,7 +373,6 @@ input[type=number]::-webkit-outer-spin-button {
 .form-register {
     width: min( 80rem, 100% ); /* Utilizar el valor mas pequeño */
     margin: 0 auto;
-    border-radius: 1rem;
 }
 
 .form-register fieldset {
@@ -418,10 +417,10 @@ input[type=number]::-webkit-outer-spin-button {
 	position: absolute;
 	right: 0;
 }
-
+/* Modificación de checkbox */
 .social-work__label {
     position: relative;
-	margin-bottom: 30px;
+	margin-bottom: 3rem;
 	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar 
         el elemento <i> en este espacio*/
 	display: block;
@@ -440,9 +439,9 @@ después de cualquier input*/
 /* Estas reglas se aplicarán a todos los i despues 
 de un input de tipo checkbox*/
 .social-work__label input[type=checkbox ] + i{
-	width: 52px;
-	height: 30px;
-	border-radius: 15px;
+	width: 5.2rem;
+	height: 3rem;
+	border-radius: 1.5rem;
 }
 
 /*
@@ -452,20 +451,20 @@ debemos poner definir este valor.
 */
 .social-work__label input[type=checkbox] + i:before{
 	content: ''; /* No hay contenido */
-	width: 26px;
-	height: 26px;
+	width: 2.6rem;
+	height: 2.6rem;
 	background: #fff;
 	border-radius: 50%;
 	position: absolute;
 	z-index: 1;
-	left: 0px;
-	top: 0px;
+	left: 0;
+	top: 0;
 	-webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
 	box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
 }
 
 .social-work__label input[type=checkbox]:checked + i:before{
-	left: 22px;
+	left: 2.2rem;
 	-webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
 	box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
 }
@@ -495,13 +494,13 @@ debemos poner definir este valor.
 }
 
 #affiliate{
-    display: none; /* Por defecto los campos de obra social no se ven, solo si seleccionan el select */
+    display: none; /* Por defecto los campos de obra social no se ven, solo si seleccionan el checkbox */
 }
 /* Eliminar borde negro al seleccionar */
 input,select:focus {
     outline: none;
 }
-
+/* No funciona */
 .select option {
     height: 2rem;
     background-color: transparent;
@@ -589,7 +588,7 @@ input,select:focus {
 
 .map iframe {
     margin: 3rem auto;
-    border-radius: 15px;
+    border-radius: 1.5rem;
 }
 
 .map .position {
@@ -599,19 +598,47 @@ input,select:focus {
 }
 
 .map .position img {
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
 }
 
 
 /* Footer */
-.footer-contact {
+.footer-grid {
+    padding: 5rem 0;
+    color: var(--blanco);
+}
+
+.footer-contact a {
+    color: var(--blanco);
+}
+
+.footer-contact a:hover {
+    /*color: green;*/
+    text-decoration: underline;
+    transition: ease-out 0.3s;
+}
+
+.footer-flex {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.social-icons h4 {
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .social-icon .icon:hover {
     stroke: var(--secundario);
     transition: ease-out 0.3s;
+}
+
+.copyrights {
+    text-align: center;
+}
+
+#copyrights__name {
+    font-size: 1.1rem;
 }
