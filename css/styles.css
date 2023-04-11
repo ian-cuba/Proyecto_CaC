@@ -80,13 +80,14 @@ select,input[type=checkbox] {
 .header,
 .footer {
     background-color: var(--primario);
+    width: 100%;
 }
 
 .button {
     border: 2px solid var(--secundario);
     background-color: transparent;
     color: var(--blanco);
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     font-size: 1.5rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -117,6 +118,7 @@ select,input[type=checkbox] {
     display: flex;
     align-items: center;
     box-shadow: 0px 8px 12px -3px rgba(138,134,138,1);
+    width: 100%;
 }
 
 .hero .container {
@@ -159,7 +161,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .nav__link {
     font-size: 2rem;
-    margin-right: 4rem;
+    margin-right: 3rem;
     color: var(--blanco);
 }
 
@@ -176,7 +178,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .nav-buttons {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .login-button {
@@ -188,6 +190,46 @@ input[type=number]::-webkit-outer-spin-button {
     border: 2px solid var(--secundario);
     background-color: transparent;
     transition: ease-out 0.3s;
+}
+
+@media (max-width: 480px) {
+    
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 1200px) {
+    .nav, .nav-buttons {
+        display: none;
+    }
+    .Burger {
+        position: absolute;
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        left: 0;
+        margin-left: 2rem;
+      }
+      .Line {
+        background-color: white;
+        height: 0.5rem;
+        width: 1.5rem;
+        border-radius: 3px;
+        transition: 0.5s;
+      }
+    /*.nav__link {
+        font-size: 1.4rem;
+    }
+    .nav-buttons a {
+        font-size: 1rem;
+    }*/
 }
 
 /* Home */
@@ -398,7 +440,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .form-register__input:nth-child(5), .form-register__input:nth-child(8),
-    .form-register__input:last-child, #social-work, #affiliate {
+    .form-register__input:nth-child(11), #social-work, #affiliate {
         grid-column: 1 / 3;
     }
 }
@@ -625,6 +667,15 @@ input,select:focus {
     margin-bottom: 4rem;
 }
 
+@media (max-width: 480px) {
+    .footer-flex {
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+}
+
 .social-icons h4 {
     text-transform: uppercase;
     text-align: center;
@@ -641,4 +692,5 @@ input,select:focus {
 
 #copyrights__name {
     font-size: 1.1rem;
+    margin-bottom: 0;
 }
