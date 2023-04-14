@@ -694,3 +694,64 @@ input,select:focus {
     font-size: 1.1rem;
     margin-bottom: 0;
 }
+
+/*menu despegable especialidades*/
+.nav ul{
+    list-style: none;
+}
+.menu>li{
+    position: relative;
+    display: inline-block;
+}
+.menu >li >a{
+    display: block;
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+}
+.menu li a :hover{
+    color: var(--secundario);
+    transition: all 3s;
+}
+.submenu{
+    width: 100%;
+    position: absolute;
+    background-color: var(--primario);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 2s;
+}
+.submenu li a{
+    float: left;
+    display: block;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    
+}
+.menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+}
+/*estilo services*/
+.containerServices{
+    display: grid;
+    grid-template-columns: 50rem auto;
+    padding: 1rem;
+    gap: 3rem;
+
+}
+.containerServices > div{   
+
+  text-align: left;
+  padding: 1rem 0;
+  
+}
+.estilo1{background-color: var(--secundario);
+color: var(--blanco);
+text-align: center;
+}
+.itemServices1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
