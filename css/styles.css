@@ -107,7 +107,13 @@ select,input[type=checkbox] {
 }
 
 .content {
-    padding: 10rem 0;
+    padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+    .content {
+        padding: 10rem 0;
+    }
 }
 
 .hero {
@@ -166,14 +172,52 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 1rem 0;
 }
 
-.nav__link {
-    font-size: 2rem;
-    margin-right: 3rem;
-    color: var(--blanco);
+.logo img {
+    width: 7rem;
 }
 
-.nav__link:last-child {
+.nav ul{
+    list-style: none;
+    padding: 0;
     margin: 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    margin-right: 3rem;
+}
+
+.menu-item:last-child {
+    margin: 0;
+}
+/* Dropdown de especialidades */
+.menu .submenu{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--primario);
+    padding: 2rem 1rem 0 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.submenu-item {
+    margin-bottom: 1rem;
+}
+
+.menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav__link {
+    font-size: 2rem;
+    color: var(--blanco);
 }
 
 .nav__link:hover {
@@ -181,7 +225,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: var(--secundario);
     transition: ease-out 0.3s;
 }
-
 
 .nav-buttons {
     display: flex;
@@ -380,6 +423,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .service-item {
+    height: 100%;
     padding: 3rem;
     text-align: center;
     border: 1px solid var(--secundario);
@@ -388,9 +432,13 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
 }
 
+.service-item .service-image {
+    margin-bottom: 1rem;
+}
+
 .service img {
-    height: 10rem;
-    width: 10rem;
+    height: 100%;
+    width: 100%;
 }
 /* Contact Section - Home */
 .contact {
@@ -450,6 +498,49 @@ input[type=number]::-webkit-outer-spin-button {
 
 .grid-item__content h3{
     margin-top: 2rem;
+}
+
+/*Services Page*/
+.containerServices > div{
+    padding: 2rem 0;
+}
+
+.service-title{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.service-title h2{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.service-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.service-description {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 1200px) {
+    .containerServices{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        padding: 1rem;
+        gap: 3rem;
+    }
+    .containerServices > div{   
+        text-align: left;
+        padding: 1rem 0;
+    }
+    .service-description {
+        font-size: 2rem;
+    }
 }
 
 /* Register Page */
@@ -600,7 +691,7 @@ input,select:focus {
     transition: ease-in .2s;
 }
 
-/* Contact Page */
+/* Contact Form - Contact Page */
 .content-contact {
     display: flex;
     margin: 1rem 20%;
@@ -662,7 +753,7 @@ input,select:focus {
     color: #000;
 }
 
-/* Map Section */
+/* Map Section - Contact Page*/
 .map {
     display: flex;
     flex-direction: column;
@@ -737,63 +828,6 @@ input,select:focus {
     margin-bottom: 0;
 }
 
-/*menu despegable especialidades*/
-.nav ul{
-    list-style: none;
-}
-.menu>li{
-    position: relative;
-    display: inline-block;
-}
-.menu >li >a{
-    display: block;
-    padding: 1.5rem 2rem;
-    text-decoration: none;
-}
-.menu li a :hover{
-    color: var(--secundario);
-    transition: all 3s;
-}
-.submenu{
-    width: 100%;
-    position: absolute;
-    background-color: var(--primario);
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 2s;
-}
-.submenu li a{
-    float: left;
-    display: block;
-    padding: 1rem;
-    color: var(--blanco);
-    text-decoration: none;
-    
-}
-.menu li:hover .submenu{
-    visibility: visible;
-    opacity: 1;
-}
-/*estilo services*/
-.containerServices{
-    display: grid;
-    grid-template-columns: 50rem auto;
-    padding: 1rem;
-    gap: 3rem;
 
-}
-.containerServices > div{   
 
-  text-align: left;
-  padding: 1rem 0;
-  
-}
-.estilo1{background-color: var(--secundario);
-color: var(--blanco);
-text-align: center;
-}
-.itemServices1{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
 
