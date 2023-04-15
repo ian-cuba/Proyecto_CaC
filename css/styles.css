@@ -831,3 +831,58 @@ input,select:focus {
 
 
 
+/*About*/
+.about-contenedor1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #f2f2f281;
+    margin: 0 auto;
+    align-items: center; /* centrar verticalmente el contenido */
+    justify-content: center; /* centrar horizontalmente el contenido */
+    /*border-radius: 5%;*/
+}
+
+.about-contenedor2 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: #f2f2f281;
+    margin: 0 auto;
+    align-items: center; /* centrar verticalmente el contenido */
+    justify-content: center; /* centrar horizontalmente el contenido */
+
+}
+  
+.about-element-1 {
+
+    padding: 40px 40px 0px;
+    text-align: justify;
+
+}
+
+.about-element-2 {
+    max-width: 600px;
+    align-items: center; 
+
+}
+  
+.about-element-3 {
+    padding: 40px 40px 0px;
+    text-align: justify; 
+}
+  
+.about-element-4 {
+
+    text-align: justify;
+
+    grid-row: 1 / span 1;
+}
+
+.about-imagen {
+    border-radius: 2%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.479);
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+
