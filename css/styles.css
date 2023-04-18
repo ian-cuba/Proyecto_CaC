@@ -717,20 +717,25 @@ input,select:focus {
     flex-direction: column;
     position: absolute;
     margin: 0 10%;
-    gap: .5rem;
+    gap: 2rem;
 }
 .formContact input{
     margin: 0 -55%;
     transition: .5s;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
 }
 .formContact textarea{
     margin: 0 -55%;
     border-radius: 25px;
     padding: 1.5rem;
+    transition: .5s;
 }
-.formContact input:focus{
+.formContact textarea:focus{
     background: transparent;
 }
+
 
 
 @media (min-width: 360px ) and (max-width: 1200px){
@@ -743,6 +748,7 @@ input,select:focus {
     .container .formContact{
         max-width: 40%;
         position:relative;
+        align-items: center;
     }
     h2{
         text-align: center;
@@ -757,11 +763,36 @@ input,select:focus {
     .map iframe {
         max-width: 90%;
     }
+    .formContact textarea{
+        margin: 0 -55%;
+        border-radius: 25px;
+        padding: 1.5rem;
+        transition: .5s;
+        width: 170%;
+    }
+    .formContact textarea:focus{
+        background: transparent;
+      
+    }
+    
 }
 
 
 /* login */
-
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+.formLogin input{
+transition: .5s;
+margin: 1rem;
+padding: .5rem;
+border: none;
+border-bottom: 1px solid black ;
+background: transparent;
+}
 
 
 /* Footer */
