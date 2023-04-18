@@ -831,7 +831,7 @@ input,select:focus {
 
 
 
-/*About*/
+/* About Page */
 .about-contenedor1 {
     display: grid;
     grid-template-columns: 2fr 1fr;
