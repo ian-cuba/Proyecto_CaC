@@ -261,7 +261,6 @@ input[type=number]::-webkit-outer-spin-button {
         align-items: center;
         cursor: pointer;
       }
-
       .line {
         background-color: white;
         height: .5rem;
@@ -692,89 +691,77 @@ input,select:focus {
 }
 
 /* Contact Form - Contact Page */
-.content-contact {
+
+
+
+
+/* Media Form */
+
+.container{
     display: flex;
-    margin: 1rem 20%;
-    gap: 5%;
     align-items: center;
 }
-
-.containerForm {
-    display: flex;
-
-}
-
-.containerForm .form {
+.container .map{
     display: flex;
     flex-direction: column;
-    margin: 5% auto;
-    gap: 1.5rem;
+    align-items: center;
+    margin: 0 0 40px 50%;
 }
-.form h2{
-    text-align: center;
-    margin-left: -50%;
+.map iframe{
+    width: 557px;
+    height: 350px;
+    border-radius: 15px;
 }
-
-.form input {
-    border: none;
-    text-align: center;
-    transition: .5s;
-    margin-left: -50%
-}
-
-.form input:focus {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 255, 0.536);
-    border: none;
-}
-
-.form input:active {
-    border-bottom: 1px solid red;
-}
-
-.form input:focus::placeholder {
-    color: black;
-}
-
-.form textarea {
-    border-radius: 5px;
-    padding: 2rem;
-    margin-left: -50%;
-}
-
-.form .btn {
-    background-color: #1169A2;
-    transition: .5s;
-    margin-left: -50%;
-}
-
-.form .btn:hover {
-    background-color: rgba(0, 128, 0, 0.531);
-    color: #000;
-}
-
-/* Map Section - Contact Page*/
-.map {
+.container .formContact{
     display: flex;
     flex-direction: column;
-    margin: 3% auto;
+    position: absolute;
+    margin: 0 10%;
+    gap: .5rem;
+}
+.formContact input{
+    margin: 0 -55%;
+    transition: .5s;
+}
+.formContact textarea{
+    margin: 0 -55%;
+    border-radius: 25px;
+    padding: 1.5rem;
+}
+.formContact input:focus{
+    background: transparent;
 }
 
-.map iframe {
-    margin: 3rem auto;
-    border-radius: 1.5rem;
+
+@media (min-width: 360px ) and (max-width: 1200px){
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .container .formContact{
+        max-width: 40%;
+        position:relative;
+    }
+    h2{
+        text-align: center;
+    }
+  
+
+    .container .map{
+       margin: 5rem 0 ;
+
+    }
+
+    .map iframe {
+        max-width: 90%;
+    }
 }
 
-.map .position {
-    display: flex;
 
-    margin: 3rem auto;
-}
+/* login */
 
-.map .position img {
-    width: 5rem;
-    height: 5rem;
-}
 
 
 /* Footer */
