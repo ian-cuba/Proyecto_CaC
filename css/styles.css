@@ -63,11 +63,14 @@ h4 {
     font-size: 2rem;
 }
 
-p,a,span {
+p,
+a,
+span {
     font-family: var(--fuenteParrafos);
 }
 
-select,input[type=checkbox] {
+select,
+input[type=checkbox] {
     cursor: pointer;
 }
 
@@ -119,11 +122,11 @@ select,input[type=checkbox] {
 .hero {
     background-color: var(--secundario);
     height: 25vw;
-    min-height: 40rem; 
+    min-height: 40rem;
     color: var(--negro);
     display: flex;
     align-items: center;
-    box-shadow: 0px 8px 12px -3px rgba(138,134,138,1);
+    box-shadow: 0px 8px 12px -3px rgba(138, 134, 138, 1);
     width: 100%;
 }
 
@@ -145,12 +148,13 @@ select,input[type=checkbox] {
         padding: 1rem 2rem;
     }
 }
+
 /* Eliminar flechas de los inputs tipo number */
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
@@ -162,7 +166,7 @@ input[type=number]::-webkit-outer-spin-button {
     top: 0;
     position: fixed;
     z-index: 10;
-    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .header-row {
@@ -176,7 +180,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 7rem;
 }
 
-.nav ul{
+.nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -193,8 +197,9 @@ input[type=number]::-webkit-outer-spin-button {
 .menu-item:last-child {
     margin: 0;
 }
+
 /* Dropdown de especialidades */
-.menu .submenu{
+.menu .submenu {
     width: 15%;
     display: flex;
     flex-direction: column;
@@ -210,7 +215,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 1rem;
 }
 
-.menu li:hover .submenu{
+.menu li:hover .submenu {
     visibility: visible;
     opacity: 1;
 }
@@ -247,7 +252,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 1200px) {
-    .nav, .nav-buttons {
+
+    .nav,
+    .nav-buttons {
         display: none;
     }
 
@@ -260,15 +267,15 @@ input[type=number]::-webkit-outer-spin-button {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-      }
+    }
 
-      .line {
+    .line {
         background-color: white;
         height: .5rem;
         width: 100%;
         border-radius: 3px;
         transition: 0.5s;
-      }
+    }
 }
 
 /* Home */
@@ -346,6 +353,7 @@ input[type=number]::-webkit-outer-spin-button {
         grid-template-columns: 2fr 2fr;
         align-items: center;
     }
+
     .about-content {
         max-width: 70rem;
     }
@@ -354,10 +362,12 @@ input[type=number]::-webkit-outer-spin-button {
         font-size: 2.5rem;
         margin-bottom: 3rem;
     }
+
     .mision {
         font-size: 4.5rem;
     }
 }
+
 /* Professionals Section - Home */
 .professionals {
     padding: 0 0 7rem 0;
@@ -394,7 +404,7 @@ input[type=number]::-webkit-outer-spin-button {
 .services h2 {
     text-align: center;
     margin-bottom: 5rem;
-    
+
 }
 
 .grid-services {
@@ -440,6 +450,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
     width: 100%;
 }
+
 /* Contact Section - Home */
 .contact {
     padding: 10rem 0;
@@ -480,12 +491,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .grid-item img {
-    width:  100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    
+
 }
-  
+
 .grid-item__content {
     background: linear-gradient(var(--blanco), 60%, var(--primario));
     border-radius: 8px;
@@ -496,28 +507,28 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
 }
 
-.grid-item__content h3{
+.grid-item__content h3 {
     margin-top: 2rem;
 }
 
 /*Services Page*/
-.containerServices > div{
+.containerServices>div {
     padding: 2rem 0;
 }
 
-.service-title{
+.service-title {
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
-.service-title h2{
+.service-title h2 {
     background-color: var(--secundario);
     color: var(--blanco);
     text-align: center;
     margin-bottom: 0;
 }
 
-.service-image img{
+.service-image img {
     height: 100%;
     width: 100%;
     border-radius: 1.5rem;
@@ -528,16 +539,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (min-width: 1200px) {
-    .containerServices{
+    .containerServices {
         display: grid;
         grid-template-columns: 40% 60%;
         padding: 1rem;
         gap: 3rem;
     }
-    .containerServices > div{   
+
+    .containerServices>div {
         text-align: left;
         padding: 1rem 0;
     }
+
     .service-description {
         font-size: 2rem;
     }
@@ -545,7 +558,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Register Page */
 .form-register {
-    width: min( 80rem, 100% ); /* Utilizar el valor mas pequeño */
+    width: min(80rem, 100%);
+    /* Utilizar el valor mas pequeño */
     margin: 0 auto;
 }
 
@@ -571,8 +585,11 @@ input[type=number]::-webkit-outer-spin-button {
         column-gap: 2rem;
     }
 
-    .form-register__input:nth-child(5), .form-register__input:nth-child(8),
-    .form-register__input:nth-child(11), #social-work, #affiliate {
+    .form-register__input:nth-child(5),
+    .form-register__input:nth-child(8),
+    .form-register__input:nth-child(11),
+    #social-work,
+    #affiliate {
         grid-column: 1 / 3;
     }
 }
@@ -586,36 +603,40 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
-.social-work__label input { /* Personalización  del checkbox */
-	visibility: hidden;
-	position: absolute;
-	right: 0;
+.social-work__label input {
+    /* Personalización  del checkbox */
+    visibility: hidden;
+    position: absolute;
+    right: 0;
 }
+
 /* Modificación de checkbox */
 .social-work__label {
     position: relative;
-	margin-bottom: 3rem;
-	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar 
+    margin-bottom: 3rem;
+    padding: 5px 0 5px 60px;
+    /* Damos un padding de 60px para posicionar 
         el elemento <i> en este espacio*/
-	display: block;
+    display: block;
 }
 
 /* Estas reglas se aplicarán a todos las elementos i 
 después de cualquier input*/
-.social-work__label input + i{
+.social-work__label input+i {
     background: #f0f0f0;
-    border:2px solid rgba(0,0,0,0.2);
-    position: absolute; 
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    position: absolute;
     left: 0;
     top: 0;
     cursor: pointer;
 }
+
 /* Estas reglas se aplicarán a todos los i despues 
 de un input de tipo checkbox*/
-.social-work__label input[type=checkbox ] + i{
-	width: 5.2rem;
-	height: 3rem;
-	border-radius: 1.5rem;
+.social-work__label input[type=checkbox]+i {
+    width: 5.2rem;
+    height: 3rem;
+    border-radius: 1.5rem;
 }
 
 /*
@@ -623,28 +644,29 @@ Creamos el círculo que aparece encima de los checkbox
 con la etqieta before. Importante aunque no haya contenido
 debemos poner definir este valor.
 */
-.social-work__label input[type=checkbox] + i:before{
-	content: ''; /* No hay contenido */
-	width: 2.6rem;
-	height: 2.6rem;
-	background: #fff;
-	border-radius: 50%;
-	position: absolute;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	-webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
-	box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+.social-work__label input[type=checkbox]+i:before {
+    content: '';
+    /* No hay contenido */
+    width: 2.6rem;
+    height: 2.6rem;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    -webkit-box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.social-work__label input[type=checkbox]:checked + i:before{
-	left: 2.2rem;
-	-webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
-	box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
+.social-work__label input[type=checkbox]:checked+i:before {
+    left: 2.2rem;
+    -webkit-box-shadow: -3px 0 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 0 -3px 0 rgba(0, 0, 0, 0.2);
 }
- 
-.social-work__label input[type=checkbox]:checked + i{
- background: var(--terciario);
+
+.social-work__label input[type=checkbox]:checked+i {
+    background: var(--terciario);
 }
 
 .form-register__input label {
@@ -667,13 +689,17 @@ debemos poner definir este valor.
     font-size: 1.5rem;
 }
 
-#affiliate{
-    display: none; /* Por defecto los campos de obra social no se ven, solo si seleccionan el checkbox */
+#affiliate {
+    display: none;
+    /* Por defecto los campos de obra social no se ven, solo si seleccionan el checkbox */
 }
+
 /* Eliminar borde negro al seleccionar */
-input,select:focus {
+input,
+select:focus {
     outline: none;
 }
+
 /* No funciona */
 .select option {
     height: 2rem;
@@ -710,7 +736,8 @@ input,select:focus {
     margin: 5% auto;
     gap: 1.5rem;
 }
-.form h2{
+
+.form h2 {
     text-align: center;
     margin-left: -50%;
 }
@@ -828,6 +855,61 @@ input,select:focus {
     margin-bottom: 0;
 }
 
+/* 404 page*/
+.content-404 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    align-items: center;
+}
 
+.text-404 {
+    font-size: 4rem;
+    color: var(--primario);
+}
 
+.text1-404 {
+    font-size: 3rem;
+    color: var(--primario);
+}
 
+.content-404__image {
+    align-items: center;
+    padding: 0.5rem;
+
+}
+
+.img_404 {
+    height: 20rem;
+}
+
+.button-404 {
+    border: 2px solid var(--blanco);
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4rem;
+    width: 25rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .text-404 {
+        font-size: 2.5rem;
+    }
+
+    .text1-404 {
+        font-size: 2rem;
+    }
+
+    .img_404 {
+        height: 10rem;
+    }
+}
