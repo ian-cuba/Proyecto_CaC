@@ -267,9 +267,8 @@ input[type=number]::-webkit-outer-spin-button {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-    }
-
-    .line {
+      }
+      .line {
         background-color: white;
         height: .5rem;
         width: 100%;
@@ -718,89 +717,107 @@ select:focus {
 }
 
 /* Contact Form - Contact Page */
-.content-contact {
+
+
+
+
+/* Media Form */
+
+.container{
     display: flex;
-    margin: 1rem 20%;
-    gap: 5%;
     align-items: center;
 }
-
-.containerForm {
-    display: flex;
-
-}
-
-.containerForm .form {
+.container .map{
     display: flex;
     flex-direction: column;
-    margin: 5% auto;
-    gap: 1.5rem;
+    align-items: center;
+    margin: 0 0 40px 50%;
 }
-
-.form h2 {
-    text-align: center;
-    margin-left: -50%;
+.map iframe{
+    width: 557px;
+    height: 350px;
+    border-radius: 15px;
 }
-
-.form input {
-    border: none;
-    text-align: center;
-    transition: .5s;
-    margin-left: -50%
-}
-
-.form input:focus {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 255, 0.536);
-    border: none;
-}
-
-.form input:active {
-    border-bottom: 1px solid red;
-}
-
-.form input:focus::placeholder {
-    color: black;
-}
-
-.form textarea {
-    border-radius: 5px;
-    padding: 2rem;
-    margin-left: -50%;
-}
-
-.form .btn {
-    background-color: #1169A2;
-    transition: .5s;
-    margin-left: -50%;
-}
-
-.form .btn:hover {
-    background-color: rgba(0, 128, 0, 0.531);
-    color: #000;
-}
-
-/* Map Section - Contact Page*/
-.map {
+.container .formContact{
     display: flex;
     flex-direction: column;
-    margin: 3% auto;
+    position: absolute;
+    margin: 0 10%;
+    gap: 2rem;
+}
+.formContact input{
+    margin: 0 -55%;
+    transition: .5s;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.formContact textarea{
+    margin: 0 -55%;
+    border-radius: 25px;
+    padding: 1.5rem;
+    transition: .5s;
+}
+.formContact textarea:focus{
+    background: transparent;
 }
 
-.map iframe {
-    margin: 3rem auto;
-    border-radius: 1.5rem;
+
+
+@media (min-width: 360px ) and (max-width: 1200px){
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .container .formContact{
+        max-width: 40%;
+        position:relative;
+        align-items: center;
+    }
+    h2{
+        text-align: center;
+    }
+  
+
+    .container .map{
+       margin: 5rem 0 ;
+
+    }
+
+    .map iframe {
+        max-width: 90%;
+    }
+    .formContact textarea{
+        margin: 0 -55%;
+        border-radius: 25px;
+        padding: 1.5rem;
+        transition: .5s;
+        width: 170%;
+    }
+    .formContact textarea:focus{
+        background: transparent;
+      
+    }
+    
 }
 
-.map .position {
+
+/* login */
+.formLogin{
     display: flex;
-
-    margin: 3rem auto;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
 }
-
-.map .position img {
-    width: 5rem;
-    height: 5rem;
+.formLogin input{
+transition: .5s;
+margin: 1rem;
+padding: .5rem;
+border: none;
+border-bottom: 1px solid black ;
+background: transparent;
 }
 
 
@@ -863,9 +880,60 @@ select:focus {
     align-items: center;
 }
 
-.text-404 {
-    font-size: 4rem;
-    color: var(--primario);
+
+
+/* About Page */
+.about-contenedor1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #f2f2f281;
+    margin: 0 auto;
+    align-items: center; /* centrar verticalmente el contenido */
+    justify-content: center; /* centrar horizontalmente el contenido */
+    /*border-radius: 5%;*/
+}
+
+.about-contenedor2 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: #f2f2f281;
+    margin: 0 auto;
+    align-items: center; /* centrar verticalmente el contenido */
+    justify-content: center; /* centrar horizontalmente el contenido */
+
+}
+  
+.about-element-1 {
+
+    padding: 40px 40px 0px;
+    text-align: justify;
+
+}
+
+.about-element-2 {
+    max-width: 600px;
+    align-items: center; 
+
+}
+  
+.about-element-3 {
+    padding: 40px 40px 0px;
+    text-align: justify; 
+}
+  
+.about-element-4 {
+
+    text-align: justify;
+
+    grid-row: 1 / span 1;
+}
+
+.about-imagen {
+    border-radius: 2%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.479);
+    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .text1-404 {
