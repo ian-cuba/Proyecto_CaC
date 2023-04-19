@@ -756,6 +756,7 @@ select:focus {
     margin: 0 10%;
     gap: 2rem;
 
+}
 .contact-form {
     width: 60rem;
     max-width: 100%;
@@ -771,7 +772,7 @@ select:focus {
 .formContact textarea{
     margin: 0 -55%;
     border-radius: 25px;
-
+}
 .input-container .message{
     border-radius: 1.5rem;
     padding: 1.5rem;
@@ -784,8 +785,6 @@ select:focus {
 .input-container .message:focus {
     outline: none;
 }
-
-@media (min-width: 1200px ) {
 
 @media (min-width: 1200px ) {
 
