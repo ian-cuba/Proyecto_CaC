@@ -802,8 +802,49 @@ select:focus {
 
 /* Login Page */
 
+.formLogin{
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+ margin: 0 10% 0 34%;
+}
+.formLogin input{
+    width: 50%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black; 
+}
+.formLogin label{
 
+    color: var(--terciario);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 2rem;
+}
+.formLogin .checkBox{
+    display: flex;
+}
 
+.formLogin .checkBox input{
+    margin-left: -22%;
+}
+.formLogin h2{
+    color: var(--terciario);
+    border-bottom: 1px solid var(--primario);
+    text-align: center;
+    width: 75%;
+    margin:-2% auto 5% auto;
+}
+
+@media (min-width: 300px){
+    .formLogin{
+        margin: 6rem;
+    }
+    .formLogin .checkBox input{
+        margin-left: -20%;
+    }
+}
 /* Footer */
 .footer-grid {
     padding: 5rem 0;
