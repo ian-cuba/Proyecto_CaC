@@ -65,7 +65,7 @@
             <div class="content">
                 <!-- form login -->
                 <form class="formLogin">
-                    <h2>Acceder</h2>
+                    <legend>Acceda a su cuenta</legend>
                     <label for="exampleInputEmail1" class="form-label">Email:</label>
                     <input type="email" placeholder="ingrse Email">
 
@@ -74,10 +74,12 @@
                     <input type="password" class="form-control" id="exampleInputPassword1"
                         placeholder="ingrese contraseña">
                     <!--  -->
-                        <div class="checkBox">
-                            <span>recordarme</span>
-                            <input type="checkbox" name="" id="">
-        
+                    <label class="social-work__label">
+                        <input type="checkbox" name="social-work" id="social-work__check" onclick="showSocialWork()">Recordarme
+                        <i></i>
+                    </label>
+                            <span style="cursor:pointer;">¿Olvido su contraseña?</span>
+                            <span>no tiene cuenta registrese <a href="./register.html" style="color:var(--terciario) ;border-bottom: 1px solid black; " >aqui</a></span>
                         </div>
                     <button type="submit" class="button submit-button">INGRESAR</button>
                 </form>

@@ -825,7 +825,14 @@ select:focus {
 .formLogin .checkBox{
     display: flex;
 }
-
+.formLogin legend{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: var(--primario);
+}
 .formLogin .checkBox input{
     margin-left: -22%;
 }
