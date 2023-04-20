@@ -798,9 +798,8 @@ select:focus {
     outline: none;
 }
 
-/* No funciona */
+
 .select option {
-    height: 2rem;
     background-color: transparent;
 }
 
