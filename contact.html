@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Salud Integral - Contacto</title>
     <link rel="icon" href="img/logo.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-row">
                 <a href="index.html" class="logo">
@@ -30,20 +28,13 @@
                         <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
                         <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a>
                             <ul class="submenu">
-                                <li class="submenu-item"><a href="services.html#clinicaGeneral"
-                                        class="nav__link">Clínica médica</a></li>
-                                <li class="submenu-item"><a href="services.html#pediatria"
-                                        class="nav__link">Pediatría</a></li>
-                                <li class="submenu-item"><a href="services.html#cardiologia"
-                                        class="nav__link">Cardiología</a></li>
-                                <li class="submenu-item"><a href="services.html#odontologia"
-                                        class="nav__link">Odontología</a></li>
-                                <li class="submenu-item"><a href="services.html#ginecologia"
-                                        class="nav__link">Ginecología</a></li>
-                                <li class="submenu-item"><a href="services.html#nutricion"
-                                        class="nav__link">Nutrición</a></li>
-                                <li class="submenu-item"><a href="services.html#psicologia"
-                                        class="nav__link">Psicología</a></li>
+                                <li class="submenu-item"><a href="services.html#clinicaGeneral" class="nav__link">Clínica médica</a></li>
+                                <li class="submenu-item"><a href="services.html#pediatria" class="nav__link">Pediatría</a></li>
+                                <li class="submenu-item"><a href="services.html#cardiologia" class="nav__link">Cardiología</a></li>
+                                <li class="submenu-item"><a href="services.html#odontologia" class="nav__link">Odontología</a></li>
+                                <li class="submenu-item"><a href="services.html#ginecologia" class="nav__link">Ginecología</a></li>
+                                <li class="submenu-item"><a href="services.html#nutricion" class="nav__link">Nutrición</a></li>
+                                <li class="submenu-item"><a href="services.html#psicologia" class="nav__link">Psicología</a></li>
                             </ul>
                         </li>
                         <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
@@ -54,12 +45,22 @@
                     <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
                     <a href="login.html" class="button login-button">Login</a>
                 </div>
-                <div class="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                <div class="menu-responsive" id="menu-responsive">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a></li>
+                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                        <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
+                        <a href="login.html" class="button login-button">Login</a>
+                    </ul>
+                </div>
+                <div class="burger" id="burger">
+                    <span id="icon"></span>
                 </div>
             </div>
+        </div>
     </header>
     <main class="main">
         <section class="hero">
@@ -77,15 +78,15 @@
                                 <div class="input-container">
                                     <div class="form-register__input">
                                         <label for="">Nombre</label>
-                                        <input class="input-text" type="text" placeholder="Escribe tu nombre">
+                                        <input class="input-text" type="text" placeholder="Escribe tu nombre" required>
                                     </div>
                                     <div class="form-register__input">
                                         <label for="">Apellido</label>
-                                        <input class="input-text" type="text" placeholder="Escribe tu apellido">
+                                        <input class="input-text" type="text" placeholder="Escribe tu apellido" required>
                                     </div>
                                     <div class="form-register__input">
                                         <label for="">Teléfono</label>
-                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono">
+                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono" required>
                                     </div>
     
                                     <div class="form-register__input">
@@ -93,7 +94,7 @@
                                         <input class="input-text" type="email" placeholder="Escribe tu email">
                                     </div>
                                     <textarea class="form-register__input message" name="" id="" cols="15" rows="5"
-                                        placeholder="Escribe tu consulta..."></textarea>
+                                        placeholder="Escribe tu consulta..." required></textarea>
                                 </div>
                                 <div>
                                     <input class="button submit-button" type="submit" value="Enviar">
@@ -188,9 +189,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

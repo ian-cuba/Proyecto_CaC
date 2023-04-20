@@ -166,10 +166,12 @@ input[type=number]::-webkit-outer-spin-button {
     position: fixed;
     z-index: 10;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+    transition: top 0.5s; /* Transicion cuando se oculta y se muestra */
 }
 
 .header-row {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
@@ -179,7 +181,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 7rem;
 }
 
-.nav ul {
+.nav ul, .menu-responsive ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -243,6 +245,10 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 }
 
+.menu-responsive {
+    display: none;
+}
+
 .login-button:hover {
     cursor: pointer;
     border: 2px solid var(--secundario);
@@ -256,23 +262,117 @@ input[type=number]::-webkit-outer-spin-button {
     .nav-buttons {
         display: none;
     }
+    /* Estilos al menú cuando está en responsive */
+    #menu-responsive {
+        display: none;
+    }
+    /* Le da los estilos cuando tiene la clase de show */
+    #menu-responsive.show {
+        display: flex;
+        justify-content: start;
+        padding-top: 11rem;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #2d2d2d;
+        top: 0;
+        left: 0;
+        transition: all .5s;
+        z-index: -1;
+    }
 
-    .burger {
-        height: 1.9rem;
-        width: 2.8rem;
+    #menu-responsive ul{
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 3rem;
+        list-style: none;
+        z-index: 5; 
+        padding: 0 0 0 2rem;
+    }
+
+    #menu-responsive ul li, #menu-responsive a{
+        font-size: 2.5rem;
+    }
+
+    #menu-responsive .button {
+        width: 100%;
+    }
+    
+    /* Estilos al menú hamburguesa y funcionalidad */
+    .burger {
+        display: flex;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
       }
-      .line {
-        background-color: white;
-        height: .5rem;
-        width: 100%;
-        border-radius: 3px;
-        transition: 0.5s;
+
+      #icon {
+        display: inline-block;
+        width: 2.8rem;
+        height: 2px;
+        background-color: var(--blanco);
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      #icon:before,
+      #icon:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 2.8rem;
+        height: 2px;
+        background-color: var(--blanco);
+        transition: all 0.3s ease-in-out;
+      }
+      
+      #icon:before {
+        transform: rotate(0deg);
+        top: -7px;
+      }
+      
+      #icon:after {
+        transform: rotate(0deg);
+        top: 7px;
+      }
+      
+      #menu-responsive.show #icon {
+        background-color: transparent;
+      }
+      
+      #menu-responsive.show #icon:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      
+      #menu-responsive.show #icon:after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      #icon.close:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      #icon.close {
+        background-color: transparent;
+      }
+      
+      #icon.close:after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+}
+
+@media (max-width: 768px) {
+    #menu-responsive ul li, #menu-responsive a{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #menu-responsive ul li, #menu-responsive a{
+        font-size: 1.7rem;
     }
 }
 
@@ -873,6 +973,7 @@ select:focus {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: start;
         margin-bottom: 4rem;
     }
 }
@@ -903,8 +1004,6 @@ select:focus {
     row-gap: 0.4rem;
     align-items: center;
 }
-
-
 
 /* About Page */
 .about-container1, .about-container2  {
