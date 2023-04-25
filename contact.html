@@ -72,34 +72,41 @@
             <div class="container">
                 <div class="contact-flex">
                     <div class="contact-form">
-                        <form action="" class="form-register">
+                        <!-- Se usa una api para el envío del email a centrosaludintegral@yopmail.com -->
+                        <form action="https://formsubmit.co/centrosaludintegral@yopmail.com" method="POST" class="form-register">
                             <fieldset>
                                 <legend>Contactanos</legend>
                                 <div class="input-container">
                                     <div class="form-register__input">
-                                        <label for="">Nombre</label>
-                                        <input class="input-text" type="text" placeholder="Escribe tu nombre" required>
+                                        <label for="Nombre">Nombre</label>
+                                        <input class="input-text" type="text" placeholder="Escribe tu nombre" name="Nombre" required>
                                     </div>
                                     <div class="form-register__input">
-                                        <label for="">Apellido</label>
-                                        <input class="input-text" type="text" placeholder="Escribe tu apellido" required>
+                                        <label for="Apellido">Apellido</label>
+                                        <input class="input-text" type="text" placeholder="Escribe tu apellido" name="Apellido" required>
                                     </div>
                                     <div class="form-register__input">
-                                        <label for="">Teléfono</label>
-                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono" required>
+                                        <label for="Telefono">Teléfono</label>
+                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono" name="Telefono" required>
                                     </div>
     
                                     <div class="form-register__input">
-                                        <label for="">Email</label>
-                                        <input class="input-text" type="email" placeholder="Escribe tu email">
+                                        <label for="Email">Email</label>
+                                        <input class="input-text" type="email" placeholder="Escribe tu email" name="Email">
                                     </div>
-                                    <textarea class="form-register__input message" name="" id="" cols="15" rows="5"
+                                    <textarea class="form-register__input message" name="Mensaje" cols="15" rows="5"
                                         placeholder="Escribe tu consulta..." required></textarea>
                                 </div>
                                 <div>
                                     <input class="button submit-button" type="submit" value="Enviar">
                                 </div>
+                                <!-- Esto se agrega para ajustar para algunos parámetros de la api al enviar el mail-->
+                                <input type="hidden" name="_subject" value="Nueva Consulta">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="box">
+                                <input type="hidden" name="_next" value="http://localhost:8000/contact.html">
                             </fieldset>
+                            
                         </form>
                     </div>
                     <div class="map">

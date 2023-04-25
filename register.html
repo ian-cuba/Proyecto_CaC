@@ -109,30 +109,33 @@
                                 </div>
                             </div>
                             <div class="form-register__input">
-                                <label for="">Dirección</label>
-                                <input class="input-text" type="text" placeholder="Escribe tu dirección" required>
+                                <label for="">Provincia</label>
+                                <select name="province" class="input-text" id="selectProvincia" required>
+                                    <option value="Seleccione un Provincia" selected disabled>Seleccione una Provincia</option>
+                                </select>
+                                <span></span>
                             </div>
                             <div class="form-register__input">
-                                <label for="">Ciudad</label>
-                                <select name="city" class="input-text select" required>
-                                    <option value="value1" selected disabled>Seleccione una Ciudad</option>
-                                    <option value="value1">Value 1</option>
-                                    <option value="value2">Value 2</option>
-                                    <option value="value3">Value 3</option>
+                                <label for="">Municipio</label>
+                                <select name="city" class="input-text select" id="selectMunicipio" required>
+                                    <option value="Seleccione un Municipio" selected disabled>Seleccione un Municipio</option>
                                 </select>
+                                <span></span>
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Localidad</label>
+                                <select name="localate" class="input-text select" id="selectLocalidad" required>
+                                    <option value="Seleccione una Localidad" selected disabled>Seleccione una Localidad</option>
+                                </select>
+                                <span></span>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Código Postal</label>
                                 <input class="input-text" type="number" placeholder="Escribe tu código postal" required>
                             </div>
-                            <div class="form-register__input select">
-                                <label for="">Provincia</label>
-                                <select name="province" class="input-text" required>
-                                    <option value="value1" selected disabled>Seleccione una provincia</option>
-                                    <option value="value1">Value 1</option>
-                                    <option value="value2">Value 2</option>
-                                    <option value="value3">Value 3</option>
-                                </select>
+                            <div class="form-register__input">
+                                <label for="">Dirección</label>
+                                <input class="input-text" type="text" placeholder="Escribe tu dirección" required>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Contraseña</label>
@@ -218,6 +221,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/api.js"></script>
     <script src="js/index.js"></script>
 </body>
 
