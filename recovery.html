@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Salud Integral - Login</title>
+    <title>Centro de Salud Integral - 404</title>
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,37 +69,20 @@
             </div>
         </div>
     </header>
-    <main class="main">
-        <div class="containerLogin">
-            <div class="content">
-                <!-- form login -->
-                <form action="" class="formLogin">
-                    <legend>Acceda a su cuenta</legend>
-                    <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="email" placeholder="Ingrese su Email">
-
-                    <!--  -->
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1"
-                        placeholder="Ingrese su Contraseña">
-                    <!--  -->
-                    <div class="containerFooterLogin">
-                        <label class="social-work__label">
-                            <input type="checkbox" name="social-work" id="social-work__check"
-                                onclick="showSocialWork()">Recordarme
-                            <i></i>
-                        </label>
-                        <span style="cursor:pointer;">¿Olvido su contraseña? <a href="recovery.html">Recuperar Contraseña</a></span>
-                        <span>¿No tiene cuenta? <a href="./register.html"
-                                style="color:var(--terciario) ;border-bottom: 1px solid black;">Registrese aca</a></span>
-                        <button type="submit" class="button submit-button">Ingresar</button>
-                    </div>
-            </div>
+    <div class="container">
+        <div class="content-recovery">
+            <form action="" class="form-register">
+                <legend>Recuperar Contraseña</legend>
+                <div class="form-register__input">
+                    <label for="">Email</label>
+                    <input class="input-text" type="email" placeholder="Escribe tu email" required>
+                </div>
+                <div>
+                    <input class="button submit-button" type="submit" value="Enviar">
+                </div>
             </form>
-            <!-- =============================------=========================== -->
         </div>
-        </div>
-    </main>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">

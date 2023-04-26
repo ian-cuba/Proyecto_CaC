@@ -112,6 +112,10 @@ input[type=checkbox] {
     padding: 5rem 0;
 }
 
+.content-recovery {
+    padding: 30rem 0;
+}
+
 @media (min-width: 768px) {
     .content {
         padding: 10rem 0;
