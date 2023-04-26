@@ -884,6 +884,16 @@ select:focus {
     width: 100%;
 }
 
+.containerFooterLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.containerFooterLogin button{
+    margin-top: 2rem;
+}
+
+
 .input-container .message:focus {
     outline: none;
 }
@@ -913,12 +923,23 @@ select:focus {
  flex-direction: column;
  gap: 2rem;
  margin:0 auto ;
+ width: 50%;
 }
 .formLogin input{
-    padding: 0 70%;
     border: none;
     background: transparent;
     border-bottom: 1px solid black; 
+    padding: 1.5rem 0;
+}
+.formLogin label{
+    font-family: var(--fuenteParrafos);
+
+    color: var(--terciario);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 2rem;
+
 }
 
 .formLogin .checkBox{
@@ -946,7 +967,7 @@ select:focus {
         margin: 6rem;
     }
     .formLogin input{
-        padding: 0;
+        padding: 1.5rem 0;
     }
     .formLogin .checkBox input{
         margin-left: -20%;
