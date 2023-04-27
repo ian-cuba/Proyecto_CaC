@@ -6,6 +6,7 @@
     --secundario: #1169A2;
     --terciario: #0C556A;
     --backgroud: #c3e3fd;
+    --alerta: #960303;
     --blanco: #FFF;
     --negro: #000;
 }
@@ -39,12 +40,13 @@ h1,
 h2,
 h3,
 h4,
-legend {
+legend,
+th {
     margin: 0 0 2rem 0;
     font-family: var(--fuenteHeading);
 }
 
-p {
+p, tr {
     margin: 0 0 1rem 0;
 }
 
@@ -700,7 +702,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-register__input span {
-    color: rgb(150, 3, 3);
+    color: var(--alerta);
 }
 
 #social-work {
@@ -726,7 +728,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Estas reglas se aplicarán a todos las elementos i 
-después de cualquier input*/
+después de cualquier input */
 .social-work__label input+i {
     background: #f0f0f0;
     border: 2px solid rgba(0, 0, 0, 0.2);
@@ -819,6 +821,83 @@ select:focus {
     background-color: transparent;
     color: var(--secundario);
     transition: ease-in .2s;
+}
+
+/* Turns Page */
+.turns-alert {
+    color: var(--alerta);
+}
+
+.turns-table {
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+.turns-table th,.turns-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.turns-table th {
+    font-size: 2.4rem
+}
+
+.turns-table td {
+    font-size: 1.8rem;
+}
+
+.turns-table tr:hover {
+    background-color: #f5f5f5;
+}
+.turns-table th {
+    background-color: var(--primario);
+    color: white;
+}
+.turns-table td.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.actions button {
+    padding: 8px;
+    background-color: var(--terciario);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 4px;
+    border-radius: 8px;
+}
+.actions button:hover {
+    background-color: var(--secundario);
+}
+
+@media screen and (max-width: 768px) {
+    .turns-alert {
+        text-align: center;
+    }
+    .turns-table {
+        width:100%;
+    }
+    .turns-table thead {
+        display: none;
+    }
+    .turns-table tr td:first-child {
+        background: #f0f0f0;
+        font-weight:bold;
+        font-size:2.4rem;
+    }
+    .turns-table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .turns-table tbody td {
+        display: block;
+        text-align:center;
+    }
 }
 
 /* Contact Form - Contact Page */
@@ -977,6 +1056,7 @@ select:focus {
         margin-left: -20%;
     }
 }
+
 /* Footer */
 .footer-grid {
     padding: 5rem 0;

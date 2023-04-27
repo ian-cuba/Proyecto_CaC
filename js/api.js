@@ -7,17 +7,19 @@ const $selectLocalidad = $d.getElementById('selectLocalidad');
 
 function provincia() {
     fetch("https://apis.datos.gob.ar/georef/api/provincias")
-    .then(res => res.ok ? res.json() : Promise.reject(res))
-    .then(json => {
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(json => {
+        // Ordenar alfabéticamente las provincias por nombre
+        json.provincias.sort((a, b) => a.nombre.localeCompare(b.nombre));
         let $options = `<option value="Seleccione una Provincia">Seleccione una Provincia</option>`;
         json.provincias.forEach(element => $options += `<option value="${element.nombre}">${element.nombre}</option>`);
         $selectProvincia.innerHTML = $options;
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         let  message  = error.statusText || "Ocurrió un error"
         $selectProvincia.nextElementSibling.innerHTML = `Error: ${error.status}: ${message}`;
-    })
-}
+      })
+  }
 
 $d.addEventListener("DOMContentLoaded", provincia);
 
@@ -25,6 +27,8 @@ function municipio(provincia) {
     fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${provincia}&max=250`)
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
+        // Ordenar alfabéticamente las provincias por nombre
+        json.municipios.sort((a, b) => a.nombre.localeCompare(b.nombre));
         let $options = `<option value="Seleccione un Municipio">Seleccione un Municipio</option>`;
         json.municipios.forEach(element => $options += `<option value="${element.id}">${element.nombre}</option>`);
         $selectMunicipio.innerHTML = $options;
@@ -51,6 +55,8 @@ function localidad_provincia(provincia) {
     fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${provincia}&max=500`)
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
+        // Ordenar alfabéticamente las provincias por nombre
+        json.localidades.sort((a, b) => a.nombre.localeCompare(b.nombre));
         let $options = `<option value="Seleccione una Localidad">Seleccione una Localidad</option>`;
         json.localidades.forEach(element => $options += `<option value="${element.id}">${element.nombre}</option>`);
         $selectLocalidad.innerHTML = $options;
@@ -65,6 +71,8 @@ function localidad(municipio) {
     fetch(`https://apis.datos.gob.ar/georef/api/localidades?municipio=${municipio}&max=100`)
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
+        // Ordenar alfabéticamente las provincias por nombre
+        json.localidades.sort((a, b) => a.nombre.localeCompare(b.nombre));
         let $options = `<option value="Seleccione una Localidad">Seleccione una Localidad</option>`;
         json.localidades.forEach(element => $options += `<option value="${element.id}">${element.nombre}</option>`);
         $selectLocalidad.innerHTML = $options;
