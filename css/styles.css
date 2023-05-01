@@ -1159,6 +1159,51 @@ select:focus {
     object-fit: cover;
 }
 
+
+
+@media (max-width: 1200px) {
+    .about-container1,
+    .about-container2 {
+      grid-template-columns: 1fr;
+    }
+    
+  
+    .about-element-1,
+    .about-element-3 {
+        text-align: justify;
+    }
+
+    .about-element-2 img,
+    .about-element-4 img {
+        display:flex;
+        height: auto;
+        justify-content: center;
+        margin: 0 auto;
+    }
+  }
+  
+
+  @media (max-width: 700px) {
+    .about-container1,
+    .about-container2 {
+      grid-template-columns: 1fr;
+    }
+    
+  
+    .about-element-1,
+    .about-element-3 {
+        text-align: justify;
+    }
+
+    .about-element-2 img,
+    .about-element-4 img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  
+
 .text1-404 {
     font-size: 3rem;
     color: var(--primario);
