@@ -1134,14 +1134,19 @@ select:focus {
     text-align: justify; 
 }
 
-.about-element-2 {
-    max-width: 600px;
+.about-element-2 { 
     align-items: center; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
 }
-  
+
 .about-element-4 {
     text-align: justify;
     grid-row: 1 / span 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
 }
 
 .about-imagen {
@@ -1159,8 +1164,7 @@ select:focus {
     .about-container2 {
       grid-template-columns: 1fr;
     }
-    
-  
+
     .about-element-1,
     .about-element-3 {
         text-align: justify;
@@ -1168,10 +1172,23 @@ select:focus {
 
     .about-element-2 img,
     .about-element-4 img {
-        display:flex;
+        display:grid;
         height: auto;
         justify-content: center;
+        align-self: center;
         margin: 0 auto;
+    }
+   
+    .about-container1{
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    
+    .about-container2{
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
     }
   }
   
@@ -1186,12 +1203,17 @@ select:focus {
     .about-element-1,
     .about-element-3 {
         text-align: justify;
+        padding: 20px;
+        margin: 10;
     }
 
     .about-element-2 img,
     .about-element-4 img {
-      max-width: 100%;
+        padding: 0px;
+     max-width: 100%;
       height: auto;
+      width: auto;
+
     }
   }
   
