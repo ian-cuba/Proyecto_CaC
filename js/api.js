@@ -1,4 +1,4 @@
-/* Se anteponen las variables del DOM con el signo $ */
+``/* Se anteponen las variables del DOM con el signo $ */
 
 const $d = document;
 const $selectProvincia = $d.getElementById('selectProvincia');

@@ -1044,7 +1044,9 @@ select:focus {
     width: 75%;
     margin:-2% auto 5% auto;
 }
-
+span a{
+    cursor: pointer;
+}
 @media (min-width: 300px){
     .formLogin{
         margin: 6rem;
