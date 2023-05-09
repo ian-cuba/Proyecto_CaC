@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-row">
                 <a href="index.html" class="logo">
@@ -45,10 +45,19 @@
                     <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
                     <a href="login.html" class="button login-button">Login</a>
                 </div>
-                <div class="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                <div class="menu-responsive" id="menu-responsive">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a></li>
+                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                        <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
+                        <a href="login.html" class="button login-button">Login</a>
+                    </ul>
+                </div>
+                <div class="burger" id="burger">
+                    <span id="icon"></span>
                 </div>
             </div>
         </div>
@@ -61,21 +70,50 @@
         </section>
         <div class="container">
             <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, quasi quibusdam ea autem commodi
-                    temporibus
-                    molestiae, magnam quaerat eius aperiam sed quae asperiores nesciunt reiciendis dicta necessitatibus
-                    rem
-                    totam voluptas placeat? Sint architecto fuga nemo expedita cupiditate vel ducimus unde deserunt
-                    saepe quod!
-                    Assumenda odio consectetur esse quae officia sit reprehenderit, architecto voluptate optio,
-                    temporibus
-                    voluptates rem, illo excepturi? Commodi, sed dolores labore saepe repellat atque, tempora unde
-                    laudantium
-                    voluptate eum et perferendis magnam veritatis omnis tempore facilis, doloribus modi fuga architecto
-                    optio!
-                    Ipsam accusamus pariatur esse, veritatis in optio cum sequi ea obcaecati quos soluta illum!
-                    Consequuntur,
-                    illum quibusdam!</p>
+                <h4 class="turns-alert">Los turnos solo podrán ser modificados y/o eliminados con no menos de 48 hs hábiles de anticipación.</h4>
+                <table class="turns-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Especialización</th>
+                            <th>Profesional</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/05/2023</td>
+                            <td>09:00</td>
+                            <td>Cardiología</td>
+                            <td>Dr. Juan Pérez</td>
+                            <td class="actions">
+                                <button>Modificar</button>
+                                <button>Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02/05/2023</td>
+                            <td>11:00</td>
+                            <td>Odontología</td>
+                            <td>Dra. Ana Gómez</td>
+                            <td class="actions">
+                                <button>Modificar</button>
+                                <button>Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03/05/2023</td>
+                            <td>15:00</td>
+                            <td>Psiquiatría</td>
+                            <td>Dr. Pedro García</td>
+                            <td class="actions">
+                                <button>Modificar</button>
+                                <button>Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
@@ -146,6 +184,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

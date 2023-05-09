@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-row">
                 <a href="index.html" class="logo">
@@ -45,15 +45,29 @@
                     <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
                     <a href="login.html" class="button login-button">Login</a>
                 </div>
-                <div class="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                <div class="menu-responsive" id="menu-responsive">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a></li>
+                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                        <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
+                        <a href="login.html" class="button login-button">Login</a>
+                    </ul>
+                </div>
+                <div class="burger" id="burger">
+                    <span id="icon"></span>
                 </div>
             </div>
         </div>
     </header>
     <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Registro</h1>
+            </div>
+        </section>
         <div class="content">
             <div class="container">
                 <form action="" class="form-register">
@@ -62,19 +76,19 @@
                         <div class="input-container">
                             <div class="form-register__input">
                                 <label for="">Nombre</label>
-                                <input class="input-text" type="text" placeholder="Escribe tu nombre">
+                                <input class="input-text" type="text" placeholder="Escribe tu nombre" required>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Apellido</label>
-                                <input class="input-text" type="text" placeholder="Escribe tu apellido">
+                                <input class="input-text" type="text" placeholder="Escribe tu apellido" required>
                             </div>
                             <div class="form-register__input">
                                 <label for="">DNI</label>
-                                <input class="input-text" type="number" placeholder="Escribe tu DNI">
+                                <input class="input-text" type="number" placeholder="Escribe tu DNI" required>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Teléfono</label>
-                                <input class="input-text" type="tel" placeholder="Escribe tu teléfono">
+                                <input class="input-text" type="tel" placeholder="Escribe tu teléfono" required>
                             </div>
 
                             <div class="form-register__input">
@@ -92,45 +106,53 @@
                             <div id="affiliate">
                                 <div class="form-register__input">
                                     <label for="">Obra Social</label>
-                                    <input class="input-text" type="text" placeholder="Escribe el nombre de tu obra social">
+                                    <input class="input-text" type="text" placeholder="Escribe el nombre de tu obra social" required>
                                 </div>
                                 <div class="form-register__input">
                                     <label for="">Número de Afiliado</label>
-                                    <input class="input-text" type="number" placeholder="Escribe tu número de afiliado">
+                                    <input class="input-text" type="number" placeholder="Escribe tu número de afiliado" required>
                                 </div>
                             </div>
                             <div class="form-register__input">
-                                <label for="">Dirección</label>
-                                <input class="input-text" type="text" placeholder="Escribe tu dirección">
+                                <label for="">Provincia</label>
+                                <select name="province" class="input-text" id="selectProvincia" required>
+                                    <option value="Seleccione un Provincia" selected disabled>Seleccione una Provincia</option>
+                                </select>
+                                <span></span>
                             </div>
                             <div class="form-register__input">
-                                <label for="">Ciudad</label>
-                                <select name="city" class="input-text select">
-                                    <option value="value1" selected>Value 1</option>
-                                    <option value="value2">Value 2</option>
-                                    <option value="value3">Value 3</option>
+                                <label for="">Municipio</label>
+                                <select name="city" class="input-text select" id="selectMunicipio" required>
+                                    <option value="Seleccione un Municipio" selected disabled>Seleccione un Municipio</option>
                                 </select>
+                                <span></span>
+                            </div>
+                            <div class="form-register__input">
+                                <label for="">Localidad</label>
+                                <select name="localate" class="input-text select" id="selectLocalidad" required>
+                                    <option value="Seleccione una Localidad" selected disabled>Seleccione una Localidad</option>
+                                </select>
+                                <span></span>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Código Postal</label>
-                                <input class="input-text" type="number" placeholder="Escribe tu código postal">
+                                <input class="input-text" type="number" placeholder="Escribe tu código postal" required>
                             </div>
-                            <div class="form-register__input select">
-                                <label for="">Provincia</label>
-                                <select name="province" class="input-text">
-                                    <option value="value1" selected>Value 1</option>
-                                    <option value="value2">Value 2</option>
-                                    <option value="value3">Value 3</option>
-                                </select>
+                            <div class="form-register__input">
+                                <label for="">Dirección</label>
+                                <input class="input-text" type="text" placeholder="Escribe tu dirección" required>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Contraseña</label>
-                                <input class="input-text" type="password" placeholder="Escribe una contraseña">
+                                <input class="input-text" type="password" placeholder="Escribe una contraseña" required>
                             </div>
                             <div class="form-register__input">
                                 <label for="">Confirmar Contraseña</label>
-                                <input class="input-text" type="password" placeholder="Confirma tu contraseña">
+                                <input class="input-text" type="password" placeholder="Confirma tu contraseña" required>
                             </div>
+                        </div>
+                        <div class="form-register__input">
+                            <span class="span-text">¿Ya tiene cuenta? <a href="./login.html">Ingrese acá</a></span>
                         </div>
                         <div>
                             <input class="button submit-button" type="submit" value="Registrarse">
@@ -207,18 +229,8 @@
             </div>
         </div>
     </footer>
-    <script>
-        function showSocialWork() {
-
-            social_work__check = document.getElementById("social-work__check");
-            console.log(social_work__check);
-            if (social_work__check.checked) {
-                document.getElementById("affiliate").style.display = "block";
-            } else {
-                document.getElementById("affiliate").style.display = "none";
-            }
-        }
-    </script>
+    <script src="js/api.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

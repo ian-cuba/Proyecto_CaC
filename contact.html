@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Salud Integral - Contacto</title>
     <link rel="icon" href="img/logo.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +14,9 @@
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-row">
                 <a href="index.html" class="logo">
@@ -45,12 +45,22 @@
                     <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
                     <a href="login.html" class="button login-button">Login</a>
                 </div>
-                <div class="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                <div class="menu-responsive" id="menu-responsive">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a></li>
+                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                        <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
+                        <a href="login.html" class="button login-button">Login</a>
+                    </ul>
+                </div>
+                <div class="burger" id="burger">
+                    <span id="icon"></span>
                 </div>
             </div>
+        </div>
     </header>
     <main class="main">
         <section class="hero">
@@ -60,25 +70,63 @@
         </section>
         <div class="content">
             <div class="container">
-                    <form action=""class="formContact" >
-                        <h2>Contactanos</h2>
-                        <input class="input
-                        " type="text" placeholder="ingrese nombre y apellido">
-                        <input class="input
-                        " type="number" name="" id="" placeholder="ingrese numero telefonico">
-                        <input class="input
-                        " type="email" name="" id=""placeholder="ingrese email">
-                        <textarea class="inputText
-                        " name="" id="" cols="15" rows="5" placeholder="Escribe tu consulta..."></textarea>
-                          <button class=" button submit-button">Enviar</button>  
-                    </form>
+                <div class="contact-flex">
+                    <div class="contact-form">
+                        <!-- Se usa una api para el envío del email a centrosaludintegral@yopmail.com -->
+                        <form action="https://formsubmit.co/centrosaludintegral@yopmail.com" method="POST" class="form-register">
+                            <fieldset>
+                                <legend>Contactanos</legend>
+                                <div class="input-container">
+                                    <div class="form-register__input">
+                                        <label for="Nombre">Nombre</label>
+                                        <input class="input-text" type="text" placeholder="Escribe tu nombre" name="Nombre" required>
+                                    </div>
+                                    <div class="form-register__input">
+                                        <label for="Apellido">Apellido</label>
+                                        <input class="input-text" type="text" placeholder="Escribe tu apellido" name="Apellido" required>
+                                    </div>
+                                    <div class="form-register__input">
+                                        <label for="Telefono">Teléfono</label>
+                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono" name="Telefono" required>
+                                    </div>
+    
+                                    <div class="form-register__input">
+                                        <label for="Email">Email</label>
+                                        <input class="input-text" type="email" placeholder="Escribe tu email" name="Email">
+                                    </div>
+                                    <textarea class="form-register__input message" name="Mensaje" cols="15" rows="5"
+                                        placeholder="Escribe tu consulta..." required></textarea>
+                                </div>
+                                <div>
+                                    <input class="button submit-button" type="submit" value="Enviar">
+                                </div>
+                                <!-- Esto se agrega para ajustar para algunos parámetros de la api al enviar el mail-->
+                                <input type="hidden" name="_subject" value="Nueva Consulta">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="box">
+                                <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html">
+                            </fieldset>
+                            
+                        </form>
+                    </div>
                     <div class="map">
-                        <img src="./img/marcador-de-posicion.png" alt="" width="50px" height="50px">
-                        <h3>visitanos</h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d105030.11011524414!2d-58.4385617!3d-34.6498805!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x95bccbbf570b95bd%3A0xe3ddfb60665e26c7!2sCeSAC%20N%C2%BA%2020%20Ana%20Mar%C3%ADa%20Janer%202300%20C1437HGJ%20CABA!3m2!1d-34.6498805!2d-58.438561699999994!5e0!3m2!1ses-419!2sar!4v1681757940935!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="map-title">
+                            <div class="map-title__icon">
+                                <img src="./img/marcador-de-posicion.png" alt="" width="50px" height="50px">
+                            </div>
+                            <h3>Visitanos</h3>
+                        </div>
+                        <div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d105030.11011524414!2d-58.4385617!3d-34.6498805!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x95bccbbf570b95bd%3A0xe3ddfb60665e26c7!2sCeSAC%20N%C2%BA%2020%20Ana%20Mar%C3%ADa%20Janer%202300%20C1437HGJ%20CABA!3m2!1d-34.6498805!2d-58.438561699999994!5e0!3m2!1ses-419!2sar!4v1681757940935!5m2!1ses-419!2sar"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </main>
     <footer class="footer">
@@ -148,8 +196,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>

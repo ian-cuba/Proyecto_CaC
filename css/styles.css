@@ -6,6 +6,7 @@
     --secundario: #1169A2;
     --terciario: #0C556A;
     --backgroud: #c3e3fd;
+    --alerta: #960303;
     --blanco: #FFF;
     --negro: #000;
 }
@@ -38,12 +39,14 @@ a {
 h1,
 h2,
 h3,
-h4 {
+h4,
+legend,
+th {
     margin: 0 0 2rem 0;
     font-family: var(--fuenteHeading);
 }
 
-p {
+p, tr {
     margin: 0 0 1rem 0;
 }
 
@@ -63,9 +66,7 @@ h4 {
     font-size: 2rem;
 }
 
-p,
-a,
-span {
+p,a,span, label {
     font-family: var(--fuenteParrafos);
 }
 
@@ -111,6 +112,10 @@ input[type=checkbox] {
 
 .content {
     padding: 5rem 0;
+}
+
+.content-recovery {
+    padding: 30rem 0;
 }
 
 @media (min-width: 768px) {
@@ -167,10 +172,12 @@ input[type=number]::-webkit-outer-spin-button {
     position: fixed;
     z-index: 10;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+    transition: top 0.5s; /* Transicion cuando se oculta y se muestra */
 }
 
 .header-row {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
@@ -180,7 +187,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 7rem;
 }
 
-.nav ul {
+.nav ul, .menu-responsive ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -244,6 +251,10 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 }
 
+.menu-responsive {
+    display: none;
+}
+
 .login-button:hover {
     cursor: pointer;
     border: 2px solid var(--secundario);
@@ -257,24 +268,117 @@ input[type=number]::-webkit-outer-spin-button {
     .nav-buttons {
         display: none;
     }
-
-    .burger {
-        height: 1.9rem;
-        width: 2.8rem;
+    /* Estilos al menú cuando está en responsive */
+    #menu-responsive {
+        display: none;
+    }
+    /* Le da los estilos cuando tiene la clase de show */
+    #menu-responsive.show {
         display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+        justify-content: start;
+        padding-top: 11rem;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #2d2d2d;
+        top: 0;
+        left: 0;
+        transition: all .5s;
+        z-index: -1;
     }
 
-    .line {
-        background-color: white;
-        height: .5rem;
+    #menu-responsive ul{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        list-style: none;
+        z-index: 5; 
+        padding: 0 0 0 2rem;
+    }
+
+    #menu-responsive ul li, #menu-responsive a{
+        font-size: 2.5rem;
+    }
+
+    #menu-responsive .button {
         width: 100%;
-        border-radius: 3px;
-        transition: 0.5s;
+    }
+    
+    /* Estilos al menú hamburguesa y funcionalidad */
+    .burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #icon {
+        display: inline-block;
+        width: 2.8rem;
+        height: 2px;
+        background-color: var(--blanco);
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      #icon:before,
+      #icon:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 2.8rem;
+        height: 2px;
+        background-color: var(--blanco);
+        transition: all 0.3s ease-in-out;
+      }
+      
+      #icon:before {
+        transform: rotate(0deg);
+        top: -7px;
+      }
+      
+      #icon:after {
+        transform: rotate(0deg);
+        top: 7px;
+      }
+      
+      #menu-responsive.show #icon {
+        background-color: transparent;
+      }
+      
+      #menu-responsive.show #icon:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      
+      #menu-responsive.show #icon:after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      #icon.close:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      #icon.close {
+        background-color: transparent;
+      }
+      
+      #icon.close:after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+}
+
+@media (max-width: 768px) {
+    #menu-responsive ul li, #menu-responsive a{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #menu-responsive ul li, #menu-responsive a{
+        font-size: 1.7rem;
     }
 }
 
@@ -452,13 +556,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Contact Section - Home */
-.contact {
+.contact-section {
     padding: 10rem 0;
     background-color: var(--terciario);
     color: var(--blanco);
 }
 
-.contact .container {
+.contact-section .container {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -536,8 +640,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-.service-description {
+.service-description p {
     font-size: 1.8rem;
+    text-align: justify;
+
 }
 
 @media (min-width: 1200px) {
@@ -574,7 +680,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form-register legend {
     text-align: center;
-    font-size: 2.7rem;
+    font-size: 3rem;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 4rem;
@@ -589,8 +695,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .form-register__input:nth-child(5),
-    .form-register__input:nth-child(8),
-    .form-register__input:nth-child(11),
+    .form-register__input:nth-child(12),
     #social-work,
     #affiliate {
         grid-column: 1 / 3;
@@ -599,6 +704,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form-register__input {
     margin: 1rem 0;
+}
+
+.form-register__input span {
+    color: var(--alerta);
 }
 
 #social-work {
@@ -624,7 +733,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Estas reglas se aplicarán a todos las elementos i 
-después de cualquier input*/
+después de cualquier input */
 .social-work__label input+i {
     background: #f0f0f0;
     border: 2px solid rgba(0, 0, 0, 0.2);
@@ -688,7 +797,7 @@ debemos poner definir este valor.
     border-bottom: 1px solid var(--negro);
 }
 
-.input-text::placeholder {
+.input-text::placeholder, textarea::placeholder {
     font-size: 1.5rem;
 }
 
@@ -703,9 +812,8 @@ select:focus {
     outline: none;
 }
 
-/* No funciona */
+
 .select option {
-    height: 2rem;
     background-color: transparent;
 }
 
@@ -720,28 +828,115 @@ select:focus {
     transition: ease-in .2s;
 }
 
-/* Contact Form - Contact Page */
-
-
-
-
-/* Media Form */
-
-.container {
-    display: flex;
-    align-items: center;
+/* Turns Page */
+.turns-alert {
+    color: var(--alerta);
 }
 
-.container .map {
+.turns-table {
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+.turns-table th,.turns-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.turns-table th {
+    font-size: 2.4rem
+}
+
+.turns-table td {
+    font-size: 1.8rem;
+}
+
+.turns-table tr:hover {
+    background-color: #f5f5f5;
+}
+.turns-table th {
+    background-color: var(--primario);
+    color: white;
+}
+.turns-table td.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.actions button {
+    padding: 8px;
+    background-color: var(--terciario);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 4px;
+    border-radius: 8px;
+}
+.actions button:hover {
+    background-color: var(--secundario);
+}
+
+@media screen and (max-width: 768px) {
+    .turns-alert {
+        text-align: center;
+    }
+    .turns-table {
+        width:100%;
+    }
+    .turns-table thead {
+        display: none;
+    }
+    .turns-table tr td:first-child {
+        background: #f0f0f0;
+        font-weight:bold;
+        font-size:2.4rem;
+    }
+    .turns-table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .turns-table tbody td {
+        display: block;
+        text-align:center;
+    }
+}
+
+/* Contact Form - Contact Page */
+.contact-flex{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 0 0 40px 50%;
+    gap: 5rem;
 }
 
-.map iframe {
-    width: 557px;
-    height: 350px;
+.contact-flex .map{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5rem;
+}
+
+.map-title__icon {
+    margin-bottom: 2rem;
+}
+
+.map-title h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primario);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.map iframe{
+    height: 30rem;
+    width: 100%;
     border-radius: 15px;
 }
 
@@ -751,6 +946,12 @@ select:focus {
     position: absolute;
     margin: 0 10%;
     gap: 2rem;
+
+}
+.contact-form {
+    width: 60rem;
+    max-width: 100%;
+    margin: 0;
 }
 
 .formContact input {
@@ -764,77 +965,109 @@ select:focus {
 .formContact textarea {
     margin: 0 -55%;
     border-radius: 25px;
+}
+.input-container .message{
+    border-radius: 1.5rem;
     padding: 1.5rem;
     transition: .5s;
+    background-color: transparent;
+    border: 1px solid var(--negro);
+    width: 100%;
 }
 
-.formContact textarea:focus {
-    background: transparent;
-}
-
-
-
-@media (min-width: 360px) and (max-width: 1200px) {
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .container .formContact {
-        max-width: 40%;
-        position: relative;
-        align-items: center;
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-
-    .container .map {
-        margin: 5rem 0;
-
-    }
-
-    .map iframe {
-        max-width: 90%;
-    }
-
-    .formContact textarea {
-        margin: 0 -55%;
-        border-radius: 25px;
-        padding: 1.5rem;
-        transition: .5s;
-        width: 170%;
-    }
-
-    .formContact textarea:focus {
-        background: transparent;
-
-    }
-
-}
-
-
-/* login */
-.formLogin {
+.containerFooterLogin{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    align-items: center;
+    gap: 1.5rem;
+}
+.containerFooterLogin button{
+    margin-top: 2rem;
 }
 
-.formLogin input {
-    transition: .5s;
-    margin: 1rem;
-    padding: .5rem;
+
+.input-container .message:focus {
+    outline: none;
+}
+
+@media (min-width: 1200px ) {
+
+    .contact-flex {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 480px) {
+    .map iframe{
+        width: 50rem;
+    }
+}
+
+/* Login Page */
+.form-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+}
+
+.formLogin input{
     border: none;
-    border-bottom: 1px solid black;
     background: transparent;
+    border-bottom: 1px solid black; 
+    padding: 1.5rem 0;
 }
 
+.formLogin label{
+    font-family: var(--fuenteParrafos);
+    color: var(--terciario);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 2rem;
+}
+
+.formLogin legend{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: var(--primario);
+}
+
+.formLogin h2{
+    color: var(--terciario);
+    border-bottom: 1px solid var(--primario);
+    text-align: center;
+    width: 75%;
+    margin:-2% auto 5% auto;
+}
+
+.span-text, .form-register__input span {
+    color: var(--negro);
+}
+
+.span-text a{
+    cursor: pointer;
+    color: var(--secundario);
+}
+
+.span-text a:hover {
+    color: var(--terciario);
+    transition: ease-out 0.3s;
+}
+
+@media (max-width: 768px) {
+    .formLogin{
+        width: 100%;
+    }
+}
 
 /* Footer */
 .footer-grid {
@@ -864,6 +1097,7 @@ select:focus {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: start;
         margin-bottom: 4rem;
     }
 }
@@ -887,78 +1121,69 @@ select:focus {
     margin-bottom: 0;
 }
 
-
-
-
-
 /* About Page */
-.about-contenedor1 {
+.about-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     background-color: #f2f2f281;
-    margin: 0 auto;
-    align-items: center;
-    /* centrar verticalmente el contenido */
+    align-items: center; 
     justify-content: center;
-    /* centrar horizontalmente el contenido */
-    /*border-radius: 5%;*/
+    padding: 4rem;
+    gap: 4rem; 
 }
 
-.about-contenedor2 {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    background-color: #f2f2f281;
-    margin: 0 auto;
-    align-items: center;
-    /* centrar verticalmente el contenido */
-    justify-content: center;
-    /* centrar horizontalmente el contenido */
-
+#about-grid-par .about-grid__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
-.about-element-1 {
-
-    padding: 40px 40px 0px;
-    text-align: justify;
-
-}
-
-.about-element-2 {
-    max-width: 600px;
-    align-items: center;
-
-}
-
-.about-element-3 {
-    padding: 40px 40px 0px;
+.about-grid__text p {
+    margin: 0;
+    font-size: 2rem;
     text-align: justify;
 }
 
-.about-element-4 {
-
-    text-align: justify;
-
-    grid-row: 1 / span 1;
-}
-
-.about-imagen {
+.about-grid__image img {
     border-radius: 2%;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.479);
-    display: block;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
-/* 404 page*/
-@media (max-width: 1200px ) {
-    .content-404 {
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.4rem;
-        justify-content: center;
-        align-items: center;
+@media (max-width: 1200px) {
 
+    .about-grid {
+        grid-template-columns: 100%;
     }
+
+    .about-grid__image {
+        grid-row: 1 / 2;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .about-grid {
+        padding: 2rem;
+        gap: 2rem;
+    }
+}
+
+/* 404 page*/
+.content-404 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    align-items: center;
+}
+
+.text1-404 {
+    font-size: 3rem;
+    color: var(--primario);
+}
+
+    
 
     .text1-404 {
         font-size: 3rem;
@@ -981,7 +1206,7 @@ select:focus {
         width: 25rem;
     }
 
-}
+
 
 @media (max-width: 480px) {
     .text-404 {

@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-row">
                 <a href="index.html" class="logo">
@@ -32,20 +32,13 @@
                         <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
                         <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a>
                             <ul class="submenu">
-                                <li class="submenu-item"><a href="services.html#clinicaGeneral"
-                                        class="nav__link">Clínica médica</a></li>
-                                <li class="submenu-item"><a href="services.html#pediatria"
-                                        class="nav__link">Pediatría</a></li>
-                                <li class="submenu-item"><a href="services.html#cardiologia"
-                                        class="nav__link">Cardiología</a></li>
-                                <li class="submenu-item"><a href="services.html#odontologia"
-                                        class="nav__link">Odontología</a></li>
-                                <li class="submenu-item"><a href="services.html#ginecologia"
-                                        class="nav__link">Ginecología</a></li>
-                                <li class="submenu-item"><a href="services.html#nutricion"
-                                        class="nav__link">Nutrición</a></li>
-                                <li class="submenu-item"><a href="services.html#psicologia"
-                                        class="nav__link">Psicología</a></li>
+                                <li class="submenu-item"><a href="services.html#clinicaGeneral" class="nav__link">Clínica médica</a></li>
+                                <li class="submenu-item"><a href="services.html#pediatria" class="nav__link">Pediatría</a></li>
+                                <li class="submenu-item"><a href="services.html#cardiologia" class="nav__link">Cardiología</a></li>
+                                <li class="submenu-item"><a href="services.html#odontologia" class="nav__link">Odontología</a></li>
+                                <li class="submenu-item"><a href="services.html#ginecologia" class="nav__link">Ginecología</a></li>
+                                <li class="submenu-item"><a href="services.html#nutricion" class="nav__link">Nutrición</a></li>
+                                <li class="submenu-item"><a href="services.html#psicologia" class="nav__link">Psicología</a></li>
                             </ul>
                         </li>
                         <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
@@ -56,10 +49,19 @@
                     <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
                     <a href="login.html" class="button login-button">Login</a>
                 </div>
-                <div class="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                <div class="menu-responsive" id="menu-responsive">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a></li>
+                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                        <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
+                        <a href="login.html" class="button login-button">Login</a>
+                    </ul>
+                </div>
+                <div class="burger" id="burger">
+                    <span id="icon"></span>
                 </div>
             </div>
         </div>
@@ -302,6 +304,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
