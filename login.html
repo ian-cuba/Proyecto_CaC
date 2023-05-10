@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,14 +81,14 @@
             <div class="content">
                 <div class="form-flex">
                     <!-- form login -->
-                    <form action="" class="formLogin">
+                    <form action="" class="formLogin" id="formLogin">
                         <legend>Acceda a su cuenta</legend>
                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" placeholder="Ingrese su Email">
+                        <input id="email"  type="text" placeholder="Ingrese su Email">
 
                         <!--  -->
                         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"
+                        <input id="password" type="password" class="form-control" id="exampleInputPassword1"
                             placeholder="Ingrese su Contraseña">
                         <!--  -->
                         <div class="containerFooterLogin">
@@ -94,11 +96,12 @@
                                 <input type="checkbox" name="social-work" id="social-work__check"
                                     onclick="showSocialWork()">Recordarme
                                 <i></i>
+                               
                             </label>
                             <span class="span-text"> <a href="recovery.html">Recuperar Contraseña</a></span>
                             <span class="span-text">¿No tiene cuenta? <a href="./register.html">Registrese
                                     acá</a></span>
-                            <button type="submit" class="button submit-button">Ingresar</button>
+                            <button type="submit" class="button submit-button" id="access">Ingresar</button>
                         </div>
                     </form>
                     <!-- =============================------=========================== -->
@@ -174,6 +177,7 @@
         </div>
     </footer>
     <script src="js/index.js"></script>
+    <script src="./js/validate.js"></script>
 </body>
 
 </html>
