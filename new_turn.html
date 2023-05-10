@@ -72,7 +72,7 @@
     <main class="main">
         <section class="hero">
             <div class="container">
-                <h1>Turnos</h1>
+                <h1>Solicitar Turno</h1>
             </div>
         </section>
         <div class="container">
@@ -100,47 +100,51 @@
                     </div>
                     <div class="div-form">
 
-                        <form class="div-form" action="">
-                            <label class="text-label" for="especialidad"> Especialidad:</label>
-                            <select class="text-select" name="Especialidades" id="especialidad">
-                                <option value="">Seleccione especialidad</option>
-                                <option value="">Clínica médica </option>
-                                <option value="">Pediatría</option>
-                                <option value="">Cardiología</option>
-                                <option value="">Odontología</option>
-                                <option value="">Ginecología</option>
-                                <option value="">Nutrición</option>
-                                <option value="">Psicología</option>
-                            </select>
-                            <label class="text-label" for="medicos">Profecional:</label>
-                            <select class="text-select" id="medicos">
-                                <option value="">Seleccione un médico</option>
-                                <optgroup label="Médicos clínicos">
-                                    <option>Miller María</option>
-                                    <option>McAllister Ana</option>
-                                </optgroup>
-                                <optgroup label="Pediatras">
-                                    <option>Williams Luis</option>
-                                    <option>Adams Ana</option>
-                                </optgroup>
-                                <optgroup label="Cardiólogos">
-                                    <option>Evans Ana</option>
-                                </optgroup>
-                                <optgroup label="odontológos">
-                                    <option>Wilson Juan</option>
-                                </optgroup>
-                                <optgroup label="Ginecólogos">
-                                    <option>Moore Carlos</option>
-                                </optgroup>
-                                <optgroup label="Nutricionistas">
-                                    <option>Collins Mónica</option>
-                                </optgroup>
-                                <optgroup label="Psicologos">
-                                    <option>Taylor Juana</option>
-                                </optgroup>
-                            </select>
-
-
+                        <form class="div-form " action="">
+                            <div class="input-container">
+                                <div class="form-register__input">
+                                    <label class="text-label" for="especialidad"> Especialidad:</label>
+                                    <select class="input-text" name="Especialidades" id="especialidad">
+                                        <option value="">Seleccione especialidad</option>
+                                        <option value="">Clínica médica </option>
+                                        <option value="">Pediatría</option>
+                                        <option value="">Cardiología</option>
+                                        <option value="">Odontología</option>
+                                        <option value="">Ginecología</option>
+                                        <option value="">Nutrición</option>
+                                        <option value="">Psicología</option>
+                                    </select>
+                                </div>
+                                <div class="form-register__input">
+                                    <label class="text-label" for="medicos">Profesional:</label>
+                                    <select class="input-text" id="medicos">
+                                        <option value="">Seleccione un médico</option>
+                                        <optgroup label="Médicos clínicos">
+                                            <option>Miller María</option>
+                                            <option>McAllister Ana</option>
+                                        </optgroup>
+                                        <optgroup label="Pediatras">
+                                            <option>Williams Luis</option>
+                                            <option>Adams Ana</option>
+                                        </optgroup>
+                                        <optgroup label="Cardiólogos">
+                                            <option>Evans Ana</option>
+                                        </optgroup>
+                                        <optgroup label="Odontológos">
+                                            <option>Wilson Juan</option>
+                                        </optgroup>
+                                        <optgroup label="Ginecólogos">
+                                            <option>Moore Carlos</option>
+                                        </optgroup>
+                                        <optgroup label="Nutricionistas">
+                                            <option>Collins Mónica</option>
+                                        </optgroup>
+                                        <optgroup label="Psicologos">
+                                            <option>Taylor Juana</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
                         </form>
                         <div class="div-button">
                             <button class="button button-turno">Buscar</button>
@@ -166,8 +170,8 @@
 
                                 </thead>
                                 <thead>
-                                    <td><input class="text-input" type="date" name="" value="" id="fecha"></td>
-                                    <td><input class="text-input" type="time" list="popularHours" value="08:00" />
+                                    <td><input class="input-text" type="date" name="" value="" id="fecha"></td>
+                                    <td><input class="input-text" type="time" list="popularHours" value="08:00" />
                                         <datalist id="popularHours">
                                             <option value="08:00"></option>
                                             <option value="09:00"></option>
@@ -183,7 +187,7 @@
                                             <option value="19:00"></option>
                                         </datalist>
                                     </td>
-                                    <td><input class="text-input" type="text" name="" value=" 1" id="consultorio"></td>
+                                    <td><input class="input-text" type="text" name="" value=" 1" id="consultorio"></td>
 
                                 </thead>
                             </table>

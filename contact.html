@@ -72,8 +72,7 @@
             <div class="container">
                 <div class="contact-flex">
                     <div class="contact-form">
-                        <!-- Se usa una api para el envío del email a centrosaludintegral@yopmail.com -->
-                        <form action="https://formsubmit.co/centrosaludintegral@yopmail.com" method="POST" class="form-register">
+                        <form action="https://formspree.io/f/xyyaoran" method="POST" class="form-register" id="contactForm">
                             <fieldset>
                                 <legend>Contactanos</legend>
                                 <div class="input-container">
@@ -100,13 +99,7 @@
                                 <div>
                                     <input class="button submit-button" type="submit" value="Enviar">
                                 </div>
-                                <!-- Esto se agrega para ajustar para algunos parámetros de la api al enviar el mail-->
-                                <input type="hidden" name="_subject" value="Nueva Consulta">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="box">
-                                <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html">
                             </fieldset>
-                            
                         </form>
                     </div>
                     <div class="map">
@@ -196,7 +189,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
+    <script src="js/api_contact.js"></script>
 </body>
 
 </html>
