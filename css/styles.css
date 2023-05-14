@@ -1010,6 +1010,36 @@ select:focus {
     }
 }
 
+/* Contact - Animation of the icon*/
+
+
+.map-title__icon img {
+    animation: jump 1s infinite;
+    transform-origin: bottom;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+
+/* Contact icon animation (Cuando posamos el mouse)
+
+.map-title__icon img:hover {
+    animation: jump 1s infinite;
+    transform-origin: bottom;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}*/
+
+
+
 /* Login Page */
 .form-flex{
     display: flex;
@@ -1326,3 +1356,4 @@ color: var(--primario);
     }
     .informacion1 .div-datos .div-form{font-size: 1rem;}
 }
+
