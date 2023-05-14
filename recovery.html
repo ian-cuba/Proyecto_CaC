@@ -75,10 +75,11 @@
                 <legend>Recuperar Contraseña</legend>
                 <div class="form-register__input">
                     <label for="">Email</label>
-                    <input class="input-text" type="email" placeholder="Escribe tu email" required>
+                    <input class="input-text" type="email" placeholder="Escribe tu email" id="email" required>
+                    <p id="emailStatus"> </p>
                 </div>
                 <div>
-                    <input class="button submit-button" type="submit" value="Enviar">
+                    <input class="button submit-button" type="submit" value="Enviar" onclick="evalRecoveryForm()">
                 </div>
             </form>
         </div>
@@ -150,7 +151,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
+    <script src="js/validate.js"></script>
 </body>
 
 </html>

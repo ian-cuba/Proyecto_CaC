@@ -17,7 +17,7 @@ async function handleSubmit (event) {
         Swal.fire({
             icon: 'success',
             title: 'Gracias por Contactarnos!',
-            text: 'Nos comunicaremos con vos en la brevedad!',
+            text: 'Nos comunicaremos con usted en la brevedad!',
         })
     }
 }

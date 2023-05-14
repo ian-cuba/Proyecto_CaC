@@ -91,115 +91,119 @@
 
                     </div>
 
-                    <div class="div-button"><button class="button button-turno">Nuevo turno</button>
+                    <div class="div-button"><button class="button button-turno" id="new_turn_btn">Nuevo turno</button>
                     </div>
 
-                    <div class="div-informacion informacion1">
+                    <div class="div-informacion informacion1" id="div-informacion">
                         <p>Seleccione la especialidad y el médico para buscar un turno disponible. Luego seleccione la
                             opción "Registrar Turno"</p>
                     </div>
                     <div class="div-form">
 
-                        <form class="div-form " action="">
-                            <div class="input-container">
-                                <div class="form-register__input">
-                                    <label class="text-label" for="especialidad"> Especialidad:</label>
-                                    <select class="input-text" name="Especialidades" id="especialidad">
-                                        <option value="">Seleccione especialidad</option>
-                                        <option value="">Clínica médica </option>
-                                        <option value="">Pediatría</option>
-                                        <option value="">Cardiología</option>
-                                        <option value="">Odontología</option>
-                                        <option value="">Ginecología</option>
-                                        <option value="">Nutrición</option>
-                                        <option value="">Psicología</option>
-                                    </select>
+                        <div id="first-block">
+                            <form class="div-form " action="">
+                                <div class="input-container">
+                                    <div class="form-register__input">
+                                        <label class="text-label" for="especialidad"> Especialidad:</label>
+                                        <select class="input-text" name="Especialidades" id="especialidad">
+                                            <option value="">Seleccione especialidad</option>
+                                            <option value="">Clínica médica </option>
+                                            <option value="">Pediatría</option>
+                                            <option value="">Cardiología</option>
+                                            <option value="">Odontología</option>
+                                            <option value="">Ginecología</option>
+                                            <option value="">Nutrición</option>
+                                            <option value="">Psicología</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-register__input">
+                                        <label class="text-label" for="medicos">Profesional:</label>
+                                        <select class="input-text" id="medicos">
+                                            <option value="">Seleccione un médico</option>
+                                            <optgroup label="Médicos clínicos">
+                                                <option>Miller María</option>
+                                                <option>McAllister Ana</option>
+                                            </optgroup>
+                                            <optgroup label="Pediatras">
+                                                <option>Williams Luis</option>
+                                                <option>Adams Ana</option>
+                                            </optgroup>
+                                            <optgroup label="Cardiólogos">
+                                                <option>Evans Ana</option>
+                                            </optgroup>
+                                            <optgroup label="Odontológos">
+                                                <option>Wilson Juan</option>
+                                            </optgroup>
+                                            <optgroup label="Ginecólogos">
+                                                <option>Moore Carlos</option>
+                                            </optgroup>
+                                            <optgroup label="Nutricionistas">
+                                                <option>Collins Mónica</option>
+                                            </optgroup>
+                                            <optgroup label="Psicologos">
+                                                <option>Taylor Juana</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-register__input">
-                                    <label class="text-label" for="medicos">Profesional:</label>
-                                    <select class="input-text" id="medicos">
-                                        <option value="">Seleccione un médico</option>
-                                        <optgroup label="Médicos clínicos">
-                                            <option>Miller María</option>
-                                            <option>McAllister Ana</option>
-                                        </optgroup>
-                                        <optgroup label="Pediatras">
-                                            <option>Williams Luis</option>
-                                            <option>Adams Ana</option>
-                                        </optgroup>
-                                        <optgroup label="Cardiólogos">
-                                            <option>Evans Ana</option>
-                                        </optgroup>
-                                        <optgroup label="Odontológos">
-                                            <option>Wilson Juan</option>
-                                        </optgroup>
-                                        <optgroup label="Ginecólogos">
-                                            <option>Moore Carlos</option>
-                                        </optgroup>
-                                        <optgroup label="Nutricionistas">
-                                            <option>Collins Mónica</option>
-                                        </optgroup>
-                                        <optgroup label="Psicologos">
-                                            <option>Taylor Juana</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
+                            </form>
+                            <div class="div-button">
+                                <button class="button button-turno" id="search_btn">Buscar</button>
                             </div>
-                        </form>
-                        <div class="div-button">
-                            <button class="button button-turno">Buscar</button>
                         </div>
-                        <div class="div-informacion">
-                            <p>Ha seleccionado a: .............. Especialista en ................
-                                Atiende: Martes: 14:00 a 20:00 hs.. Jueves: 08:30 a 13:30 hs..
+                        <div id="second-block">
+                            <div class="div-informacion">
+                                <p>Ha seleccionado a: .............. Especialista en ................
+                                    Atiende: Martes: 14:00 a 20:00 hs.. Jueves: 08:30 a 13:30 hs..
 
-                            </p>
+                                </p>
+                            </div>
+                            <div class="div-informacion informacion2">
+                                <p>No tiene convenio con ninguna obra social. Solo por reintegro.
+                                    El tiempo aproximado de consulta es de 1 hora.
+                                    Los turnos serán confirmados con 48 a 24 hs de anticipación a través de mensaje de
+                                    mail
+                                    . Chequear los datos ingresados correctamente.</p>
+                            </div>
+                            <div>
+                                <table class="div-table">
+                                    <thead class="text-thead">
+                                        <td>Fecha</td>
+                                        <td>Hora</td>
+                                        <td>Consultorio</td>
+
+                                    </thead>
+                                    <thead>
+                                        <td><input class="input-text" type="date" name="" value="" id="fecha"></td>
+                                        <td><input class="input-text" type="time" list="popularHours" value="08:00" />
+                                            <datalist id="popularHours">
+                                                <option value="08:00"></option>
+                                                <option value="09:00"></option>
+                                                <option value="10:00"></option>
+                                                <option value="11:00"></option>
+                                                <option value="12:00"></option>
+                                                <option value="13:00"></option>
+                                                <option value="14:00"></option>
+                                                <option value="15:00"></option>
+                                                <option value="16:00"></option>
+                                                <option value="17:00"></option>
+                                                <option value="18:00"></option>
+                                                <option value="19:00"></option>
+                                            </datalist>
+                                        </td>
+                                        <td><input class="input-text" type="text" name="" value=" 1" id="consultorio">
+                                        </td>
+
+                                    </thead>
+                                </table>
+
+                            </div>
+
+                            <div class=" div-button ">
+                                <button class="button button-turno" type="button" id="btnAgregar">Registrar
+                                    Turno</button>
+                            </div>
                         </div>
-                        <div class="div-informacion informacion2">
-                            <p>No tiene convenio con ninguna obra social. Solo por reintegro.
-                                El tiempo aproximado de consulta es de 1 hora.
-                                Los turnos serán confirmados con 48 a 24 hs de anticipación a través de mensaje de mail
-                                . Chequear los datos ingresados correctamente.</p>
-                        </div>
-                        <div>
-                            <table class="div-table">
-                                <thead class="text-thead">
-                                    <td>Fecha</td>
-                                    <td>Hora</td>
-                                    <td>Consultorio</td>
-
-                                </thead>
-                                <thead>
-                                    <td><input class="input-text" type="date" name="" value="" id="fecha"></td>
-                                    <td><input class="input-text" type="time" list="popularHours" value="08:00" />
-                                        <datalist id="popularHours">
-                                            <option value="08:00"></option>
-                                            <option value="09:00"></option>
-                                            <option value="10:00"></option>
-                                            <option value="11:00"></option>
-                                            <option value="12:00"></option>
-                                            <option value="13:00"></option>
-                                            <option value="14:00"></option>
-                                            <option value="15:00"></option>
-                                            <option value="16:00"></option>
-                                            <option value="17:00"></option>
-                                            <option value="18:00"></option>
-                                            <option value="19:00"></option>
-                                        </datalist>
-                                    </td>
-                                    <td><input class="input-text" type="text" name="" value=" 1" id="consultorio"></td>
-
-                                </thead>
-                            </table>
-
-                        </div>
-
-                        <div class=" div-button ">
-                            <button class="button button-turno" type="button" id="btnAgregar">Registrar Turno</button>
-                        </div>
-
-
-
                     </div>
 
                 </div>

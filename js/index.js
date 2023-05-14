@@ -2,7 +2,6 @@
 function showSocialWork() {
 
     social_work__check = document.getElementById("social-work__check");
-    console.log(social_work__check);
     if (social_work__check.checked) {
         document.getElementById("affiliate").style.display = "block";
     } else {
@@ -15,10 +14,8 @@ let ubicacionPrincipal = window.pageYOffset;
 window.onscroll = function () {
     let desplazamientoActual = window.pageYOffset;
     if (ubicacionPrincipal >= desplazamientoActual) {
-        /*document.querySelector('header').style.visibility = 'visible';*/
         document.querySelector('header').style.top = '0';
     } else {
-        /*document.querySelector('header').style.visibility = 'hidden';*/
         document.querySelector('header').style.top = '-100px';
     }
     ubicacionPrincipal = desplazamientoActual
@@ -29,13 +26,35 @@ function toggleMenu() {
     var menu = document.getElementById("menu-responsive");
     var icon = document.getElementById("icon");
     if (menu.className === "show") {
-      menu.className = "";
-      icon.className = "";
+        menu.className = "";
+        icon.className = "";
     } else {
-      menu.className = "show";
-      icon.className = "close";
+        menu.className = "show";
+        icon.className = "close";
     }
-  }
+}
 
 var button = document.getElementById("burger");
 button.onclick = toggleMenu;
+
+/* Utilización de Vue js para mostrar y ocultar bloques en la página de Solictitar Turno */
+let $info = document.querySelector("#div-informacion");
+let $firstBlock = document.querySelector("#first-block");
+let $secondBlock = document.querySelector("#second-block");
+let $newTurn = document.querySelector("#new_turn_btn");
+let $search = document.querySelector("#search_btn");
+
+$info.style.display = 'none';
+$firstBlock.style.display = 'none';
+$secondBlock.style.display = 'none';
+
+$newTurn.addEventListener('click', () => {
+    $info.style.display = 'block';
+    $firstBlock.style.display = 'block';
+})
+
+$search.addEventListener('click', () => {
+    $secondBlock.style.display = 'block';
+})
+
+

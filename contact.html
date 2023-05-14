@@ -77,27 +77,30 @@
                                 <legend>Contactanos</legend>
                                 <div class="input-container">
                                     <div class="form-register__input">
-                                        <label for="Nombre">Nombre</label>
-                                        <input class="input-text" type="text" placeholder="Escribe tu nombre" name="Nombre" required>
+                                        <label for="Nombre">Nombre*</label>
+                                        <input class="input-text" type="text" placeholder="Escribe tu nombre" name="Nombre" id="name" required>
+                                        <p id="nameStatus"> </p>
                                     </div>
                                     <div class="form-register__input">
-                                        <label for="Apellido">Apellido</label>
-                                        <input class="input-text" type="text" placeholder="Escribe tu apellido" name="Apellido" required>
+                                        <label for="Apellido">Apellido*</label>
+                                        <input class="input-text" type="text" placeholder="Escribe tu apellido" name="Apellido" id="lastName" required>
+                                        <p id="lastNameStatus"> </p>
                                     </div>
                                     <div class="form-register__input">
-                                        <label for="Telefono">Teléfono</label>
-                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono" name="Telefono" required>
+                                        <label for="Telefono">Teléfono*</label>
+                                        <input class="input-text" type="tel" placeholder="Escribe tu teléfono" name="Telefono" id="phone" required>
+                                        <p id="phoneStatus"> </p>
                                     </div>
-    
                                     <div class="form-register__input">
                                         <label for="Email">Email</label>
-                                        <input class="input-text" type="email" placeholder="Escribe tu email" name="Email">
+                                        <input class="input-text" type="email" placeholder="Escribe tu email" name="Email" id="email">
                                     </div>
                                     <textarea class="form-register__input message" name="Mensaje" cols="15" rows="5"
-                                        placeholder="Escribe tu consulta..." required></textarea>
-                                </div>
+                                        placeholder="Escribe tu consulta..." id="message" required></textarea>
+                                    <p id="messageStatus"> </p>
+                                    </div>
                                 <div>
-                                    <input class="button submit-button" type="submit" value="Enviar">
+                                    <input class="button submit-button" type="submit" value="Enviar" id="contactFormSubmit" onclick="evalContactForm()">
                                 </div>
                             </fieldset>
                         </form>
@@ -192,6 +195,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
     <script src="js/api_contact.js"></script>
+    <script src="js/validate.js"></script>
 </body>
 
 </html>
