@@ -205,9 +205,9 @@ function evalProvincia() {
     }
 }
 function evalMunicipio() {
-    let muni = document.getElementById("selectMunicipio").value;
+    let muni = document.getElementById("selectMunicipio");
     let element = document.getElementById("municipioStatus");
-    if (muni != 'Seleccione un Municipio') {
+    if (muni.value != 'Seleccione un Municipio' || muni.disabled) {
         element.innerHTML = ''
         return true;
     } else {

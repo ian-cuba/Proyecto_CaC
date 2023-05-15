@@ -1011,8 +1011,6 @@ select:focus {
 }
 
 /* Contact - Animation of the icon*/
-
-
 .map-title__icon img {
     animation: jump 1s infinite;
     transform-origin: bottom;
@@ -1026,7 +1024,6 @@ select:focus {
 
 
 /* Contact icon animation (Cuando posamos el mouse)
-
 .map-title__icon img:hover {
     animation: jump 1s infinite;
     transform-origin: bottom;
