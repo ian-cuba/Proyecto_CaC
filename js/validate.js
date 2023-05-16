@@ -250,7 +250,7 @@ function evalAddress() {
 function evalPass() {
     let pass = document.getElementById("password").value;
     let element = document.getElementById("passwordStatus");
-    let regExName = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    let regExName = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_.!])(?!.*\s).{8,}$/;
     if (pass != '') {
         if (regExName.test(pass)) {
             element.innerHTML = ''

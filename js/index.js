@@ -37,7 +37,7 @@ function toggleMenu() {
 var button = document.getElementById("burger");
 button.onclick = toggleMenu;
 
-/* Utilización de Vue js para mostrar y ocultar bloques en la página de Solictitar Turno */
+/* Mostrar y ocultar bloques en la página de Solicitar Turno */
 let $info = document.querySelector("#div-informacion");
 let $firstBlock = document.querySelector("#first-block");
 let $secondBlock = document.querySelector("#second-block");
