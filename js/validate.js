@@ -1,38 +1,16 @@
 function login(){
-  ``
     let email = document.getElementById(`emailLogin`) ;
     let password = document.getElementById(`passwordLogin`) 
-
-    if(email.value ==='' && password.value===''){
+    if(email.value==='' && password.value ===''){
         Swal.fire({
             icon:`error`,
             title:`Oops...`,
             text:`debes completar los campos`
         })
-    }else{
-        if(email.value!=''){
-            controlEmail()
-        }
-    }
-    if(password.value!=''){
-        controlPassword()
-    }
-}
-
-
-//validacion del correo
-function controlEmail(){
-    let digitEmail = /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    let email = document.getElementById(`emailLogin`) ;
-    if(email.value!=''){
-        if(email.value===''){
-            Swal.fire({
-                icon:`error`,
-                title:`Oops...`,
-                text:`revisa la sintaxis del email`
-            })
-        }
-        if(digitEmail.test(email.value)){
+        email.className=`error`
+        password.className=`error` 
+    } else{
+        if(controlEmail() && controlPassword()){
             Swal.fire({
                 icon:`success`,
                 title:`OK`,
@@ -40,31 +18,57 @@ function controlEmail(){
             })
         }
     }
+   
+
+}
+
+
+//validacion del correo
+function controlEmail(){
+    let digitEmail = /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let email = document.getElementById(`emailLogin`) ;
+    
+        if(!digitEmail.test(email.value)){
+            Swal.fire({
+                icon:`error`,
+                title:`Oops...`,
+                text:`revisa la sintaxis del email`
+            })
+            email.className=`error`
+            return false
+        }else{
+            return true
+        }
+    
 }
 
 //validacion de la clave
 function controlPassword(){
   
-    let regexPassword = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/;
+    let regexPassword = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).+$/;
+
     let password = document.getElementById(`passwordLogin`) 
 
-    if(password.value==='' || password.value.length<6){
+    if(!regexPassword.test(password.value)){
         Swal.fire({
             icon:`error`,
             title:`Oops...`,
-            text:`la clave debe tener al menos 6 caracteres  `
+            text:`la clave debe contener al menos 8 caracteres y tener: \n
+             al menos una mayuscula un caracter especial y un numero`
         })
+   password.className=`error`
+   return false
     }else{
-        if(!regexPassword.test(password.value)){
-            Swal.fire({
-                icon:`error`,
-                title:`Oops...`,
-                text:`la clave debe contener mayusculas`
-            })
-        }
-        
+        return true
+    
     }
+    return regexPassword ; 
 }
+
+
+
+
+
 
 // ----------------***--------------------
 function evalName() {

@@ -1104,6 +1104,12 @@ select:focus {
     }
 }
 
+/* errores de validacion */
+.formLogin .error{
+    border-bottom: 1px solid red;
+    transition: .5s;
+}
+
 /* Footer */
 .footer-grid {
     padding: 5rem 0;
