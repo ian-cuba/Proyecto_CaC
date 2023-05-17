@@ -1096,6 +1096,18 @@ select:focus {
 
 
 /*  */
+
+.showRegister{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.showRegister .showPassword{
+    width: 20px;
+    cursor: pointer;
+    margin: 2rem 1rem;
+    position: absolute;
+}
+
 .span-text, .form-register__input span {
     color: var(--negro);
 }
