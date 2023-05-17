@@ -1083,7 +1083,19 @@ select:focus {
     width: 75%;
     margin:-2% auto 5% auto;
 }
+.showP{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.showP .showPassword{
+    width: 20px;
+    cursor: pointer;
+    margin: 3rem 0;
+    position: absolute;
+}
 
+
+/*  */
 .span-text, .form-register__input span {
     color: var(--negro);
 }
@@ -1102,6 +1114,7 @@ select:focus {
     .formLogin{
         width: 100%;
     }
+
 }
 
 /* errores de validacion */

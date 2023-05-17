@@ -23,6 +23,26 @@ function login() {
     }
 }
 
+//control de visualizacion del password
+
+function showPassword(){
+    let password = document.getElementById(`passwordLogin`) ; 
+    let imgEye = document.getElementById(`eye`)
+    let eye = "./img/login/ojo.png" ;
+    let notEye = "./img/login/ver.png"
+
+    if(password.type===`password`){
+        password.type=`text`
+        imgEye.src=notEye
+    }else{
+        if(password.type===`text`){
+            password.type=`password`
+            imgEye.src=eye
+        }
+    }
+
+}
+
 // Validacion del correo de login
 function controlEmail() {
     let digitEmail = /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
