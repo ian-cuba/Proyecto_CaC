@@ -385,7 +385,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* Home */
 /* Hero Section - Home */
 .home-hero {
-    background-image: url(../img/hero.jpg);
+    background-image: url(../img/hero.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 45vw;
@@ -1022,21 +1022,6 @@ select:focus {
     100% { transform: translateY(0); }
 }
 
-
-/* Contact icon animation (Cuando posamos el mouse)
-.map-title__icon img:hover {
-    animation: jump 1s infinite;
-    transform-origin: bottom;
-}
-
-@keyframes jump {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}*/
-
-
-
 /* Login Page */
 .form-flex{
     display: flex;
@@ -1107,11 +1092,13 @@ select:focus {
 .footer-grid {
     padding: 5rem 0;
     color: var(--blanco);
+    text-align: center;
 }
 
 .footer-contact a {
     color: var(--blanco);
 }
+
 
 .footer-contact a:hover {
     text-decoration: underline;
