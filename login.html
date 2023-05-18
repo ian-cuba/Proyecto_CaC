@@ -83,25 +83,31 @@
                     <!-- form login -->
                     <form action="" class="formLogin" id="formLogin">
                         <legend>Acceda a su cuenta</legend>
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <label for="exampleInputEmail1" class="form-label">Email*</label>
                         <input id="emailLogin" type="text" placeholder="Ingrese su Email">
 
                         <!--  -->
-                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <label for="exampleInputPassword1" class="form-label">Contraseña*</label>
+                        <div class="showP">
+                        
+                        <img src="./img/login/ojo.png" alt="" class="showPassword" onclick="showPassword()" id="eye">
+                        </div>
                         <input id="passwordLogin" type="password" class="form-control" id="exampleInputPassword1"
                             placeholder="Ingrese su Contraseña">
+                  
                         <!--  -->
                         <div class="containerFooterLogin">
                             <label class="social-work__label">
                                 <input type="checkbox" name="social-work" id="social-work__check"
                                     onclick="showSocialWork()">Recordarme
+                                
                                 <i></i>
-                               
+                        
                             </label>
                             <span class="span-text"> <a href="recovery.html">Recuperar Contraseña</a></span>
                             <span class="span-text">¿No tiene cuenta? <a href="./register.html">Registrese
                                     acá</a></span>
-                            <button type="submit" class="button submit-button" id="access">Ingresar</button>
+                            <button type="button" class="button submit-button" id="access" onclick="login()">Ingresar</button>
                         </div>
                     </form>
                     <!-- =============================------=========================== -->

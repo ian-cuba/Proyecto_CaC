@@ -1,68 +1,126 @@
-
-//funcion de logueo.
-/*
-function login (){
-
-    let btn = document.getElementById('access') ;
-    let emailLogin = document.getElementById('emailLogin') ; 
-    let passwordLogin = document.getElementById('passwordLogin') ;
-
- btn.addEventListener(('click'), (e)=>{
-    e.preventDefault()
-     if(emailLogin.value==='' || passwordLogin.value === ''){
+/* Validación de Formulario de Login */
+function login() {
+    let email = document.getElementById(`emailLogin`);
+    let password = document.getElementById(`passwordLogin`)
+    if (email.value === '' && password.value === '') {
         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Debes completar los campos',
-          })
-     }else{
-    let user = [] ;
-
-    for(x of emailLogin.value) { 
-        user.push(x)
-    }
-    let contieneArroba = user.find(e => e=== `@`) ; 
-
-    let contieneNumero = user.map((n) => {
-return !isNaN(parseFloat(n)) ? parseFloat(n) : null 
-    })
-        
-    const tieneNumeroYarroba = ()=> {
-        if((contieneArroba && contieneNumero) && passwordLogin.value.length > 6 ) { 
-            for(let i=0 ; i< contieneNumero.length ; i++ ){ 
-                if(contieneNumero[0]!=null){
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'el email no puede contener numeros al inicio',
-                      })
-                }else{
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'OK',
-                        text: 'Te damos la Bienvenida',
-                      })
-                }
-            }
-        }else{
+            icon: `error`,
+            title: `Oops...`,
+            text: `Debes completar los campos`
+        })
+        email.classList.add("error");
+        password.classList.add("error");
+    } else {
+        if (controlEmail() && controlPassword()) {
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Debes completar los campos',
-              })
+                icon: `success`,
+                title: `OK`,
+                text: `Te damos la bienvenida...`
+            })
+            email.classList.remove("error");
+            password.classList.remove("error");
         }
     }
-tieneNumeroYarroba()
-
-     }
-    })
-   
 }
 
-login()*/
+//control de visualizacion del password
 
-/* Validación de Formulario de Registro y Contacto */
-/* Funciones con validación de cada campo */
+function showPassword(){
+    let password = document.getElementById(`passwordLogin`) ; 
+    let imgEye = document.getElementById(`eye`)
+    let eye = "./img/login/ojo.png" ;
+    let notEye = "./img/login/ver.png"
+
+    if(password.type===`password`){
+        password.type=`text`
+        imgEye.src=notEye
+    }else{
+        if(password.type===`text`){
+            password.type=`password`
+            imgEye.src=eye
+        }
+    }
+
+}
+
+// Validacion del correo de login
+function controlEmail() {
+    let digitEmail = /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let email = document.getElementById(`emailLogin`);
+    if (!digitEmail.test(email.value)) {
+        Swal.fire({
+            icon: `error`,
+            title: `Oops...`,
+            text: `Revisa la sintaxis del email. Debe ser del tipo: ejemplo@email.com`
+        })
+        email.classList.add("error")
+        return false
+    } else {
+        email.classList.remove("error")
+        return true
+    }
+}
+
+// Validacion de la clave de login
+function controlPassword() {
+    let regexPassword = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).+$/;
+    let password = document.getElementById(`passwordLogin`);
+    if (!regexPassword.test(password.value)) {
+        Swal.fire({
+            icon: `error`,
+            title: `Oops...`,
+            text: `La clave debe contener al menos 8 caracteres y tener: \n
+             al menos una mayúscula, un caracter especial y un numero`
+        })
+        password.classList.add("error");
+        return false
+    } else {
+        password.classList.remove("error");
+        return true
+    }
+}
+
+
+// Validación de campos de los formularios de Register y Contact
+function confirmation(){
+    let password2 = document.getElementById(`password2`) ; 
+    let imgEye2 = document.getElementById(`eyeRegister2`) ;
+    let eye = "./img/login/ojo.png" ;
+    let notEye = "./img/login/ver.png"
+
+    if(password2.type===`password`){
+        password2.type=`text`
+        imgEye2.src=notEye
+    }else{
+        if(password2.type===`text`){
+            password2.type=`password`
+            imgEye2.src=eye
+        }
+    }
+    
+}
+
+function passwordDisplay(){
+    let password = document.getElementById(`password`) ;
+    let imgEye = document.getElementById(`eyeRegister`) ;
+    
+    let eye = "./img/login/ojo.png" ;
+    let notEye = "./img/login/ver.png"
+
+    if(password.type===`password`){
+        password.type=`text`
+        imgEye.src=notEye
+    }else{
+        if(password.type===`text`){
+            password.type=`password`
+            imgEye.src=eye
+        }
+    }
+    
+}
+
+
+
 function evalName() {
     let name = document.getElementById("name").value;
     let element = document.getElementById("nameStatus");
@@ -246,7 +304,7 @@ function evalAddress() {
 function evalPass() {
     let pass = document.getElementById("password").value;
     let element = document.getElementById("passwordStatus");
-    let regExName = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    let regExName = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_.!])(?!.*\s).{8,}$/;
     if (pass != '') {
         if (regExName.test(pass)) {
             element.innerHTML = ''
@@ -295,6 +353,7 @@ function evalMessage() {
     }
 }
 
+
 evalRegisterForm = () => {
     let formRegister = document.getElementById("form-register"); /* Ver si se puede borrar */
     document.getElementById("name").addEventListener("input", evalName);
@@ -312,7 +371,7 @@ evalRegisterForm = () => {
     document.getElementById("password").addEventListener("input", evalPass);
     document.getElementById("password2").addEventListener("input", evalPass2);
     document.getElementById("social-work__check").addEventListener("change", evalSocialCheck);
-    
+
     if (evalName() & evalLastName() & evalDni() & evalBirthday() & evalPhone() & evalEmail() & evalProvincia() & evalMunicipio() & evalLocalidad() & evalAddress() & evalPass() & evalPass2()) {
         Swal.fire({
             icon: 'success',

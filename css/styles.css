@@ -1023,6 +1023,7 @@ select:focus {
 }
 
 /* Login Page */
+
 .form-flex{
     display: flex;
     justify-content: center;
@@ -1067,6 +1068,30 @@ select:focus {
     width: 75%;
     margin:-2% auto 5% auto;
 }
+.showP{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.showP .showPassword{
+    width: 20px;
+    cursor: pointer;
+    margin: 3rem 0;
+    position: absolute;
+}
+
+
+/*  */
+
+.showRegister{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.showRegister .showPassword{
+    width: 20px;
+    cursor: pointer;
+    margin: 2rem 1rem;
+    position: absolute;
+}
 
 .span-text, .form-register__input span {
     color: var(--negro);
@@ -1086,6 +1111,13 @@ select:focus {
     .formLogin{
         width: 100%;
     }
+
+}
+
+/* errores de validacion */
+.formLogin .error{
+    border-bottom: 1px solid red;
+    transition: .5s;
 }
 
 /* Footer */
