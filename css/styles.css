@@ -1022,21 +1022,6 @@ select:focus {
     100% { transform: translateY(0); }
 }
 
-
-/* Contact icon animation (Cuando posamos el mouse)
-.map-title__icon img:hover {
-    animation: jump 1s infinite;
-    transform-origin: bottom;
-}
-
-@keyframes jump {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}*/
-
-
-
 /* Login Page */
 
 .form-flex{
@@ -1083,29 +1068,19 @@ select:focus {
     width: 75%;
     margin:-2% auto 5% auto;
 }
-.showP{
+.showP, .showRegister{
     display: flex;
     flex-direction: row-reverse;
 }
-.showP .showPassword{
+.showPassword{
     width: 20px;
     cursor: pointer;
     margin: 3rem 0;
     position: absolute;
 }
 
-
-/*  */
-
-.showRegister{
-    display: flex;
-    flex-direction: row-reverse;
-}
 .showRegister .showPassword{
-    width: 20px;
-    cursor: pointer;
-    margin: 2rem 1rem;
-    position: absolute;
+    margin: 1rem;
 }
 
 .span-text, .form-register__input span {
