@@ -14,14 +14,13 @@
 /* Globales */
 html {
     box-sizing: border-box;
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-size: 16px;
-    /* 1rem = 10px */
+    font-size: 16px; 
     background-color: var(--backgroud);
     padding-top: 9rem;
 }
@@ -155,7 +154,6 @@ input[type=checkbox] {
 }
 
 /* Eliminar flechas de los inputs tipo number */
-
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -932,6 +930,11 @@ select:focus {
     margin-bottom: 2rem;
 }
 
+.map-title__icon img {
+    height: 5rem;
+    width: 5rem;
+}
+
 .map-title h3 {
     font-size: 3rem;
     font-weight: 600;
@@ -1265,7 +1268,6 @@ color: var(--primario);
 }
 
 /* New Turn Page*/
-
 .container-turno {
     display: grid;
     grid-template-columns: 30% 50% 20%;
@@ -1349,7 +1351,6 @@ color: var(--primario);
     font-weight: bold;
 }
 
-
 @media(max-width: 768px) {
     .container-turno {
         display: grid;
@@ -1362,4 +1363,3 @@ color: var(--primario);
     }
     .informacion1 .div-datos .div-form{font-size: 1rem;}
 }
-
