@@ -1,4 +1,4 @@
-//import {evalEspecialidad, evalProfecional} from './validate'
+
 let btnBuscar = document.querySelector("#btnBuscar");
 btnBuscar.addEventListener("click", buscar);
 
@@ -114,5 +114,4 @@ function limpiar() {
     document.getElementById("medicos").value = "";
     document.getElementById("especialidad").value = "";
 }
-
 

@@ -353,7 +353,6 @@ function evalMessage() {
 
 
 evalRegisterForm = () => {
-    let formRegister = document.getElementById("form-register"); /* Ver si se puede borrar */
     document.getElementById("name").addEventListener("input", evalName);
     document.getElementById("lastName").addEventListener("input", evalLastName);
     document.getElementById("dni").addEventListener("input", evalDni);
@@ -424,10 +423,12 @@ evalRecoveryForm = () => {
         });
     }
 }
-function evalEspecialidad() {
-    let especialidad = document.getElementById("especialidad");
-    let element = document.getElementById("valEspecialidad");
-    if (especialidad.value != 'Seleccione especialidad' || especialidad.disabled) {
+
+/* Validación formularios New Turn */
+/*function evalService() {
+    let especialidad = document.getElementById("especialidad").value;
+    let element = document.getElementById("servicesStatus");
+    if (especialidad != 'Seleccione una especialidad') {
         element.innerHTML = ''
         return true;
     } else {
@@ -435,10 +436,10 @@ function evalEspecialidad() {
         element.style.color = "red";
     }
 }
-function evalProfecional() {
-    let profecional= document.getElementById("medicos");
-    let element = document.getElementById("valEspecialidad");
-    if (profecional.value != 'Seleccione medico' || profecional.disabled) {
+function evalProfessionals() {
+    let profesional = document.getElementById("medicos").value;
+    let element = document.getElementById("professionalsStatus");
+    if (profesional != 'Seleccione un médico') {
         element.innerHTML = ''
         return true;
     } else {
@@ -446,10 +447,21 @@ function evalProfecional() {
         element.style.color = "red";
     }
 }
-function evalHora() {
-    let hora= document.getElementById("hora").value;
-    let element = document.getElementById("valHora");
-    if (hora.value != '' ) {
+function evalDate() {
+    let fecha= document.getElementById("date").value;
+    let element = document.getElementById("dateStatus");
+    if (fecha != '' ) {
+        element.innerHTML = ''
+        return true;
+    } else {
+        element.innerHTML = "Este campo es obligatorio";
+        element.style.color = "red";
+    }
+}    
+function evalHour() {
+    let hora = document.getElementById("hour").value;
+    let element = document.getElementById("hourStatus");
+    if (hora != '' ) {
         element.innerHTML = ''
         return true;
     } else {
@@ -457,4 +469,36 @@ function evalHora() {
         element.style.color = "red";
     }
 }
+
+evalNewTurnForm1 = () => {
+    document.getElementById("especialidad").addEventListener("input", evalService);
+    document.getElementById("medicos").addEventListener("input", evalProfessionals);
+    if (evalService() && evalProfessionals()) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Envio Exitoso'
+        });
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Verifique los errores'
+        });
+    }
+}
+
+evalNewTurnForm2 = () => {
+    document.getElementById("date").addEventListener("input", evalDate);
+    document.getElementById("hour").addEventListener("input", evalHour);
+    if (evalDate() && evalHour()) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Envio Exitoso'
+        });
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Verifique los errores'
+        });
+    }
+}*/
 

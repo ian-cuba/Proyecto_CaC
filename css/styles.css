@@ -160,7 +160,6 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-
 /* Header */
 .header {
     min-height: 9rem;
@@ -1026,7 +1025,6 @@ select:focus {
 }
 
 /* Login Page */
-
 .form-flex{
     display: flex;
     justify-content: center;
@@ -1107,7 +1105,7 @@ select:focus {
 
 }
 
-/* errores de validacion */
+/* Errores de validacion */
 .formLogin .error{
     border-bottom: 1px solid red;
     transition: .5s;
@@ -1216,7 +1214,7 @@ select:focus {
     }
 }
 
-/* 404 page*/
+/* 404 Page*/
 .content-404 {
 display: flex;
 flex-direction: column;
@@ -1269,22 +1267,20 @@ color: var(--primario);
 
 /* New Turn Page*/
 .container-turno {
-    display: grid;
-    grid-template-columns: 30% 50% 20%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     gap: 3rem;
+    align-items: center;
 }
+
 .datos-container{
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 3rem;
+    grid-template-columns: auto;
     gap: 3rem;
 }
 .div-button {
-    padding-top: 2rem;
-
+    padding: 0;
 }
 
 .img-turno {
@@ -1294,7 +1290,7 @@ color: var(--primario);
 .button-turno {
     background-color: var(--terciario);
     width: 20rem;
-
+    margin-top: 2rem;
 }
 
 .button-turno:hover {
@@ -1303,9 +1299,8 @@ color: var(--primario);
 }
 
 .div-datos {
-    
-    padding-bottom: 2rem;
-    text-align: left;
+    padding: 0;
+    text-align: center;
 }
 
 .div-informacion {
@@ -1322,7 +1317,11 @@ color: var(--primario);
     border-radius: 3px;
     padding: 1.5rem 1.5rem;
     font-size: 2rem;
+}
 
+.informacion1 p {
+    margin: 0;
+    text-align: center;
 }
 
 .informacion2 {
@@ -1331,11 +1330,7 @@ color: var(--primario);
 }
 
 .div-form {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    margin: 2rem;
-    font-size: 2rem;
-    padding: 1rem 0;
+    width: 100%;
 }
 
 .text-select,
@@ -1358,17 +1353,33 @@ color: var(--primario);
 
 }
 
-
-@media(max-width: 1200px) {
+@media (min-width: 1200px) {
     .container-turno {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-       
-    } 
-
-    .img-turno {
-        height: 15rem;
+        grid-template-columns: 1fr 3fr auto;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
-    .informacion1  .div-form{font-size: 1rem;}
-    .div-datos, h3, h2{font-size: 2.5rem;}
+    .div-datos {
+        text-align: left;
+        padding-bottom: 2rem;
+    }
+    .div-button {
+        padding-top: 2rem;
+    }
+    .div-form {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        padding: 2rem;
+        font-size: 2rem;
+    }
+    .datos-container{
+        grid-template-columns: auto auto auto;
+    }
+    #buttonNewTurn {
+        padding: 0;
+    }
+    .button-turno {
+        margin: 0;
+    }
 }
