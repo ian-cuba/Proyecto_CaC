@@ -10,7 +10,7 @@ const component1 = {
                     <ul class="menu">
                         <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
                         <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
-                        <li class="menu-item"><a href="services.html" class="nav__link">EspecialidadesTes</a>
+                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a>
                             <ul class="submenu">
                                 <li class="submenu-item"><a href="services.html#clinicaGeneral"
                                         class="nav__link">Clínica médica</a></li>
