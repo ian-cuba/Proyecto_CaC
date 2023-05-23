@@ -424,3 +424,37 @@ evalRecoveryForm = () => {
         });
     }
 }
+function evalEspecialidad() {
+    let especialidad = document.getElementById("especialidad");
+    let element = document.getElementById("valEspecialidad");
+    if (especialidad.value != 'Seleccione especialidad' || especialidad.disabled) {
+        element.innerHTML = ''
+        return true;
+    } else {
+        element.innerHTML = "Este campo es obligatorio";
+        element.style.color = "red";
+    }
+}
+function evalProfecional() {
+    let profecional= document.getElementById("medicos");
+    let element = document.getElementById("valEspecialidad");
+    if (profecional.value != 'Seleccione medico' || profecional.disabled) {
+        element.innerHTML = ''
+        return true;
+    } else {
+        element.innerHTML = "Este campo es obligatorio";
+        element.style.color = "red";
+    }
+}
+function evalHora() {
+    let hora= document.getElementById("hora").value;
+    let element = document.getElementById("valHora");
+    if (hora.value != '' ) {
+        element.innerHTML = ''
+        return true;
+    } else {
+        element.innerHTML = "Este campo es obligatorio";
+        element.style.color = "red";
+    }
+}
+

@@ -1276,12 +1276,15 @@ color: var(--primario);
     padding: 1rem;
     gap: 3rem;
 }
-
+.datos-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 3rem;
+    gap: 3rem;
+}
 .div-button {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    padding-left: 3rem;
-    text-align: center;
+    padding-top: 2rem;
+
 }
 
 .img-turno {
@@ -1289,16 +1292,19 @@ color: var(--primario);
 }
 
 .button-turno {
-    background-color: rgb(34,34,221);
+    background-color: var(--terciario);
     width: 20rem;
 
 }
 
 .button-turno:hover {
-    background-color: rgb(67, 120, 241)
+    background-color:transparent;
+    color: #0C556A;
 }
 
 .div-datos {
+    
+    padding-bottom: 2rem;
     text-align: left;
 }
 
@@ -1306,19 +1312,22 @@ color: var(--primario);
     grid-column-start: 1;
     grid-column-end: 4;
     padding: 2rem 2rem;
+    width: 100%;
+    color: var(--terciario);
 
 }
 
 .informacion1 {
-    border: 3px solid var(--primario);
+    border: 3px solid var(--secundario);
     border-radius: 3px;
     padding: 1.5rem 1.5rem;
     font-size: 2rem;
+
 }
 
 .informacion2 {
     text-align: center;
-    color: blue;
+    color:red;
 }
 
 .div-form {
@@ -1329,14 +1338,10 @@ color: var(--primario);
     padding: 1rem 0;
 }
 
-.div-table {
-    padding: 1rem 0;
-}
-
 .text-select,
 .text-input {
     font-family: var(--fuenteParrafos);
-    font-size: 80%;
+    font-size: 100%;
     outline: none;
     width: 20rem;
     height: 2.5rem;
@@ -1345,21 +1350,25 @@ color: var(--primario);
     border: 1px solid var(--primario);
 }
 
-.text-thead,
+
 .text-label {
     font-family: var(--fuenteParrafos);
     font-weight: bold;
+    color:var(--terciario) ;
+
 }
 
-@media(max-width: 768px) {
+
+@media(max-width: 1200px) {
     .container-turno {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-
-    }
+       
+    } 
 
     .img-turno {
         height: 15rem;
     }
-    .informacion1 .div-datos .div-form{font-size: 1rem;}
+    .informacion1  .div-form{font-size: 1rem;}
+    .div-datos, h3, h2{font-size: 2.5rem;}
 }
