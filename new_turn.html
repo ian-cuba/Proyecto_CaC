@@ -26,7 +26,7 @@
             </div>
         </section>
         <div class="container">
-            <div class="content">
+            <div class="content-new_turn">
                 <div class="container-turno">
                     <div>
                         <img class="img-turno" src="img/avatar-persona.webp" alt="avatar-persona">
@@ -41,7 +41,8 @@
 
                     </div>
 
-                    <div class="div-button" id="buttonNewTurn"><button id="btnNuevoTurno" class="button button-turno">Nuevo turno</button>
+                    <div class="div-button" id="buttonNewTurn">
+                        <a href="#div-informacion" id="btnNuevoTurno" class="button button-turno">Nuevo turno</a>
                     </div>
 
                     <div class="div-informacion informacion1" id="div-informacion">
@@ -50,104 +51,52 @@
                     </div>
                     <div class="div-form" id="first-block">
 
-                        <form action="" id="formNewTurn1">
+                        <form action="" id="formulario">
                             <div class="input-container">
                                 <div class="form-register__input">
                                     <label class="text-label" for="Especialidades"> Especialidad:</label>
                                     <select class="input-text" name="Especialidades" id="especialidad" required>
-                                        <option value="Seleccione una especialidad" selected disabled>Seleccione una
-                                            especialidad</option>
-                                        <option value="Clínica médica">Clínica médica</option>
-                                        <option value="Pediatría">Pediatría</option>
-                                        <option value="Cardiología">Cardiología</option>
-                                        <option value="Odontología">Odontología</option>
-                                        <option value="Ginecología">Ginecología</option>
-                                        <option value="Nutrición">Nutrición</option>
-                                        <option value="Psicología">Psicología</option>
+                                        <option selected disabled>Seleccionar una especialidad</option>
                                     </select>
                                     <p id="servicesStatus"> </p>
                                 </div>
                                 <div class="form-register__input">
                                     <label class="text-label" for="Medicos">Profesional:</label>
                                     <select class="input-text" id="medicos" name="Medicos" required>
-                                        <option value="Seleccione un médico" selected disabled>Seleccione un médico
-                                        </option>
-                                        <optgroup id="esp" value="Médicos clínico" label="Médicos clínicos">
-                                            <option value="Miller María">Miller María</option>
-                                            <option value="McAllister Ana">McAllister Ana</option>
-                                        </optgroup>
-                                        <optgroup label="Pediatras">
-                                            <option value="Williams Luis">Williams Luis</option>
-                                            <option value="Adams Ana">Adams Ana</option>
-                                        </optgroup>
-                                        <optgroup label="Cardiólogos">
-                                            <option value="Evans Ana">Evans Ana</option>
-                                        </optgroup>
-                                        <optgroup label="Odontológos">
-                                            <option value="Wilson Juan">Wilson Juan</option>
-                                        </optgroup>
-                                        <optgroup label="Ginecólogos">
-                                            <option value="Moore Carlos">Moore Carlos</option>
-                                        </optgroup>
-                                        <optgroup label="Nutricionistas">
-                                            <option value="Collins Mónica">Collins Mónica</option>
-                                        </optgroup>
-                                        <optgroup label="Psicologos">
-                                            <option value="Taylor Juana">Taylor Juana</option>
-                                        </optgroup>
+                                        <option selected disabled>Seleccionar un profesional</option>
                                     </select>
                                     <p id="professionalsStatus"> </p>
                                 </div>
 
-                            </div>
-                            <div class="div-button">
-                                <input id="btnBuscar" type="submit" value="Buscar" class="button button-turno">
-                            </div>
-                        </form>
-                        
-                        <div class="div-informacion">
-                            <p id="texto1">
-                            </p>
-                        </div>
-                        <div class="div-informacion informacion2">
-                            <p id="texto2"></p>
-                        </div>
-
-                        <form id="formulario">
-                            <div class="datos-container">
-                                <div class="form-register__input">
-                                    <label for="date">Fecha</label>
-                                    <input class="input-text" type="date" name="" id="date" required>
-                                    <p id="dateStatus"> </p>
+                                <div class="datos-container">
+                                    <div class="form-register__input">
+                                        <label for="date">Fecha</label>
+                                        <input class="input-text" type="date" name="" id="date" required>
+                                        <p id="dateStatus"> </p>
+                                    </div>
+                                    <div class="form-register__input">
+                                        <label for="hora">Hora</label>
+                                        <input id="hour" class="input-text" type="time" list="popularHours" required>
+                                        <datalist id="popularHours">
+                                            <option value="08:00"></option>
+                                            <option value="09:00"></option>
+                                            <option value="10:00"></option>
+                                            <option value="11:00"></option>
+                                            <option value="12:00"></option>
+                                            <option value="13:00"></option>
+                                            <option value="14:00"></option>
+                                            <option value="15:00"></option>
+                                            <option value="16:00"></option>
+                                            <option value="17:00"></option>
+                                            <option value="18:00"></option>
+                                            <option value="19:00"></option>
+                                        </datalist>
+                                        <p id="hourStatus"></p>
+                                    </div>
                                 </div>
-                                <div class="form-register__input">
-                                    <label for="hora">Hora</label>
-                                    <input id="hour" class="input-text" type="time" list="popularHours"
-                                        required>
-                                    <datalist id="popularHours">
-                                        <option value="08:00"></option>
-                                        <option value="09:00"></option>
-                                        <option value="10:00"></option>
-                                        <option value="11:00"></option>
-                                        <option value="12:00"></option>
-                                        <option value="13:00"></option>
-                                        <option value="14:00"></option>
-                                        <option value="15:00"></option>
-                                        <option value="16:00"></option>
-                                        <option value="17:00"></option>
-                                        <option value="18:00"></option>
-                                        <option value="19:00"></option>
-                                    </datalist>
-                                    <p id="hourStatus"></p>
+                                <div class=" div-button " id="boton">
+                                    <input class="button button-turno" type="submit" value="Registrar" id="btnAgregar">
                                 </div>
-                                <div class="form-register__input">
-                                    <label for="consultorio">Consultorio</label>
-                                    <input class="input-text" type="text" name="" value="" id="consultorio" readonly>
-                                </div>
-                            </div>
-                            <div class=" div-button " id="boton">
-                                <input class="button button-turno" type="submit" value="Registrar" id="btnAgregar">
-                            </div>
                         </form>
                     </div>
 
@@ -167,6 +116,104 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
     <script src="js/validate.js"></script>
+    <script>
+        /* Script para añadir un nuevo turno */
+        const URL = "http://127.0.0.1:5000/"
+        // const URL = "https://ianluisnoa.pythonanywhere.com/"
+        // Capturamos el evento de envío del formulario
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form por ahora
+
+            // Obtenemos los valores del formulario
+            var especialidad = document.getElementById('especialidad').value;
+            var profesional = document.getElementById('medicos').value;
+            var fecha = document.getElementById('date').value;
+            var hora = document.getElementById('hour').value;
+
+            // Creamos un objeto con los datos del producto
+            var turno = {
+                especialidad: especialidad,
+                profesional: profesional,
+                fecha: fecha,
+                hora: hora
+            };
+            console.log(turno)
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'new_turn', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(turno)
+            })
+                .then(function (response) {
+                    // Código para manejar la respuesta
+                    if (response.ok) {
+                        return response.json(); // Parseamos la respuesta JSON
+                    } else {
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                        throw new Error('Error al agregar el turno.');
+                    }
+                })
+                .then(function (data) {
+                    alert('Turno agregado correctamente.');
+                    //Limpiamos el formulario.
+                    document.getElementById('date').value = "";
+                    document.getElementById('hour').value = "";
+                })
+                .catch(function (error) {
+                    // Código para manejar errores
+                    alert('Error al agregar el turno.');
+                });
+        })
+    </script>
+    <script>
+        /* Script para obtener especialidades y profesionales en los select */
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener especialidades
+            fetch('http://localhost:5000/new_turn')
+                .then(response => response.json())
+                .then(data => {
+                    var especialidades = data;
+                    var selectEspecialidades = document.getElementById('especialidad');
+
+                    // Llenar el select de especialidades
+                    especialidades.forEach(function (especialidad) {
+                        var option = document.createElement('option');
+                        option.value = especialidad.id_especialidad;
+                        option.text = especialidad.nombre;
+                        selectEspecialidades.appendChild(option);
+                    });
+                });
+
+            // Evento para obtener los profesionales asociados a la especialidad seleccionada
+            var selectEspecialidades = document.getElementById('especialidad');
+            selectEspecialidades.addEventListener('change', function () {
+                var especialidadId = this.value;
+                var selectProfesionales = document.getElementById('medicos');
+
+                selectProfesionales.innerHTML = '<option selected disabled>Seleccionar un profesional</option>'
+
+                // Obtener profesionales de la especialidad seleccionada
+                var url = 'http://localhost:5000/new_turn/' + especialidadId;
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        var profesionales = data;
+                        var selectProfesionales = document.getElementById('medicos');
+
+                        // Crear y agregar las opciones al select
+                        profesionales.forEach(function (profesional) {
+                            var option = document.createElement('option');
+                            option.value = profesional.id_profesional;
+                            option.text = profesional.rol + ' ' + profesional.nombre + ' ' + profesional.apellido;
+                            selectProfesionales.appendChild(option);
+                        });
+                    });
+            });
+        });
+    </script>
 </body>
 
 </html>

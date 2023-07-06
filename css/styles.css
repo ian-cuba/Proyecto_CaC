@@ -113,6 +113,10 @@ input[type=checkbox] {
     padding: 5rem 0;
 }
 
+.content-new_turn {
+    padding: 5rem 0;
+}
+
 .content-recovery {
     padding: 30rem 0;
 }
@@ -1277,7 +1281,8 @@ color: var(--primario);
 .datos-container{
     display: grid;
     grid-template-columns: auto;
-    gap: 3rem;
+    grid-column: 1 / 3;
+    
 }
 .div-button {
     padding: 0;
@@ -1374,7 +1379,9 @@ color: var(--primario);
         font-size: 2rem;
     }
     .datos-container{
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
+        grid-column: 1 / 3;
+        gap: 3rem;
     }
     #buttonNewTurn {
         padding: 0;
