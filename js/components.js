@@ -11,21 +11,7 @@ const component1 = {
                         <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
                         <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
                         <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a>
-                            <ul class="submenu">
-                                <li class="submenu-item"><a href="services.html#clinicaGeneral"
-                                        class="nav__link">Clínica médica</a></li>
-                                <li class="submenu-item"><a href="services.html#pediatria"
-                                        class="nav__link">Pediatría</a></li>
-                                <li class="submenu-item"><a href="services.html#cardiologia"
-                                        class="nav__link">Cardiología</a></li>
-                                <li class="submenu-item"><a href="services.html#odontologia"
-                                        class="nav__link">Odontología</a></li>
-                                <li class="submenu-item"><a href="services.html#ginecologia"
-                                        class="nav__link">Ginecología</a></li>
-                                <li class="submenu-item"><a href="services.html#nutricion"
-                                        class="nav__link">Nutrición</a></li>
-                                <li class="submenu-item"><a href="services.html#psicologia"
-                                        class="nav__link">Psicología</a></li>
+                            <ul class="submenu" id="submenuServices">
                             </ul>
                         </li>
                         <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
@@ -124,3 +110,27 @@ const component2 = {
         </div>
     `
 }
+
+const URL_ = "http://127.0.0.1:5000/"
+//const URL = "https://ianluisnoa.pythonanywhere.com/"
+// JavaScript
+window.addEventListener('DOMContentLoaded', () => {
+    const containerServices = document.getElementById('submenuServices');
+
+    // Hacer una solicitud GET al servidor para obtener los datos de los profesionales
+    fetch(URL_ + '/submenu')
+        .then(response => response.json())
+        .then(data => {
+            // Generar el código HTML para cada profesional y agregarlo al contenedor de la grilla
+            data.forEach(service => {
+                const html = `
+                    <li class="submenu-item"><a href="services.html#${service.id}"
+                    class="nav__link">${service.nombre}</a></li>
+                    `;
+                containerServices.insertAdjacentHTML('beforeend', html);
+            });
+        })
+        .catch(error => {
+            console.error('Error al obtener los profesionales:', error);
+        });
+});

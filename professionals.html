@@ -27,99 +27,7 @@
         </section>
         <div class="content">
             <div class="container">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dra6.webp" alt="Dra. María Miller">
-                            </div>
-                            <h3>Dra. María Miller</h3>
-                            <p>Médica clínica con experiencia en atención primaria y cuidado de pacientes
-                                hospitalizados.</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dc1.webp" alt="Dr. Luis Williams">
-                            </div>
-                            <h3>Dr. Luis Williams</h3>
-                            <p>Pediatra altamente capacitado y dedicado a brindar atención médica de calidad a los niños
-                                y adolescentes.</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dra1.webp" alt="Dr. Juliana Evans">
-                            </div>
-                            <h3>Dra. Juliana Evans</h3>
-                            <p>Cardióloga con experiencia en diagnóstico y tratamiento de enfermedades cardiovasculares,
-                                que brinda atención médica personalizada y de calidad a sus pacientes.</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dra2.webp" alt="Dra. Ana Adams">
-                            </div>
-                            <h3>Dra. Ana Adams</h3>
-                            <p>Pediatra con experiencia en el cuidado de niños, incluyendo la atención de enfermedades y
-                                problemas de desarrollo.</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dc2.webp" alt="Dr. Carlos Moore">
-                            </div>
-                            <h3>Dr. Carlos Moore</h3>
-                            <p>Ginecólogo experimentado en el diagnóstico y tratamiento de enfermedades y condiciones
-                                ginecológicas, brindando atención médica integral y personalizada a sus pacientes.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dra4.webp" alt="Dr. Juana Taylor">
-                            </div>
-                            <h3>Dra. Juana Taylor</h3>
-                            <p>Psiquiatra con amplia experiencia en el tratamiento de trastornos mentales y emocionales,
-                                incluyendo ansiedad, depresión y trastornos del estado de ánimo.</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dra3.webp" alt="Dra. Mónica Collins">
-                            </div>
-                            <h3>Dra. Mónica Collins</h3>
-                            <p>Nutricionista especializada en mejorar la salud de sus pacientes con cambios
-                                personalizados en la alimentación y estilo de vida</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dc3.webp" alt="Dr. Juan Wilson">
-                            </div>
-                            <h3>Dr. Juan Wilson</h3>
-                            <p>Odontólogo especializado en prevención, tratamiento y procedimientos dentales cosméticos
-                                para mejorar la salud y estética oral de sus pacientes.</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div>
-                                <img src="img/proffesionals/dra5.webp" alt="Dra. Ana McAllister">
-                            </div>
-                            <h3>Dra. Ana McAllister</h3>
-                            <p>Médica clínica comprometida con el bienestar de sus pacientes y en ofrecer una atención
-                                médica integral y personalizada. </p>
-                        </div>
-                    </div>
-                </div>
+                <div class="grid-container" id="grid-container"></div>
             </div>
         </div>
     </main>
@@ -130,6 +38,39 @@
     <script src="js/components.js"></script>
     <script src="js/scriptvue.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        const URL = "http://127.0.0.1:5000/"
+        //const URL = "https://ianluisnoa.pythonanywhere.com/"
+        // JavaScript
+        window.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.getElementById('grid-container');
+
+            // Hacer una solicitud GET al servidor para obtener los datos de los profesionales
+            fetch(URL + '/professionals')
+                .then(response => response.json())
+                .then(data => {
+                    // Generar el código HTML para cada profesional y agregarlo al contenedor de la grilla
+                    data.forEach(profesional => {
+                        const html = `
+                        <div class="grid-item">
+                            <div class="grid-item__content">
+                            <div>
+                                <img src="${profesional.ruta_imagen}" alt="Imagen de ${profesional.nombre}">
+                            </div>
+                            <h3>${profesional.nombre}</h3>
+                            <p>${profesional.descripcion}</p>
+                            </div>
+                        </div>
+                        `;
+                        gridContainer.insertAdjacentHTML('beforeend', html);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener los profesionales:', error);
+                });
+        });
+
+    </script>
 </body>
 
 </html>

@@ -22,88 +22,54 @@
     <main class="main">
         <section class="hero">
             <div class="container">
-                <h1>Solicitar Turno</h1>
+                <h1>Modificar Turno</h1>
             </div>
         </section>
         <div class="container">
             <div class="content-new_turn">
-                <div class="container-turno">
-                    <div>
-                        <img class="img-turno" src="img/avatar-persona.webp" alt="avatar-persona">
-                    </div>
-                    <div class="div-datos">
-                        <h2>Gentile Gisela</h2>
-                        <h3>Paciente</h3>
+                
+                <div class="div-form" id="first-block">
 
-                        <h4>Correo electronico: <span id="correo" value="">persona@hotmail.com</span></h4>
-                        <h4>Telefono: <span id="telefono" value="">202156985</span></h4>
-                        <h4>D.N.I: <span id:="dni" value="">32147896</span></h4>
+                    <form action="" id="formulario">
+                        <div class="input-container">
+                            
 
-                    </div>
-
-                    <div class="div-button" id="buttonNewTurn">
-                        <a href="#div-informacion" id="btnNuevoTurno" class="button button-turno">Nuevo turno</a>
-                    </div>
-
-                    <div class="div-informacion informacion1" id="div-informacion">
-                        <p>Seleccione la especialidad y el médico para buscar un turno disponible. Luego seleccione la
-                            opción "Registrar Turno"</p>
-                    </div>
-                    <div class="div-form" id="first-block">
-
-                        <form action="" id="formulario">
-                            <div class="input-container">
+                            <div class="datos-container">
                                 <div class="form-register__input">
-                                    <label class="text-label" for="Especialidades"> Especialidad:</label>
-                                    <select class="input-text" name="Especialidades" id="especialidad" required>
-                                        <option selected disabled>Seleccionar una especialidad</option>
-                                    </select>
-                                    <p id="servicesStatus"> </p>
+                                    <label for="date">Fecha</label>
+                                    <input class="input-text" type="date" name="" id="date" required>
+                                    <p id="dateStatus"> </p>
                                 </div>
                                 <div class="form-register__input">
-                                    <label class="text-label" for="Medicos">Profesional:</label>
-                                    <select class="input-text" id="medicos" name="Medicos" required>
-                                        <option selected disabled>Seleccionar un profesional</option>
-                                    </select>
-                                    <p id="professionalsStatus"> </p>
+                                    <label for="hora">Hora</label>
+                                    <input id="hour" class="input-text" type="time" list="popularHours" required>
+                                    <datalist id="popularHours">
+                                        <option value="08:00"></option>
+                                        <option value="09:00"></option>
+                                        <option value="10:00"></option>
+                                        <option value="11:00"></option>
+                                        <option value="12:00"></option>
+                                        <option value="13:00"></option>
+                                        <option value="14:00"></option>
+                                        <option value="15:00"></option>
+                                        <option value="16:00"></option>
+                                        <option value="17:00"></option>
+                                        <option value="18:00"></option>
+                                        <option value="19:00"></option>
+                                    </datalist>
+                                    <p id="hourStatus"></p>
                                 </div>
-
-                                <div class="datos-container">
-                                    <div class="form-register__input">
-                                        <label for="date">Fecha</label>
-                                        <input class="input-text" type="date" name="" id="date" required>
-                                        <p id="dateStatus"> </p>
-                                    </div>
-                                    <div class="form-register__input">
-                                        <label for="hora">Hora</label>
-                                        <input id="hour" class="input-text" type="time" list="popularHours" required>
-                                        <datalist id="popularHours">
-                                            <option value="08:00"></option>
-                                            <option value="09:00"></option>
-                                            <option value="10:00"></option>
-                                            <option value="11:00"></option>
-                                            <option value="12:00"></option>
-                                            <option value="13:00"></option>
-                                            <option value="14:00"></option>
-                                            <option value="15:00"></option>
-                                            <option value="16:00"></option>
-                                            <option value="17:00"></option>
-                                            <option value="18:00"></option>
-                                            <option value="19:00"></option>
-                                        </datalist>
-                                        <p id="hourStatus"></p>
-                                    </div>
-                                </div>
-                                <div class=" div-button " id="boton">
-                                    <input class="button button-turno" type="submit" value="Registrar" id="btnAgregar">
-                                </div>
-                        </form>
-                    </div>
-
-
+                            </div>
+                            <div class=" div-button " id="boton">
+                                <input class="button button-turno" type="submit" value="Modificar" id="btnAgregar">
+                            </div>
+                    </form>
                 </div>
 
+
             </div>
+
+        </div>
         </div>
         </div>
     </main>
@@ -115,103 +81,81 @@
     <script src="js/scriptvue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
-    <script src="js/validate.js"></script>
+    <script src="js/validate.js"></script> 
     <script>
-        /* Script para añadir un nuevo turno */
+
         const URL = "http://127.0.0.1:5000/"
-        // const URL = "https://ianluisnoa.pythonanywhere.com/"
-        // Capturamos el evento de envío del formulario
+        //const URL = "https://ianluisnoa.pythonanywhere.com/"
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const fecha = urlParams.get('fecha');
+            const hora = urlParams.get('hora');
+            // const especialidad_ = urlParams.get('especialidad');
+            // const profesional = urlParams.get('profesional');
+
+            // Asignar los valores a los campos en la página
+            document.getElementById('date').value = fecha;
+            document.getElementById('hour').value = hora;
+            // const selectService = document.getElementById('especialidad');
+            // selectService.value = especialidad_;
+            // const selectProfessional = document.getElementById('medicos');
+            // selectProfessional.value = profesional;
+        });
+
+
+        // Capturamos el evento de envío del formulario de modificación
         document.getElementById('formulario').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitamos que se envie el form por ahora
+            event.preventDefault(); // Evitamos que se recargue la página
 
-            // Obtenemos los valores del formulario
-            var especialidad = document.getElementById('especialidad').value;
-            var profesional = document.getElementById('medicos').value;
-            var fecha = document.getElementById('date').value;
-            var hora = document.getElementById('hour').value;
+            // Obtenemos los valores del formulario de modificación
+            var fechaModificada = document.getElementById('date').value;
+            var horaModificada = document.getElementById('hour').value;
+            // var especialidad = document.getElementById('especialidad').value;
+            // var profesional = document.getElementById('medicos').value;
 
-            // Creamos un objeto con los datos del producto
+            // Creamos un objeto con los datos del producto actualizados
+            const urlParams = new URLSearchParams(window.location.search);
+            const especialidad = urlParams.get('especialidad');
+            const profesional = urlParams.get('profesional');
+            const id_t = urlParams.get('id_t');
             var turno = {
+                fecha: fechaModificada,
+                hora: horaModificada,
                 especialidad: especialidad,
                 profesional: profesional,
-                fecha: fecha,
-                hora: hora
+                id_t: id_t
             };
-            console.log(turno)
-            // Realizamos la solicitud POST al servidor
-            fetch(URL + 'new_turn', {
-                method: 'POST',
+
+            console.log(turno);
+            
+            // Realizamos la solicitud PUT al servidor para guardar los cambios
+            const url = URL + 'turns/' + id_t + '&' + especialidad + '&' + profesional;
+            fetch(url, {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(turno)
             })
                 .then(function (response) {
-                    // Código para manejar la respuesta
                     if (response.ok) {
                         return response.json(); // Parseamos la respuesta JSON
                     } else {
                         // Si hubo un error, lanzar explícitamente una excepción
                         // para ser "catcheada" más adelante
-                        throw new Error('Error al agregar el turno.');
+                        throw new Error('Error al guardar los cambios del turno.');
                     }
                 })
                 .then(function (data) {
-                    alert('Turno agregado correctamente.');
-                    //Limpiamos el formulario.
-                    document.getElementById('date').value = "";
-                    document.getElementById('hour').value = "";
+                    alert('Cambios guardados correctamente.');
+                    window.location.href = "/turns.html"; // Redirigimos a turnos
                 })
                 .catch(function (error) {
                     // Código para manejar errores
-                    alert('Error al agregar el turno.');
-                });
-        })
-    </script>
-    <script>
-        /* Script para obtener especialidades y profesionales en los select */
-        document.addEventListener('DOMContentLoaded', function () {
-            // Obtener especialidades
-            fetch('http://localhost:5000/new_turn')
-                .then(response => response.json())
-                .then(data => {
-                    var especialidades = data;
-                    var selectEspecialidades = document.getElementById('especialidad');
-
-                    // Llenar el select de especialidades
-                    especialidades.forEach(function (especialidad) {
-                        var option = document.createElement('option');
-                        option.value = especialidad.id_especialidad;
-                        option.text = especialidad.nombre;
-                        selectEspecialidades.appendChild(option);
-                    });
-                });
-
-            // Evento para obtener los profesionales asociados a la especialidad seleccionada
-            var selectEspecialidades = document.getElementById('especialidad');
-            selectEspecialidades.addEventListener('change', function () {
-                var especialidadId = this.value;
-                var selectProfesionales = document.getElementById('medicos');
-
-                selectProfesionales.innerHTML = '<option selected disabled>Seleccionar un profesional</option>'
-
-                // Obtener profesionales de la especialidad seleccionada
-                var url = 'http://localhost:5000/new_turn/' + especialidadId;
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        var profesionales = data;
-                        var selectProfesionales = document.getElementById('medicos');
-
-                        // Crear y agregar las opciones al select
-                        profesionales.forEach(function (profesional) {
-                            var option = document.createElement('option');
-                            option.value = profesional.id_profesional;
-                            option.text = profesional.rol + ' ' + profesional.nombre + ' ' + profesional.apellido;
-                            selectProfesionales.appendChild(option);
-                        });
-                    });
-            });
+                    alert('Error al guardar los cambios del turno.');
+                })
         });
     </script>
 </body>

@@ -119,7 +119,7 @@
     <script>
         /* Script para añadir un nuevo turno */
         const URL = "http://127.0.0.1:5000/"
-        // const URL = "https://ianluisnoa.pythonanywhere.com/"
+        //const URL = "https://ianluisnoa.pythonanywhere.com/"
         // Capturamos el evento de envío del formulario
         document.getElementById('formulario').addEventListener('submit', function (event) {
             event.preventDefault(); // Evitamos que se envie el form por ahora
@@ -158,9 +158,11 @@
                 })
                 .then(function (data) {
                     alert('Turno agregado correctamente.');
-                    //Limpiamos el formulario.
-                    document.getElementById('date').value = "";
-                    document.getElementById('hour').value = "";
+                    // Refrescar la página después de 500 milisegundos
+                    setTimeout(function () {
+                        location.reload();
+                    }, 500);
+
                 })
                 .catch(function (error) {
                     // Código para manejar errores
@@ -172,7 +174,7 @@
         /* Script para obtener especialidades y profesionales en los select */
         document.addEventListener('DOMContentLoaded', function () {
             // Obtener especialidades
-            fetch('http://localhost:5000/new_turn')
+            fetch(URL + 'new_turn')
                 .then(response => response.json())
                 .then(data => {
                     var especialidades = data;
@@ -196,7 +198,7 @@
                 selectProfesionales.innerHTML = '<option selected disabled>Seleccionar un profesional</option>'
 
                 // Obtener profesionales de la especialidad seleccionada
-                var url = 'http://localhost:5000/new_turn/' + especialidadId;
+                var url = URL + 'new_turn/' + especialidadId;
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {

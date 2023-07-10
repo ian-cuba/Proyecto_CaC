@@ -70,33 +70,67 @@
             })
             .then(function (data) {
                 var tablaTurnos = document.getElementById('tablaTurnos');
+                var currentDate = new Date(); // Obtener la fecha actual
+
+                // Ordenar los turnos por fecha en orden ascendente
+                data.sort(function (a, b) {
+                    return new Date(a.fecha) - new Date(b.fecha);
+                });
 
                 // Iteramos sobre los productos y agregamos filas a la tabla
                 data.forEach(function (turno) {
                     var fecha = new Date(turno.fecha);
-                    var fechaFormatted = fecha.toLocaleDateString('es-ES'); // Formato DD-MM-AAAA
 
-                    var fila = document.createElement('tr');
-                    fila.innerHTML = '<td>' + fechaFormatted + '</td>' +
-                        '<td>' + turno.hora + '</td>' +
-                        '<td>' + turno.especialidad + '</td>' +
-                        '<td>' + turno.profesional + '</td>' +
-                        '<td class="actions">' +
-                        '<button onclick="modificar_turno(\'' + turno.fecha + '\', \'' + turno.hora + '\')">Modificar</button>' +
-                        '<button onclick="eliminar_turno(\'' + turno.fecha + '\', \'' + turno.hora + '\')">Eliminar</button>' +
-                        '</td>';
-                    tablaTurnos.appendChild(fila);
+                    // Verificar si la fecha del turno es posterior a la fecha actual
+                    if (fecha > currentDate) {
+                        var dia = fecha.getDate() + 1;
+                        var mes = fecha.getMonth() + 1; // Sumamos 1 al mes para ajustar el índice basado en cero
+                        var anio = fecha.getFullYear();
+
+                        // Formatear la fecha en "dd/mm/aaaa"
+                        var fechaFormatted = ('0' + dia).slice(-2) + '/' + ('0' + mes).slice(-2) + '/' + anio;
+
+                        var fila = document.createElement('tr');
+                        fila.innerHTML =
+                            '<td>' + fechaFormatted + '</td>' +
+                            '<td>' + turno.hora + '</td>' +
+                            '<td>' + turno.especialidad + '</td>' +
+                            '<td>' + turno.profesional + '</td>' +
+                            '<td class="actions">' +
+                            '<button onclick="modificar_turno(\'' + turno.id_t + '\',\'' + turno.id_e + '\', \'' + turno.id_p + '\')">Modificar</button>' +
+                            '<button onclick="eliminar_turno(\'' + turno.fecha + '\', \'' + turno.hora + '\')">Eliminar</button>' +
+                            '</td>';
+                        tablaTurnos.appendChild(fila);
+                    }
                 });
-
             })
             .catch(function (error) {
                 // Código para manejar errores
                 alert('Error al obtener los turnos.');
             });
 
-        
-        function modificar_turno(fecha, hora) {
-            console.log("Modifciar Turno");
+
+        function modificar_turno(id_t, especialidad, profesional) {
+            const url = URL + 'turns/' + id_t + '&' + especialidad + '&' + profesional;
+
+            fetch(url)
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json(); // Parseamos la respuesta JSON
+                    } else {
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                        throw new Error('Error al obtener los datos del producto.');
+                    }
+                })
+                .then(turno => {
+                    // Aquí redirige a la página update_turn.html y pasa los datos del turno
+                    window.location.href = `update_turn.html?id_t=${turno.id_t}&fecha=${turno.fecha}&hora=${turno.hora}&especialidad=${turno.especialidad}&profesional=${turno.profesional}`;
+                })
+                .catch(function (error) {
+                    // Código para manejar errores
+                    alert('Error al obtener los datos del producto.');
+                });
         }
 
         function eliminar_turno(fecha, hora) {
@@ -106,8 +140,11 @@
                 .then(response => {
                     if (response.ok) {
                         // Eliminar el turno de la lista después de eliminarlo en el servidor
-                        // Aquí debes implementar el código para actualizar la lista de turnos en tu interfaz
                         alert('Turno eliminado correctamente.');
+                        // Refrescar la página después de 500 milisegundos
+                        setTimeout(function () {
+                            location.reload();
+                        }, 500);
                     } else {
                         // Si hubo un error, lanzar explícitamente una excepción
                         // para ser "catcheada" más adelante

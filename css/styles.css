@@ -1274,7 +1274,7 @@ color: var(--primario);
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -1289,7 +1289,8 @@ color: var(--primario);
 }
 
 .img-turno {
-    height: 30rem;
+    height: 100%;
+    width: 30rem;
 }
 
 .button-turno {
