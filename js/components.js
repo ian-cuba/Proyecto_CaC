@@ -112,7 +112,7 @@ const component2 = {
 }
 
 // const URL_ = "http://127.0.0.1:5000/"
-cons URL_ = "https://ianluisnoa.pythonanywhere.com/"
+const URL_ = "https://ianluisnoa.pythonanywhere.com/"
 // JavaScript
 window.addEventListener('DOMContentLoaded', () => {
     const containerServices = document.getElementById('submenuServices');
