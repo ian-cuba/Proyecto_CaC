@@ -1122,12 +1122,12 @@ select:focus {
     text-align: center;
 }
 
-.footer-contact a {
+.footer-contact a, #copyrights__name a {
     color: var(--blanco);
 }
 
 
-.footer-contact a:hover {
+.footer-contact a:hover, #copyrights__name a:hover {
     text-decoration: underline;
     transition: ease-out 0.3s;
 }

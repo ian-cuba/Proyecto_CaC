@@ -103,8 +103,12 @@ const component2 = {
                 </div>
                 <div class="copyrights">
                     <p>Copyright © 2023 Centro de Salud Integral.</p>
-                    <p id="copyrights__name">All Rights Reserved. Designed and Developed with ❤ by Ana García, Gisela
-                        Gentile, Angel Mugracci, Ian Luis Noa Delgado</p>
+                    <p id="copyrights__name">All Rights Reserved. Designed and Developed with ❤ by <a href="https://www.linkedin.com/in/garciaanalaura/"
+                    target="_blank">Ana García</a>, <a href="https://www.linkedin.com/in/gisela-gentile-b555706b"
+                    target="_blank">Gisela
+                    Gentile</a>, <a href="https://www.linkedin.com/in/angel-mugracci-363683238/"
+                    target="_blank">Angel Mugracci</a>, <a href="https://www.linkedin.com/in/ian-luis-noa-delgado-4a150a1ba"
+                    target="_blank">Ian Luis Noa Delgado</a></p>
                 </div>
             </div>
         </div>
