@@ -38,23 +38,16 @@ var button = document.getElementById("burger");
 button.onclick = toggleMenu;
 
 /* Mostrar y ocultar bloques en la página de Solicitar Turno */
-/*let $info = document.getElementById("div-informacion");
+let $info = document.getElementById("div-informacion");
 let $firstBlock = document.getElementById("first-block");
-//let $secondBlock = document.querySelector("#second-block");
 let $newTurn = document.getElementById("btnNuevoTurno");
-//let $search = document.querySelector("#search_btn");
 
 $info.style.display = 'none';
 $firstBlock.style.display = 'none';
-$secondBlock.style.display = 'none';
 
 $newTurn.addEventListener('click', () => {
     $info.style.display = 'block';
     $firstBlock.style.display = 'block';
 })
-
-$search.addEventListener('click', () => {
-    $secondBlock.style.display = 'block';
-})*/
 
 
