@@ -115,8 +115,8 @@ const component2 = {
     `
 }
 
-// const URL_ = "http://127.0.0.1:5000/"
-const URL_ = "https://ianluisnoa.pythonanywhere.com/"
+//const URL_ = "http://127.0.0.1:500/"
+const URL_ = "https://app-proyecto-final.onrender.com"
 // JavaScript
 window.addEventListener('DOMContentLoaded', () => {
     const containerServices = document.getElementById('submenuServices');
