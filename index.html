@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+    
 </head>
 
 <body id="app">
@@ -79,13 +80,13 @@
     <footer class="footer">
         <mifooter></mifooter>
     </footer>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/components.js"></script>
     <script src="js/scriptvue.js"></script>
     <script src="js/index.js"></script>
     <script>
         //const URL = "http://127.0.0.1:5000/"
-        const URL = "https://app-proyecto-final.onrender.com"
+        const URL = "https://app-proyecto-final.onrender.com/"
         // JavaScript
         window.addEventListener('DOMContentLoaded', () => {
             const gridContainer = document.getElementById('grid-container');
@@ -131,7 +132,7 @@
                         if (service) {
                             const truncatedDescription = truncateText(service.descripcion, 3); // Función para truncar la descripción a 3 líneas
                             const html = `
-                            <a href="services.html#${service.id}" class="service">
+                            <a href="services.html#service-${service.id}" class="service">
                                 <div class="service-item">
                                     <h3>${service.nombre}</h3>
                                     <div class="service-image">

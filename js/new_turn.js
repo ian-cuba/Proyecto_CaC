@@ -14,7 +14,7 @@ btnNuevoTurno.addEventListener("click", limpiar);
 function buscar() {
     
     //  evalEspecialidad();
-    //  evalProfecional();
+    //  evalProfesional();
    // let e = document.getElementById("especialidad").value;(para obtener la especialidad/no lo use hasta no poder validar el campo con profecional)
     let nombre = document.getElementById("medicos").value;
     let especialidad = ""

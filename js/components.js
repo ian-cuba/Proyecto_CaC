@@ -116,7 +116,7 @@ const component2 = {
 }
 
 //const URL_ = "http://127.0.0.1:500/"
-const URL_ = "https://app-proyecto-final.onrender.com"
+const URL_ = "https://app-proyecto-final.onrender.com/"
 // JavaScript
 window.addEventListener('DOMContentLoaded', () => {
     const containerServices = document.getElementById('submenuServices');
@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
             // Generar el código HTML para cada profesional y agregarlo al contenedor de la grilla
             data.forEach(service => {
                 const html = `
-                    <li class="submenu-item"><a href="services.html#${service.id}"
+                    <li class="submenu-item"><a href="services.html#service-${service.id}"
                     class="nav__link">${service.nombre}</a></li>
                     `;
                 containerServices.insertAdjacentHTML('beforeend', html);

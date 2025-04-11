@@ -34,39 +34,50 @@
     <footer class="footer">
         <mifooter></mifooter>
     </footer>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/components.js"></script>
     <script src="js/scriptvue.js"></script>
     <script src="js/index.js"></script>
     <script>
         // const URL = "http://127.0.0.1:5000/"
-        const URL = "https://app-proyecto-final.onrender.com"
+        const URL = "https://app-proyecto-final.onrender.com/"
         // JavaScript
+
         window.addEventListener('DOMContentLoaded', () => {
             const containerServices = document.getElementById('containerServices');
 
-            // Hacer una solicitud GET al servidor para obtener los datos de las especialidades
             fetch(URL + '/services')
                 .then(response => response.json())
                 .then(data => {
-                    // Generar el código HTML para cada especialidad
                     data.forEach(service => {
                         const html = `
-                        <div class="service-title ">
-                        <h2 id="${service.id}">${service.nombre}</h2>
-                        </div>
-                        <div class="service-image "> 
-                            <img src="${service.ruta_imagen}" alt="Imagen de ${service.nombre}">
-                        </div>
-                        <div class="service-description">
-                            <p>${service.descripcion}</p>
-                        </div>
-                        `;
+                    <div class="service-title">
+                        <h2 id="service-${service.id}">${service.nombre}</h2>
+                    </div>
+                    <div class="service-image"> 
+                        <img src="${service.ruta_imagen}" alt="Imagen de ${service.nombre}">
+                    </div>
+                    <div class="service-description">
+                        <p>${service.descripcion}</p>
+                    </div>
+                `;
                         containerServices.insertAdjacentHTML('beforeend', html);
                     });
+
+                    // Después de que todo esté cargado, hacer scroll si hay un hash en la URL
+                    const hash = window.location.hash;
+                    if (hash) {
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            // Usamos setTimeout para asegurarnos de que el render terminó
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                            }, 0);
+                        }
+                    }
                 })
                 .catch(error => {
-                    console.error('Error al obtener los profesionales:', error);
+                    console.error('Error al obtener los servicios:', error);
                 });
         });
 
