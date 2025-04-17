@@ -3,34 +3,34 @@ const component1 = {
     template: `
     <div class="container">
             <div class="header-row">
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <img src="img/logo.webp" alt="Logo">
                 </a>
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
-                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
-                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a>
+                        <li class="menu-item"><a href="about" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services" class="nav__link">Especialidades</a>
                             <ul class="submenu" id="submenuServices">
                             </ul>
                         </li>
-                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
-                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                        <li class="menu-item"><a href="turns" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact" class="nav__link">Contacto</a></li>
                     </ul>
                 </nav>
                 <div class="nav-buttons">
-                    <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
-                    <a href="404.html" class="button login-button">Login</a>
+                    <a href="new_turn" class="button shift-button">Solicitar Turno</a>
+                    <a href="404" class="button login-button">Login</a>
                 </div>
                 <div class="menu-responsive" id="menu-responsive">
                     <ul class="menu">
-                        <li class="menu-item"><a href="about.html" class="nav__link">Nosotros</a></li>
-                        <li class="menu-item"><a href="professionals.html" class="nav__link">Profesionales</a></li>
-                        <li class="menu-item"><a href="services.html" class="nav__link">Especialidades</a></li>
-                        <li class="menu-item"><a href="turns.html" class="nav__link">Mis Turnos</a></li>
-                        <li class="menu-item"><a href="contact.html" class="nav__link">Contacto</a></li>
-                        <a href="new_turn.html" class="button shift-button">Solicitar Turno</a>
-                        <a href="404.html" class="button login-button">Login</a>
+                        <li class="menu-item"><a href="about" class="nav__link">Nosotros</a></li>
+                        <li class="menu-item"><a href="professionals" class="nav__link">Profesionales</a></li>
+                        <li class="menu-item"><a href="services" class="nav__link">Especialidades</a></li>
+                        <li class="menu-item"><a href="turns" class="nav__link">Mis Turnos</a></li>
+                        <li class="menu-item"><a href="contact" class="nav__link">Contacto</a></li>
+                        <a href="new_turn" class="button shift-button">Solicitar Turno</a>
+                        <a href="404" class="button login-button">Login</a>
                     </ul>
                 </div>
                 <div class="burger" id="burger">
@@ -47,7 +47,7 @@ const component2 = {
             <div class="footer-grid">
                 <div class="footer-flex">
                     <div>
-                        <a href="index.html" class="logo logo-footer">
+                        <a href="/" class="logo logo-footer">
                             <img src="img/logo.webp" alt="Logo" width="70px">
                         </a>
                     </div>
@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
             // Generar el código HTML para cada profesional y agregarlo al contenedor de la grilla
             data.forEach(service => {
                 const html = `
-                    <li class="submenu-item"><a href="services.html#service-${service.id}"
+                    <li class="submenu-item"><a href="services#service-${service.id}"
                     class="nav__link">${service.nombre}</a></li>
                     `;
                 containerServices.insertAdjacentHTML('beforeend', html);
