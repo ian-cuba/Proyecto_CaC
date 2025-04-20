@@ -17,6 +17,9 @@
 </head>
 
 <body id="app">
+    <div id="spinner-overlay" class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
     <header class="header" id="header">
         <miheader></miheader>
     </header>
@@ -89,17 +92,27 @@
         const URL = "https://app-proyecto-final.onrender.com/"
         // JavaScript
         window.addEventListener('DOMContentLoaded', () => {
-            const gridContainer = document.getElementById('grid-container');
+        const gridContainer = document.getElementById('grid-container');
+        const containerServices = document.getElementById('containerServices');
+        const overlay = document.getElementById('spinner-overlay');
 
-            // Hacer una solicitud GET al servidor para obtener los datos de los profesionales
-            fetch(URL + '/professionals')
-                .then(response => response.json())
-                .then(data => {
-                    // Generar el código HTML solo para los 3 primeros profesionales y agregarlo al contenedor de la grilla
-                    for (let i = 0; i < 3; i++) {
-                        const profesional = data[i];
-                        if (profesional) {
-                            const html = `
+        let professionalsLoaded = false;
+        let servicesLoaded = false;
+
+        function checkIfLoaded() {
+            if (professionalsLoaded && servicesLoaded) {
+                overlay.style.display = 'none';
+            }
+        }
+
+        // Profesionales
+        fetch(URL + '/professionals')
+            .then(response => response.json())
+            .then(data => {
+                for (let i = 0; i < 3; i++) {
+                    const profesional = data[i];
+                    if (profesional) {
+                        const html = `
                             <div class="grid-item">
                                 <div class="grid-item__content">
                                     <div>
@@ -108,30 +121,28 @@
                                     <h3>${profesional.nombre}</h3>
                                     <p>${profesional.descripcion}</p>
                                 </div>
-                            </div>
-                            `;
-                            gridContainer.insertAdjacentHTML('beforeend', html);
-                        }
+                            </div>`;
+                        gridContainer.insertAdjacentHTML('beforeend', html);
                     }
-                })
-                .catch(error => {
-                    console.error('Error al obtener los profesionales:', error);
-                });
-        });
+                }
+                professionalsLoaded = true;
+                checkIfLoaded();
+            })
+            .catch(error => {
+                console.error('Error al obtener los profesionales:', error);
+                professionalsLoaded = true;
+                checkIfLoaded();
+            });
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const containerServices = document.getElementById('containerServices');
-
-            // Hacer una solicitud GET al servidor para obtener los datos de las especialidades
-            fetch(URL + '/services')
-                .then(response => response.json())
-                .then(data => {
-                    // Generar el código HTML solo para las 3 primeras especialidades
-                    for (let i = 0; i < 3; i++) {
-                        const service = data[i];
-                        if (service) {
-                            const truncatedDescription = truncateText(service.descripcion, 3); // Función para truncar la descripción a 3 líneas
-                            const html = `
+        // Servicios
+        fetch(URL + '/services')
+            .then(response => response.json())
+            .then(data => {
+                for (let i = 0; i < 3; i++) {
+                    const service = data[i];
+                    if (service) {
+                        const truncatedDescription = truncateText(service.descripcion, 3);
+                        const html = `
                             <a href="services.html#service-${service.id}" class="service">
                                 <div class="service-item">
                                     <h3>${service.nombre}</h3>
@@ -140,25 +151,25 @@
                                     </div>
                                     <p>${truncatedDescription}</p>
                                 </div>
-                            </a>
-                            `;
-                            containerServices.insertAdjacentHTML('beforeend', html);
-                        }
+                            </a>`;
+                        containerServices.insertAdjacentHTML('beforeend', html);
                     }
-                })
-                .catch(error => {
-                    console.error('Error al obtener los profesionales:', error);
-                });
+                }
+                servicesLoaded = true;
+                checkIfLoaded();
+            })
+            .catch(error => {
+                console.error('Error al obtener los servicios:', error);
+                servicesLoaded = true;
+                checkIfLoaded();
+            });
 
-            function truncateText(text, maxLines) {
-                const lineHeight = 1.2; // Altura de línea estimada en rem
-                const maxHeight = maxLines * lineHeight; // Altura máxima en rem
-                const truncatedText = `<span style="display: -webkit-box; -webkit-line-clamp: ${maxLines}; -webkit-box-orient: vertical; overflow: hidden; max-height: ${maxHeight}rem;">${text}</span>`;
-                return `${truncatedText}<span style="display: inline-block; vertical-align: middle; line-height: 1; white-space: nowrap;">...</span>`;
-            }
-
-
-        });
+        function truncateText(text, maxLines) {
+            const lineHeight = 1.2;
+            const maxHeight = maxLines * lineHeight;
+            return `<span style="display: -webkit-box; -webkit-line-clamp: ${maxLines}; -webkit-box-orient: vertical; overflow: hidden; max-height: ${maxHeight}rem;">${text}</span><span style="display: inline-block; vertical-align: middle; line-height: 1; white-space: nowrap;">...</span>`;
+        }
+    });
 
     </script>
 </body>
